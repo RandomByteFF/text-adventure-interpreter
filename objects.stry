@@ -1,0 +1,18 @@
+50;1;wife;You couldn't imagine your life without her.;false;kiss wife;;You kiss your wife good morning. She seems a bit sad today.
+51;1;pc;Last night you forgot to turn it off again…;false;check browser history/check history;;There is a search, titled "early signs of dementia". You don't remember searching it up.
+52;1;note;;false;look at note/look at the note/check note/read note/read the note;6:2;It says "Don't forget the doctors appointment."Suddenly you remember that you have an appointment. You should head out to your car and go right now.
+53;1;pictures;They are pictures with your friends and family.;false;;;
+54;1;keys;Keys to your car and front door.;true;;;
+55;1;front door;I could use my keys on this.;false;use 54;5:2;The door opens.
+56;1;ignition;;false;use/start car;7:2;You start the car.
+57;1;keys;Yes, looks like you left them in the car.;true;;;
+58;1;front door;It’s closed. I wonder where my keys are…;false;use 57;8:2;The door opens.
+59;1;wife;She’s crying.;false;;;
+60;1;pictures;Some of them are about your family. You don’t remember the rest of them.;false;;;
+61;1;pc;Old little guy… Should probably upgrade. Sadly you can’t afford an Nvidia card.;false;;;
+62;1;note;;false;look at note/look at the note/check note/read note/read the note;;There’s something written on the paper, but you can’t make out what. Looks typically what doctors write like.
+63;1;key;Just a rusty old key.;true;;;
+64;1;door;I have no idea where this leads. I would guess nowhere pleasant.;false;use 63;14:2;The door opens.
+65;1;woman;She’s smiling at you with tears in her eye.;false;;;
+66;1;pictures;Strangers living a happy life.;false;;;
+67;1;paper;You can’t understand what’s written here. But you feel like the long decline will be over if you sign it.;false;sign paper/sign it;67:0-25:2;You sign the paper

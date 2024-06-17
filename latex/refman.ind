@@ -1,0 +1,732 @@
+\begin{theindex}
+
+  \item {Add}
+    \subitem {essentials.c}, \hyperpage{36}
+    \subitem {essentials.h}, \hyperpage{48}
+  \item {AddString}
+    \subitem {essentials.c}, \hyperpage{36}
+    \subitem {essentials.h}, \hyperpage{48}
+  \item {AddStringPointer}
+    \subitem {essentials.c}, \hyperpage{36}
+    \subitem {essentials.h}, \hyperpage{48}
+  \item {all\_alloc\_bytes}
+    \subitem {DebugmallocData}, \hyperpage{5}
+  \item {all\_alloc\_count}
+    \subitem {DebugmallocData}, \hyperpage{5}
+  \item {Alloc}
+    \subitem {essentials.c}, \hyperpage{37}
+    \subitem {essentials.h}, \hyperpage{49}
+  \item {alloc\_bytes}
+    \subitem {DebugmallocData}, \hyperpage{5}
+  \item {alloc\_count}
+    \subitem {DebugmallocData}, \hyperpage{6}
+  \item {AllocStd}
+    \subitem {essentials.c}, \hyperpage{37}
+  \item {At}
+    \subitem {essentials.c}, \hyperpage{37}
+    \subitem {essentials.h}, \hyperpage{49}
+  \item {AtString}
+    \subitem {essentials.c}, \hyperpage{37}
+    \subitem {essentials.h}, \hyperpage{49}
+
+  \indexspace
+
+  \item {calloc}
+    \subitem {debugmalloc.h}, \hyperpage{18}
+  \item {ChangeStates}
+    \subitem {gameSpace.c}, \hyperpage{58}
+    \subitem {gameSpace.h}, \hyperpage{60}
+  \item {COL\_BLACK}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_BLUE}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_BROWN}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_CYAN}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_DARKGRAY}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_GREEN}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_LIGHTBLUE}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_LIGHTCYAN}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_LIGHTGRAY}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_LIGHTGREEN}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_LIGHTMAGENTA}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_LIGHTRED}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_LIGHTYELLOW}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_MAGENTA}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_RED}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_RESET}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_WHITE}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {COL\_YELLOW}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {collectible}
+    \subitem {Object}, \hyperpage{11}
+  \item {connectedItems}
+    \subitem {Room}, \hyperpage{13}
+  \item {connectedRooms}
+    \subitem {Room}, \hyperpage{13}
+  \item {Contains}
+    \subitem {essentials.c}, \hyperpage{38}
+    \subitem {essentials.h}, \hyperpage{50}
+  \item {ContainsString}
+    \subitem {essentials.c}, \hyperpage{38}
+    \subitem {essentials.h}, \hyperpage{50}
+  \item {ConvertToInt}
+    \subitem {essentials.c}, \hyperpage{39}
+    \subitem {essentials.h}, \hyperpage{50}
+  \item {CpyStrPtr}
+    \subitem {essentials.c}, \hyperpage{39}
+    \subitem {essentials.h}, \hyperpage{51}
+  \item {CreateList}
+    \subitem {essentials.c}, \hyperpage{39}
+    \subitem {essentials.h}, \hyperpage{51}
+  \item {CreateStringList}
+    \subitem {essentials.c}, \hyperpage{40}
+    \subitem {essentials.h}, \hyperpage{52}
+  \item {currentRoomId}
+    \subitem {graphics.c}, \hyperpage{64}
+  \item {currentRoomState}
+    \subitem {graphics.c}, \hyperpage{64}
+
+  \indexspace
+
+  \item {debugmalloc.h}, \hyperpage{17}
+    \subitem {calloc}, \hyperpage{18}
+    \subitem {debugmalloc\_canary\_char}, \hyperpage{19}
+    \subitem {debugmalloc\_canary\_size}, \hyperpage{19}
+    \subitem {debugmalloc\_max\_block\_size\_default}, \hyperpage{19}
+    \subitem {debugmalloc\_tablesize}, \hyperpage{19}
+    \subitem {DebugmallocData}, \hyperpage{18}
+    \subitem {DebugmallocEntry}, \hyperpage{18}
+    \subitem {free}, \hyperpage{18}
+    \subitem {malloc}, \hyperpage{18}
+    \subitem {realloc}, \hyperpage{18}
+  \item {debugmalloc\_canary\_char}
+    \subitem {debugmalloc.h}, \hyperpage{19}
+  \item {debugmalloc\_canary\_size}
+    \subitem {debugmalloc.h}, \hyperpage{19}
+  \item {debugmalloc\_max\_block\_size\_default}
+    \subitem {debugmalloc.h}, \hyperpage{19}
+  \item {debugmalloc\_tablesize}
+    \subitem {debugmalloc.h}, \hyperpage{19}
+  \item {DebugmallocData}, \hyperpage{5}
+    \subitem {all\_alloc\_bytes}, \hyperpage{5}
+    \subitem {all\_alloc\_count}, \hyperpage{5}
+    \subitem {alloc\_bytes}, \hyperpage{5}
+    \subitem {alloc\_count}, \hyperpage{6}
+    \subitem {debugmalloc.h}, \hyperpage{18}
+    \subitem {head}, \hyperpage{6}
+    \subitem {logfile}, \hyperpage{6}
+    \subitem {max\_block\_size}, \hyperpage{6}
+    \subitem {tail}, \hyperpage{6}
+  \item {DebugmallocEntry}, \hyperpage{6}
+    \subitem {debugmalloc.h}, \hyperpage{18}
+    \subitem {expr}, \hyperpage{7}
+    \subitem {file}, \hyperpage{7}
+    \subitem {func}, \hyperpage{7}
+    \subitem {line}, \hyperpage{7}
+    \subitem {next}, \hyperpage{7}
+    \subitem {prev}, \hyperpage{7}
+    \subitem {real\_mem}, \hyperpage{8}
+    \subitem {size}, \hyperpage{8}
+    \subitem {user\_mem}, \hyperpage{8}
+  \item {DestroyList}
+    \subitem {essentials.c}, \hyperpage{40}
+    \subitem {essentials.h}, \hyperpage{52}
+  \item {DestroyObjects}
+    \subitem {loaderSystem.c}, \hyperpage{71}
+    \subitem {loaderSystem.h}, \hyperpage{72}
+  \item {DestroyRooms}
+    \subitem {loaderSystem.c}, \hyperpage{71}
+    \subitem {loaderSystem.h}, \hyperpage{73}
+  \item {DestroyStringList}
+    \subitem {essentials.c}, \hyperpage{40}
+    \subitem {essentials.h}, \hyperpage{52}
+  \item {DrawGameSpace}
+    \subitem {graphics.c}, \hyperpage{62}
+  \item {DrawMenu}
+    \subitem {graphics.c}, \hyperpage{62}
+  \item {DrawMenuItem}
+    \subitem {graphics.c}, \hyperpage{63}
+
+  \indexspace
+
+  \item {econio.c}, \hyperpage{25}
+    \subitem {econio\_clrscr}, \hyperpage{25}
+    \subitem {econio\_flush}, \hyperpage{25}
+    \subitem {econio\_getch}, \hyperpage{26}
+    \subitem {econio\_gotoxy}, \hyperpage{26}
+    \subitem {econio\_kbhit}, \hyperpage{26}
+    \subitem {econio\_normalmode}, \hyperpage{26}
+    \subitem {econio\_rawmode}, \hyperpage{26}
+    \subitem {econio\_set\_title}, \hyperpage{26}
+    \subitem {econio\_sleep}, \hyperpage{27}
+    \subitem {econio\_textbackground}, \hyperpage{27}
+    \subitem {econio\_textcolor}, \hyperpage{27}
+  \item {econio.h}, \hyperpage{27}
+    \subitem {COL\_BLACK}, \hyperpage{30}
+    \subitem {COL\_BLUE}, \hyperpage{30}
+    \subitem {COL\_BROWN}, \hyperpage{30}
+    \subitem {COL\_CYAN}, \hyperpage{30}
+    \subitem {COL\_DARKGRAY}, \hyperpage{30}
+    \subitem {COL\_GREEN}, \hyperpage{30}
+    \subitem {COL\_LIGHTBLUE}, \hyperpage{30}
+    \subitem {COL\_LIGHTCYAN}, \hyperpage{30}
+    \subitem {COL\_LIGHTGRAY}, \hyperpage{30}
+    \subitem {COL\_LIGHTGREEN}, \hyperpage{30}
+    \subitem {COL\_LIGHTMAGENTA}, \hyperpage{30}
+    \subitem {COL\_LIGHTRED}, \hyperpage{30}
+    \subitem {COL\_LIGHTYELLOW}, \hyperpage{30}
+    \subitem {COL\_MAGENTA}, \hyperpage{30}
+    \subitem {COL\_RED}, \hyperpage{30}
+    \subitem {COL\_RESET}, \hyperpage{30}
+    \subitem {COL\_WHITE}, \hyperpage{30}
+    \subitem {COL\_YELLOW}, \hyperpage{30}
+    \subitem {econio\_clrscr}, \hyperpage{31}
+    \subitem {econio\_flush}, \hyperpage{31}
+    \subitem {econio\_getch}, \hyperpage{31}
+    \subitem {econio\_gotoxy}, \hyperpage{31}
+    \subitem {econio\_kbhit}, \hyperpage{32}
+    \subitem {econio\_normalmode}, \hyperpage{32}
+    \subitem {econio\_rawmode}, \hyperpage{32}
+    \subitem {econio\_set\_title}, \hyperpage{32}
+    \subitem {econio\_sleep}, \hyperpage{32}
+    \subitem {econio\_textbackground}, \hyperpage{32}
+    \subitem {econio\_textcolor}, \hyperpage{32}
+    \subitem {EconioColor}, \hyperpage{28, 29}
+    \subitem {EconioKey}, \hyperpage{28}, \hyperpage{30}
+    \subitem {KEY\_BACKSPACE}, \hyperpage{31}
+    \subitem {KEY\_CTRLDELETE}, \hyperpage{31}
+    \subitem {KEY\_CTRLDOWN}, \hyperpage{31}
+    \subitem {KEY\_CTRLEND}, \hyperpage{31}
+    \subitem {KEY\_CTRLHOME}, \hyperpage{31}
+    \subitem {KEY\_CTRLINSERT}, \hyperpage{31}
+    \subitem {KEY\_CTRLLEFT}, \hyperpage{31}
+    \subitem {KEY\_CTRLPAGEDOWN}, \hyperpage{31}
+    \subitem {KEY\_CTRLPAGEUP}, \hyperpage{31}
+    \subitem {KEY\_CTRLRIGHT}, \hyperpage{31}
+    \subitem {KEY\_CTRLUP}, \hyperpage{31}
+    \subitem {KEY\_DELETE}, \hyperpage{31}
+    \subitem {KEY\_DOWN}, \hyperpage{30}
+    \subitem {KEY\_END}, \hyperpage{30}
+    \subitem {KEY\_ENTER}, \hyperpage{31}
+    \subitem {KEY\_ESCAPE}, \hyperpage{31}
+    \subitem {KEY\_F1}, \hyperpage{30}
+    \subitem {KEY\_F10}, \hyperpage{30}
+    \subitem {KEY\_F11}, \hyperpage{30}
+    \subitem {KEY\_F12}, \hyperpage{30}
+    \subitem {KEY\_F2}, \hyperpage{30}
+    \subitem {KEY\_F3}, \hyperpage{30}
+    \subitem {KEY\_F4}, \hyperpage{30}
+    \subitem {KEY\_F5}, \hyperpage{30}
+    \subitem {KEY\_F6}, \hyperpage{30}
+    \subitem {KEY\_F7}, \hyperpage{30}
+    \subitem {KEY\_F8}, \hyperpage{30}
+    \subitem {KEY\_F9}, \hyperpage{30}
+    \subitem {KEY\_HOME}, \hyperpage{30}
+    \subitem {KEY\_INSERT}, \hyperpage{30}
+    \subitem {KEY\_LEFT}, \hyperpage{30}
+    \subitem {KEY\_PAGEDOWN}, \hyperpage{30}
+    \subitem {KEY\_PAGEUP}, \hyperpage{30}
+    \subitem {KEY\_RIGHT}, \hyperpage{30}
+    \subitem {KEY\_TAB}, \hyperpage{31}
+    \subitem {KEY\_UNKNOWNKEY}, \hyperpage{31}
+    \subitem {KEY\_UP}, \hyperpage{30}
+  \item {econio\_clrscr}
+    \subitem {econio.c}, \hyperpage{25}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {econio\_flush}
+    \subitem {econio.c}, \hyperpage{25}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {econio\_getch}
+    \subitem {econio.c}, \hyperpage{26}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {econio\_gotoxy}
+    \subitem {econio.c}, \hyperpage{26}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {econio\_kbhit}
+    \subitem {econio.c}, \hyperpage{26}
+    \subitem {econio.h}, \hyperpage{32}
+  \item {econio\_normalmode}
+    \subitem {econio.c}, \hyperpage{26}
+    \subitem {econio.h}, \hyperpage{32}
+  \item {econio\_rawmode}
+    \subitem {econio.c}, \hyperpage{26}
+    \subitem {econio.h}, \hyperpage{32}
+  \item {econio\_set\_title}
+    \subitem {econio.c}, \hyperpage{26}
+    \subitem {econio.h}, \hyperpage{32}
+  \item {econio\_sleep}
+    \subitem {econio.c}, \hyperpage{27}
+    \subitem {econio.h}, \hyperpage{32}
+  \item {econio\_textbackground}
+    \subitem {econio.c}, \hyperpage{27}
+    \subitem {econio.h}, \hyperpage{32}
+  \item {econio\_textcolor}
+    \subitem {econio.c}, \hyperpage{27}
+    \subitem {econio.h}, \hyperpage{32}
+  \item {EconioColor}
+    \subitem {econio.h}, \hyperpage{28, 29}
+  \item {EconioKey}
+    \subitem {econio.h}, \hyperpage{28}, \hyperpage{30}
+  \item {entryText}
+    \subitem {Room}, \hyperpage{13}
+  \item {essentials.c}, \hyperpage{34}
+    \subitem {Add}, \hyperpage{36}
+    \subitem {AddString}, \hyperpage{36}
+    \subitem {AddStringPointer}, \hyperpage{36}
+    \subitem {Alloc}, \hyperpage{37}
+    \subitem {AllocStd}, \hyperpage{37}
+    \subitem {At}, \hyperpage{37}
+    \subitem {AtString}, \hyperpage{37}
+    \subitem {Contains}, \hyperpage{38}
+    \subitem {ContainsString}, \hyperpage{38}
+    \subitem {ConvertToInt}, \hyperpage{39}
+    \subitem {CpyStrPtr}, \hyperpage{39}
+    \subitem {CreateList}, \hyperpage{39}
+    \subitem {CreateStringList}, \hyperpage{40}
+    \subitem {DestroyList}, \hyperpage{40}
+    \subitem {DestroyStringList}, \hyperpage{40}
+    \subitem {Find}, \hyperpage{41}
+    \subitem {FindString}, \hyperpage{41}
+    \subitem {Merge}, \hyperpage{41}
+    \subitem {RemoveAt}, \hyperpage{42}
+    \subitem {RemoveAtInt}, \hyperpage{42}
+    \subitem {RemoveFirst}, \hyperpage{42}
+    \subitem {RemoveFirstString}, \hyperpage{43}
+    \subitem {Set}, \hyperpage{43}
+    \subitem {SetString}, \hyperpage{43}
+    \subitem {SortBeolvas}, \hyperpage{44}
+    \subitem {SortBeolvasStd}, \hyperpage{44}
+    \subitem {Split}, \hyperpage{44}
+    \subitem {SplitInt}, \hyperpage{45}
+  \item {essentials.h}, \hyperpage{45}
+    \subitem {Add}, \hyperpage{48}
+    \subitem {AddString}, \hyperpage{48}
+    \subitem {AddStringPointer}, \hyperpage{48}
+    \subitem {Alloc}, \hyperpage{49}
+    \subitem {At}, \hyperpage{49}
+    \subitem {AtString}, \hyperpage{49}
+    \subitem {Contains}, \hyperpage{50}
+    \subitem {ContainsString}, \hyperpage{50}
+    \subitem {ConvertToInt}, \hyperpage{50}
+    \subitem {CpyStrPtr}, \hyperpage{51}
+    \subitem {CreateList}, \hyperpage{51}
+    \subitem {CreateStringList}, \hyperpage{52}
+    \subitem {DestroyList}, \hyperpage{52}
+    \subitem {DestroyStringList}, \hyperpage{52}
+    \subitem {Find}, \hyperpage{52}
+    \subitem {FindString}, \hyperpage{53}
+    \subitem {List}, \hyperpage{47}
+    \subitem {Merge}, \hyperpage{53}
+    \subitem {Node}, \hyperpage{47}
+    \subitem {RemoveAt}, \hyperpage{54}
+    \subitem {RemoveAtInt}, \hyperpage{54}
+    \subitem {RemoveFirst}, \hyperpage{54}
+    \subitem {RemoveFirstString}, \hyperpage{54}
+    \subitem {Set}, \hyperpage{55}
+    \subitem {SetString}, \hyperpage{55}
+    \subitem {SortBeolvas}, \hyperpage{55}
+    \subitem {SortBeolvasStd}, \hyperpage{56}
+    \subitem {Split}, \hyperpage{56}
+    \subitem {SplitInt}, \hyperpage{57}
+    \subitem {StringList}, \hyperpage{47}
+    \subitem {StringNode}, \hyperpage{47}
+  \item {Execute}
+    \subitem {interpreter.c}, \hyperpage{67}
+    \subitem {interpreter.h}, \hyperpage{69}
+  \item {expr}
+    \subitem {DebugmallocEntry}, \hyperpage{7}
+
+  \indexspace
+
+  \item {file}
+    \subitem {DebugmallocEntry}, \hyperpage{7}
+  \item {Find}
+    \subitem {essentials.c}, \hyperpage{41}
+    \subitem {essentials.h}, \hyperpage{52}
+  \item {FindString}
+    \subitem {essentials.c}, \hyperpage{41}
+    \subitem {essentials.h}, \hyperpage{53}
+  \item {free}
+    \subitem {debugmalloc.h}, \hyperpage{18}
+  \item {func}
+    \subitem {DebugmallocEntry}, \hyperpage{7}
+
+  \indexspace
+
+  \item {gameSpace.c}, \hyperpage{58}
+    \subitem {ChangeStates}, \hyperpage{58}
+  \item {gameSpace.h}, \hyperpage{59}
+    \subitem {ChangeStates}, \hyperpage{60}
+    \subitem {Object}, \hyperpage{59}
+    \subitem {Room}, \hyperpage{59}
+    \subitem {State}, \hyperpage{60}
+  \item {graphics.c}, \hyperpage{61}
+    \subitem {currentRoomId}, \hyperpage{64}
+    \subitem {currentRoomState}, \hyperpage{64}
+    \subitem {DrawGameSpace}, \hyperpage{62}
+    \subitem {DrawMenu}, \hyperpage{62}
+    \subitem {DrawMenuItem}, \hyperpage{63}
+    \subitem {HEIGHT}, \hyperpage{64}
+    \subitem {HowToPlay}, \hyperpage{63}
+    \subitem {items}, \hyperpage{64}
+    \subitem {LoadGame}, \hyperpage{63}
+    \subitem {MenuItem}, \hyperpage{62}
+    \subitem {MenuMode}, \hyperpage{63}
+    \subitem {NewGame}, \hyperpage{63}
+    \subitem {objectCount}, \hyperpage{64}
+    \subitem {objects}, \hyperpage{65}
+    \subitem {PlayGame}, \hyperpage{64}
+    \subitem {previousRoomId}, \hyperpage{65}
+    \subitem {previousRoomState}, \hyperpage{65}
+    \subitem {roomCount}, \hyperpage{65}
+    \subitem {rooms}, \hyperpage{65}
+    \subitem {stateCount}, \hyperpage{65}
+    \subitem {states}, \hyperpage{65}
+    \subitem {WIDTH}, \hyperpage{65}
+  \item {graphics.h}, \hyperpage{66}
+    \subitem {MenuMode}, \hyperpage{66}
+
+  \indexspace
+
+  \item {HasEvent}
+    \subitem {interpreter.c}, \hyperpage{68}
+  \item {head}
+    \subitem {DebugmallocData}, \hyperpage{6}
+  \item {HEIGHT}
+    \subitem {graphics.c}, \hyperpage{64}
+  \item {HowToPlay}
+    \subitem {graphics.c}, \hyperpage{63}
+
+  \indexspace
+
+  \item {id}
+    \subitem {Object}, \hyperpage{11}
+    \subitem {Room}, \hyperpage{13}
+    \subitem {State}, \hyperpage{14}
+  \item {interpreter.c}, \hyperpage{66}
+    \subitem {Execute}, \hyperpage{67}
+    \subitem {HasEvent}, \hyperpage{68}
+    \subitem {WhatState}, \hyperpage{68}
+  \item {interpreter.h}, \hyperpage{68}
+    \subitem {Execute}, \hyperpage{69}
+    \subitem {WhatState}, \hyperpage{69}
+  \item {items}
+    \subitem {graphics.c}, \hyperpage{64}
+
+  \indexspace
+
+  \item {KEY\_BACKSPACE}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {KEY\_CTRLDELETE}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {KEY\_CTRLDOWN}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {KEY\_CTRLEND}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {KEY\_CTRLHOME}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {KEY\_CTRLINSERT}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {KEY\_CTRLLEFT}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {KEY\_CTRLPAGEDOWN}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {KEY\_CTRLPAGEUP}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {KEY\_CTRLRIGHT}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {KEY\_CTRLUP}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {KEY\_DELETE}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {KEY\_DOWN}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_END}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_ENTER}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {KEY\_ESCAPE}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {KEY\_F1}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_F10}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_F11}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_F12}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_F2}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_F3}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_F4}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_F5}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_F6}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_F7}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_F8}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_F9}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_HOME}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_INSERT}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_LEFT}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_PAGEDOWN}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_PAGEUP}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_RIGHT}
+    \subitem {econio.h}, \hyperpage{30}
+  \item {KEY\_TAB}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {KEY\_UNKNOWNKEY}
+    \subitem {econio.h}, \hyperpage{31}
+  \item {KEY\_UP}
+    \subitem {econio.h}, \hyperpage{30}
+
+  \indexspace
+
+  \item {len}
+    \subitem {List}, \hyperpage{8}
+    \subitem {StringList}, \hyperpage{15}
+  \item {line}
+    \subitem {DebugmallocEntry}, \hyperpage{7}
+  \item {List}, \hyperpage{8}
+    \subitem {essentials.h}, \hyperpage{47}
+    \subitem {len}, \hyperpage{8}
+    \subitem {startNode}, \hyperpage{9}
+  \item {loaderSystem.c}, \hyperpage{70}
+    \subitem {DestroyObjects}, \hyperpage{71}
+    \subitem {DestroyRooms}, \hyperpage{71}
+    \subitem {LoadStry}, \hyperpage{71}
+    \subitem {ReadFile}, \hyperpage{72}
+  \item {loaderSystem.h}, \hyperpage{72}
+    \subitem {DestroyObjects}, \hyperpage{72}
+    \subitem {DestroyRooms}, \hyperpage{73}
+    \subitem {LoadStry}, \hyperpage{73}
+  \item {LoadGame}
+    \subitem {graphics.c}, \hyperpage{63}
+  \item {LoadStry}
+    \subitem {loaderSystem.c}, \hyperpage{71}
+    \subitem {loaderSystem.h}, \hyperpage{73}
+  \item {logfile}
+    \subitem {DebugmallocData}, \hyperpage{6}
+  \item {lookAroundText}
+    \subitem {Room}, \hyperpage{13}
+  \item {lookAtText}
+    \subitem {Object}, \hyperpage{11}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.c}, \hyperpage{74}
+  \item {main.c}, \hyperpage{74}
+    \subitem {main}, \hyperpage{74}
+  \item {malloc}
+    \subitem {debugmalloc.h}, \hyperpage{18}
+  \item {max\_block\_size}
+    \subitem {DebugmallocData}, \hyperpage{6}
+  \item {MenuItem}, \hyperpage{9}
+    \subitem {graphics.c}, \hyperpage{62}
+    \subitem {text}, \hyperpage{9}
+    \subitem {x}, \hyperpage{9}
+    \subitem {y}, \hyperpage{9}
+  \item {MenuMode}
+    \subitem {graphics.c}, \hyperpage{63}
+    \subitem {graphics.h}, \hyperpage{66}
+  \item {Merge}
+    \subitem {essentials.c}, \hyperpage{41}
+    \subitem {essentials.h}, \hyperpage{53}
+  \item {modify}
+    \subitem {Object}, \hyperpage{11}
+  \item {modifyEvent}
+    \subitem {Object}, \hyperpage{12}
+  \item {modifyString}
+    \subitem {Object}, \hyperpage{12}
+
+  \indexspace
+
+  \item {name}
+    \subitem {Object}, \hyperpage{12}
+    \subitem {Room}, \hyperpage{13}
+  \item {NewGame}
+    \subitem {graphics.c}, \hyperpage{63}
+  \item {next}
+    \subitem {DebugmallocEntry}, \hyperpage{7}
+  \item {nextNode}
+    \subitem {Node}, \hyperpage{10}
+    \subitem {StringNode}, \hyperpage{16}
+  \item {Node}, \hyperpage{10}
+    \subitem {essentials.h}, \hyperpage{47}
+    \subitem {nextNode}, \hyperpage{10}
+    \subitem {value}, \hyperpage{10}
+
+  \indexspace
+
+  \item {Object}, \hyperpage{11}
+    \subitem {collectible}, \hyperpage{11}
+    \subitem {gameSpace.h}, \hyperpage{59}
+    \subitem {id}, \hyperpage{11}
+    \subitem {lookAtText}, \hyperpage{11}
+    \subitem {modify}, \hyperpage{11}
+    \subitem {modifyEvent}, \hyperpage{12}
+    \subitem {modifyString}, \hyperpage{12}
+    \subitem {name}, \hyperpage{12}
+    \subitem {state}, \hyperpage{12}
+  \item {objectCount}
+    \subitem {graphics.c}, \hyperpage{64}
+  \item {objects}
+    \subitem {graphics.c}, \hyperpage{65}
+
+  \indexspace
+
+  \item {PlayGame}
+    \subitem {graphics.c}, \hyperpage{64}
+  \item {prev}
+    \subitem {DebugmallocEntry}, \hyperpage{7}
+  \item {previousRoomId}
+    \subitem {graphics.c}, \hyperpage{65}
+  \item {previousRoomState}
+    \subitem {graphics.c}, \hyperpage{65}
+
+  \indexspace
+
+  \item {ReadFile}
+    \subitem {loaderSystem.c}, \hyperpage{72}
+  \item {real\_mem}
+    \subitem {DebugmallocEntry}, \hyperpage{8}
+  \item {realloc}
+    \subitem {debugmalloc.h}, \hyperpage{18}
+  \item {RemoveAt}
+    \subitem {essentials.c}, \hyperpage{42}
+    \subitem {essentials.h}, \hyperpage{54}
+  \item {RemoveAtInt}
+    \subitem {essentials.c}, \hyperpage{42}
+    \subitem {essentials.h}, \hyperpage{54}
+  \item {RemoveFirst}
+    \subitem {essentials.c}, \hyperpage{42}
+    \subitem {essentials.h}, \hyperpage{54}
+  \item {RemoveFirstString}
+    \subitem {essentials.c}, \hyperpage{43}
+    \subitem {essentials.h}, \hyperpage{54}
+  \item {Room}, \hyperpage{12}
+    \subitem {connectedItems}, \hyperpage{13}
+    \subitem {connectedRooms}, \hyperpage{13}
+    \subitem {entryText}, \hyperpage{13}
+    \subitem {gameSpace.h}, \hyperpage{59}
+    \subitem {id}, \hyperpage{13}
+    \subitem {lookAroundText}, \hyperpage{13}
+    \subitem {name}, \hyperpage{13}
+    \subitem {state}, \hyperpage{13}
+  \item {room}
+    \subitem {State}, \hyperpage{14}
+  \item {roomCount}
+    \subitem {graphics.c}, \hyperpage{65}
+  \item {rooms}
+    \subitem {graphics.c}, \hyperpage{65}
+
+  \indexspace
+
+  \item {Set}
+    \subitem {essentials.c}, \hyperpage{43}
+    \subitem {essentials.h}, \hyperpage{55}
+  \item {SetString}
+    \subitem {essentials.c}, \hyperpage{43}
+    \subitem {essentials.h}, \hyperpage{55}
+  \item {size}
+    \subitem {DebugmallocEntry}, \hyperpage{8}
+  \item {SortBeolvas}
+    \subitem {essentials.c}, \hyperpage{44}
+    \subitem {essentials.h}, \hyperpage{55}
+  \item {SortBeolvasStd}
+    \subitem {essentials.c}, \hyperpage{44}
+    \subitem {essentials.h}, \hyperpage{56}
+  \item {Split}
+    \subitem {essentials.c}, \hyperpage{44}
+    \subitem {essentials.h}, \hyperpage{56}
+  \item {SplitInt}
+    \subitem {essentials.c}, \hyperpage{45}
+    \subitem {essentials.h}, \hyperpage{57}
+  \item {startNode}
+    \subitem {List}, \hyperpage{9}
+    \subitem {StringList}, \hyperpage{15}
+  \item {State}, \hyperpage{14}
+    \subitem {gameSpace.h}, \hyperpage{60}
+    \subitem {id}, \hyperpage{14}
+    \subitem {room}, \hyperpage{14}
+    \subitem {state}, \hyperpage{14}
+  \item {state}
+    \subitem {Object}, \hyperpage{12}
+    \subitem {Room}, \hyperpage{13}
+    \subitem {State}, \hyperpage{14}
+  \item {stateCount}
+    \subitem {graphics.c}, \hyperpage{65}
+  \item {states}
+    \subitem {graphics.c}, \hyperpage{65}
+  \item {StringList}, \hyperpage{15}
+    \subitem {essentials.h}, \hyperpage{47}
+    \subitem {len}, \hyperpage{15}
+    \subitem {startNode}, \hyperpage{15}
+  \item {StringNode}, \hyperpage{16}
+    \subitem {essentials.h}, \hyperpage{47}
+    \subitem {nextNode}, \hyperpage{16}
+    \subitem {value}, \hyperpage{16}
+
+  \indexspace
+
+  \item {tail}
+    \subitem {DebugmallocData}, \hyperpage{6}
+  \item {text}
+    \subitem {MenuItem}, \hyperpage{9}
+
+  \indexspace
+
+  \item {user\_mem}
+    \subitem {DebugmallocEntry}, \hyperpage{8}
+
+  \indexspace
+
+  \item {value}
+    \subitem {Node}, \hyperpage{10}
+    \subitem {StringNode}, \hyperpage{16}
+
+  \indexspace
+
+  \item {WhatState}
+    \subitem {interpreter.c}, \hyperpage{68}
+    \subitem {interpreter.h}, \hyperpage{69}
+  \item {WIDTH}
+    \subitem {graphics.c}, \hyperpage{65}
+
+  \indexspace
+
+  \item {x}
+    \subitem {MenuItem}, \hyperpage{9}
+
+  \indexspace
+
+  \item {y}
+    \subitem {MenuItem}, \hyperpage{9}
+
+\end{theindex}

@@ -1,0 +1,96 @@
+\hypertarget{loader_system_8c}{}\doxysection{loader\+System.\+c fájlreferencia}
+\label{loader_system_8c}\index{loaderSystem.c@{loaderSystem.c}}
+
+
+Felelős az értelmezendő szövegek betöltéséért.  
+
+
+{\ttfamily \#include \char`\"{}debugmalloc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}essentials.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}game\+Space.\+h\char`\"{}}\newline
+\doxysubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$ \mbox{\hyperlink{loader_system_8c_a9a64f9362135a5017576768c042ad458}{Read\+File}} (char $\ast$file)
+\begin{DoxyCompactList}\small\item\em Beolvas egy fájlt és egy listába tördeli szét sorok szerint. A hívó felelőssége meghívni a \mbox{\hyperlink{essentials_8c_ae6e39eb8d78f87da675fa7beb909a1a9}{Destroy\+String\+List()}} a listára. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{loader_system_8c_ace8d3b30afb92ad1d7af7d7c7943307d}{Destroy\+Rooms}} (\mbox{\hyperlink{struct_room}{Room}} $\ast$room, int \mbox{\hyperlink{graphics_8c_a90c3ccdd5d149c3fa002c1bb5bde0a20}{room\+Count}})
+\begin{DoxyCompactList}\small\item\em Felszabadítja az összes room objectet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{loader_system_8c_aa76103fd659e0150a8ce0b2e6a7733f4}{Destroy\+Objects}} (\mbox{\hyperlink{struct_object}{Object}} $\ast$object, int \mbox{\hyperlink{graphics_8c_ae65b907ff9970ea124e235d8081cbcb3}{object\+Count}})
+\begin{DoxyCompactList}\small\item\em felszabadítja az összes object objectet \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{loader_system_8c_a00f80908c946d718735c7a03325c8412}{Load\+Stry}} (\mbox{\hyperlink{struct_room}{Room}} $\ast$$\ast$\mbox{\hyperlink{graphics_8c_a9f45b48de8f01c378c8e9cf0dfce61ab}{rooms}}, \mbox{\hyperlink{struct_object}{Object}} $\ast$$\ast$\mbox{\hyperlink{graphics_8c_abfee91d18630150cb0b6c5d5e33bfa13}{objects}}, int $\ast$\mbox{\hyperlink{graphics_8c_a90c3ccdd5d149c3fa002c1bb5bde0a20}{room\+Count}}, int $\ast$\mbox{\hyperlink{graphics_8c_ae65b907ff9970ea124e235d8081cbcb3}{object\+Count}}, \mbox{\hyperlink{struct_state}{State}} $\ast$\mbox{\hyperlink{graphics_8c_ace8acdb472009cf282d9cb2dda568355}{states}}\mbox{[}$\,$\mbox{]}, int $\ast$element\+Count)
+\begin{DoxyCompactList}\small\item\em Betölti a rooms.\+stry-\/t és az objects.\+stry-\/t. A hívó köteles meghívni mint a Destroy\+Objects és a Destroy\+Rooms függvényeket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+Felelős az értelmezendő szövegek betöltéséért. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\mbox{\Hypertarget{loader_system_8c_aa76103fd659e0150a8ce0b2e6a7733f4}\label{loader_system_8c_aa76103fd659e0150a8ce0b2e6a7733f4}} 
+\index{loaderSystem.c@{loaderSystem.c}!DestroyObjects@{DestroyObjects}}
+\index{DestroyObjects@{DestroyObjects}!loaderSystem.c@{loaderSystem.c}}
+\doxysubsubsection{\texorpdfstring{DestroyObjects()}{DestroyObjects()}}
+{\footnotesize\ttfamily void Destroy\+Objects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_object}{Object}} $\ast$}]{object,  }\item[{int}]{object\+Count }\end{DoxyParamCaption})}
+
+
+
+felszabadítja az összes object objectet 
+
+\mbox{\Hypertarget{loader_system_8c_ace8d3b30afb92ad1d7af7d7c7943307d}\label{loader_system_8c_ace8d3b30afb92ad1d7af7d7c7943307d}} 
+\index{loaderSystem.c@{loaderSystem.c}!DestroyRooms@{DestroyRooms}}
+\index{DestroyRooms@{DestroyRooms}!loaderSystem.c@{loaderSystem.c}}
+\doxysubsubsection{\texorpdfstring{DestroyRooms()}{DestroyRooms()}}
+{\footnotesize\ttfamily void Destroy\+Rooms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_room}{Room}} $\ast$}]{room,  }\item[{int}]{room\+Count }\end{DoxyParamCaption})}
+
+
+
+Felszabadítja az összes room objectet. 
+
+\mbox{\Hypertarget{loader_system_8c_a00f80908c946d718735c7a03325c8412}\label{loader_system_8c_a00f80908c946d718735c7a03325c8412}} 
+\index{loaderSystem.c@{loaderSystem.c}!LoadStry@{LoadStry}}
+\index{LoadStry@{LoadStry}!loaderSystem.c@{loaderSystem.c}}
+\doxysubsubsection{\texorpdfstring{LoadStry()}{LoadStry()}}
+{\footnotesize\ttfamily void Load\+Stry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_room}{Room}} $\ast$$\ast$}]{rooms,  }\item[{\mbox{\hyperlink{struct_object}{Object}} $\ast$$\ast$}]{objects,  }\item[{int $\ast$}]{room\+Count,  }\item[{int $\ast$}]{object\+Count,  }\item[{\mbox{\hyperlink{struct_state}{State}} $\ast$}]{states\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{element\+Count }\end{DoxyParamCaption})}
+
+
+
+Betölti a rooms.\+stry-\/t és az objects.\+stry-\/t. A hívó köteles meghívni mint a Destroy\+Objects és a Destroy\+Rooms függvényeket. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em rooms} & \\
+\hline
+{\em objects} & \\
+\hline
+{\em room\+Count} & \\
+\hline
+{\em object\+Count} & \\
+\hline
+{\em states} & \\
+\hline
+{\em element\+Count} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{loader_system_8c_a9a64f9362135a5017576768c042ad458}\label{loader_system_8c_a9a64f9362135a5017576768c042ad458}} 
+\index{loaderSystem.c@{loaderSystem.c}!ReadFile@{ReadFile}}
+\index{ReadFile@{ReadFile}!loaderSystem.c@{loaderSystem.c}}
+\doxysubsubsection{\texorpdfstring{ReadFile()}{ReadFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$ Read\+File (\begin{DoxyParamCaption}\item[{char $\ast$}]{file }\end{DoxyParamCaption})}
+
+
+
+Beolvas egy fájlt és egy listába tördeli szét sorok szerint. A hívó felelőssége meghívni a \mbox{\hyperlink{essentials_8c_ae6e39eb8d78f87da675fa7beb909a1a9}{Destroy\+String\+List()}} a listára. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em file} & Fájl \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+String\+List$\ast$ Beolvasott sorok 
+\end{DoxyReturn}

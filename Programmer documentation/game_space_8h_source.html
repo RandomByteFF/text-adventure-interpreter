@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Szöveges kalandjáték értelmező: gameSpace.h Forrásfájl</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Szöveges kalandjáték értelmező
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.9.5 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','Keresés');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">gameSpace.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="game_space_8h.html">Ugrás a fájl dokumentációjához.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef GAMESPACE_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define GAMESPACE_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="essentials_8h.html">essentials.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_room.html">   10</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_room.html">Room</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_room.html#a7441ef0865bcb3db9b8064dd7375c1ea">   12</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_room.html#a7441ef0865bcb3db9b8064dd7375c1ea">id</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_room.html#a89f234133d3efe315836311cbf21c64b">   13</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_room.html#a89f234133d3efe315836311cbf21c64b">state</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_room.html#a5ac083a645d964373f022d03df4849c8">   14</a></span>    <span class="keywordtype">char</span> *<a class="code hl_variable" href="struct_room.html#a5ac083a645d964373f022d03df4849c8">name</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_room.html#a708724b88a1448d492390994a27fd060">   15</a></span>    <span class="keywordtype">char</span> *<a class="code hl_variable" href="struct_room.html#a708724b88a1448d492390994a27fd060">lookAroundText</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_room.html#a4c1aa5183787b8f708ace40c720984d0">   16</a></span>    <span class="keywordtype">char</span> *<a class="code hl_variable" href="struct_room.html#a4c1aa5183787b8f708ace40c720984d0">entryText</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_room.html#af516ddd52f7624bffea6758efda12cf6">   17</a></span>    <a class="code hl_struct" href="struct_list.html">List</a> *<a class="code hl_variable" href="struct_room.html#af516ddd52f7624bffea6758efda12cf6">connectedItems</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_room.html#a6ed20cbe4d4defbc73f0398e92303725">   18</a></span>    <a class="code hl_struct" href="struct_list.html">List</a> *<a class="code hl_variable" href="struct_room.html#a6ed20cbe4d4defbc73f0398e92303725">connectedRooms</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="game_space_8h.html#a2809d44319d7553e1846b35be4b953d8">   19</a></span>} <a class="code hl_struct" href="struct_room.html">Room</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="struct_object.html">   25</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_object.html">Object</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_object.html#a7441ef0865bcb3db9b8064dd7375c1ea">   26</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_object.html#a7441ef0865bcb3db9b8064dd7375c1ea">id</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_object.html#a89f234133d3efe315836311cbf21c64b">   27</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_object.html#a89f234133d3efe315836311cbf21c64b">state</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_object.html#a5ac083a645d964373f022d03df4849c8">   28</a></span>    <span class="keywordtype">char</span> *<a class="code hl_variable" href="struct_object.html#a5ac083a645d964373f022d03df4849c8">name</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_object.html#ad8a40975ddf68b2b486cbd7c546366ef">   29</a></span>    <span class="keywordtype">char</span> *<a class="code hl_variable" href="struct_object.html#ad8a40975ddf68b2b486cbd7c546366ef">lookAtText</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_object.html#a9fc7bf88ec59249d82adde1fd7351acd">   30</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_object.html#a9fc7bf88ec59249d82adde1fd7351acd">collectible</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_object.html#af0efbfd79dfe73d2ed3e454faa5ff486">   31</a></span>    <a class="code hl_struct" href="struct_string_list.html">StringList</a> *<a class="code hl_variable" href="struct_object.html#af0efbfd79dfe73d2ed3e454faa5ff486">modifyEvent</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_object.html#a8c19cca1333d6bc33b60f8f384b24f06">   32</a></span>    <a class="code hl_struct" href="struct_string_list.html">StringList</a> *<a class="code hl_variable" href="struct_object.html#a8c19cca1333d6bc33b60f8f384b24f06">modify</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_object.html#a4a090cc21e7181d86339b45e862f6469">   33</a></span>    <a class="code hl_struct" href="struct_string_list.html">StringList</a> *<a class="code hl_variable" href="struct_object.html#a4a090cc21e7181d86339b45e862f6469">modifyString</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="game_space_8h.html#ab1287b6141419421dc5c14b9f7756b0a">   34</a></span>} <a class="code hl_struct" href="struct_object.html">Object</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_state.html">   40</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_state.html">State</a> {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_state.html#a94695358c018ccf54fe026a550e1a354">   41</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_state.html#a94695358c018ccf54fe026a550e1a354">room</a>; <span class="comment">//A false azt jelenti, hogy object</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_state.html#a7441ef0865bcb3db9b8064dd7375c1ea">   42</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_state.html#a7441ef0865bcb3db9b8064dd7375c1ea">id</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_state.html#a89f234133d3efe315836311cbf21c64b">   43</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_state.html#a89f234133d3efe315836311cbf21c64b">state</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="game_space_8h.html#aae671ea028d612abfaf230eb64495ca0">   44</a></span>} <a class="code hl_struct" href="struct_state.html">State</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keywordtype">void</span> <a class="code hl_function" href="game_space_8h.html#a9c79114362333cd45c94aa258af5df40">ChangeStates</a>(<a class="code hl_struct" href="struct_state.html">State</a> <a class="code hl_variable" href="graphics_8c.html#ace8acdb472009cf282d9cb2dda568355">states</a>[], <span class="keywordtype">int</span> <a class="code hl_variable" href="graphics_8c.html#a12cc37e05dc5b7ad42ae6436cc78c0e4">stateCount</a>, <span class="keywordtype">char</span> *list);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aessentials_8h_html"><div class="ttname"><a href="essentials_8h.html">essentials.h</a></div></div>
+<div class="ttc" id="agame_space_8h_html_a9c79114362333cd45c94aa258af5df40"><div class="ttname"><a href="game_space_8h.html#a9c79114362333cd45c94aa258af5df40">ChangeStates</a></div><div class="ttdeci">void ChangeStates(State states[], int stateCount, char *list)</div><div class="ttdoc">Megváltoztatja egy event string alapján az object/room állapotát.</div><div class="ttdef"><b>Definition:</b> gameSpace.c:17</div></div>
+<div class="ttc" id="agraphics_8c_html_a12cc37e05dc5b7ad42ae6436cc78c0e4"><div class="ttname"><a href="graphics_8c.html#a12cc37e05dc5b7ad42ae6436cc78c0e4">stateCount</a></div><div class="ttdeci">int stateCount</div><div class="ttdef"><b>Definition:</b> graphics.c:37</div></div>
+<div class="ttc" id="agraphics_8c_html_ace8acdb472009cf282d9cb2dda568355"><div class="ttname"><a href="graphics_8c.html#ace8acdb472009cf282d9cb2dda568355">states</a></div><div class="ttdeci">State * states</div><div class="ttdef"><b>Definition:</b> graphics.c:33</div></div>
+<div class="ttc" id="astruct_list_html"><div class="ttname"><a href="struct_list.html">List</a></div><div class="ttdoc">Int lista.</div><div class="ttdef"><b>Definition:</b> essentials.h:21</div></div>
+<div class="ttc" id="astruct_object_html"><div class="ttname"><a href="struct_object.html">Object</a></div><div class="ttdoc">Objectet definiáló struct.</div><div class="ttdef"><b>Definition:</b> gameSpace.h:25</div></div>
+<div class="ttc" id="astruct_object_html_a4a090cc21e7181d86339b45e862f6469"><div class="ttname"><a href="struct_object.html#a4a090cc21e7181d86339b45e862f6469">Object::modifyString</a></div><div class="ttdeci">StringList * modifyString</div><div class="ttdef"><b>Definition:</b> gameSpace.h:33</div></div>
+<div class="ttc" id="astruct_object_html_a5ac083a645d964373f022d03df4849c8"><div class="ttname"><a href="struct_object.html#a5ac083a645d964373f022d03df4849c8">Object::name</a></div><div class="ttdeci">char * name</div><div class="ttdef"><b>Definition:</b> gameSpace.h:28</div></div>
+<div class="ttc" id="astruct_object_html_a7441ef0865bcb3db9b8064dd7375c1ea"><div class="ttname"><a href="struct_object.html#a7441ef0865bcb3db9b8064dd7375c1ea">Object::id</a></div><div class="ttdeci">int id</div><div class="ttdef"><b>Definition:</b> gameSpace.h:26</div></div>
+<div class="ttc" id="astruct_object_html_a89f234133d3efe315836311cbf21c64b"><div class="ttname"><a href="struct_object.html#a89f234133d3efe315836311cbf21c64b">Object::state</a></div><div class="ttdeci">int state</div><div class="ttdef"><b>Definition:</b> gameSpace.h:27</div></div>
+<div class="ttc" id="astruct_object_html_a8c19cca1333d6bc33b60f8f384b24f06"><div class="ttname"><a href="struct_object.html#a8c19cca1333d6bc33b60f8f384b24f06">Object::modify</a></div><div class="ttdeci">StringList * modify</div><div class="ttdef"><b>Definition:</b> gameSpace.h:32</div></div>
+<div class="ttc" id="astruct_object_html_a9fc7bf88ec59249d82adde1fd7351acd"><div class="ttname"><a href="struct_object.html#a9fc7bf88ec59249d82adde1fd7351acd">Object::collectible</a></div><div class="ttdeci">bool collectible</div><div class="ttdef"><b>Definition:</b> gameSpace.h:30</div></div>
+<div class="ttc" id="astruct_object_html_ad8a40975ddf68b2b486cbd7c546366ef"><div class="ttname"><a href="struct_object.html#ad8a40975ddf68b2b486cbd7c546366ef">Object::lookAtText</a></div><div class="ttdeci">char * lookAtText</div><div class="ttdef"><b>Definition:</b> gameSpace.h:29</div></div>
+<div class="ttc" id="astruct_object_html_af0efbfd79dfe73d2ed3e454faa5ff486"><div class="ttname"><a href="struct_object.html#af0efbfd79dfe73d2ed3e454faa5ff486">Object::modifyEvent</a></div><div class="ttdeci">StringList * modifyEvent</div><div class="ttdef"><b>Definition:</b> gameSpace.h:31</div></div>
+<div class="ttc" id="astruct_room_html"><div class="ttname"><a href="struct_room.html">Room</a></div><div class="ttdoc">Szobát definiáló struct.</div><div class="ttdef"><b>Definition:</b> gameSpace.h:11</div></div>
+<div class="ttc" id="astruct_room_html_a4c1aa5183787b8f708ace40c720984d0"><div class="ttname"><a href="struct_room.html#a4c1aa5183787b8f708ace40c720984d0">Room::entryText</a></div><div class="ttdeci">char * entryText</div><div class="ttdef"><b>Definition:</b> gameSpace.h:16</div></div>
+<div class="ttc" id="astruct_room_html_a5ac083a645d964373f022d03df4849c8"><div class="ttname"><a href="struct_room.html#a5ac083a645d964373f022d03df4849c8">Room::name</a></div><div class="ttdeci">char * name</div><div class="ttdef"><b>Definition:</b> gameSpace.h:14</div></div>
+<div class="ttc" id="astruct_room_html_a6ed20cbe4d4defbc73f0398e92303725"><div class="ttname"><a href="struct_room.html#a6ed20cbe4d4defbc73f0398e92303725">Room::connectedRooms</a></div><div class="ttdeci">List * connectedRooms</div><div class="ttdef"><b>Definition:</b> gameSpace.h:18</div></div>
+<div class="ttc" id="astruct_room_html_a708724b88a1448d492390994a27fd060"><div class="ttname"><a href="struct_room.html#a708724b88a1448d492390994a27fd060">Room::lookAroundText</a></div><div class="ttdeci">char * lookAroundText</div><div class="ttdef"><b>Definition:</b> gameSpace.h:15</div></div>
+<div class="ttc" id="astruct_room_html_a7441ef0865bcb3db9b8064dd7375c1ea"><div class="ttname"><a href="struct_room.html#a7441ef0865bcb3db9b8064dd7375c1ea">Room::id</a></div><div class="ttdeci">int id</div><div class="ttdef"><b>Definition:</b> gameSpace.h:12</div></div>
+<div class="ttc" id="astruct_room_html_a89f234133d3efe315836311cbf21c64b"><div class="ttname"><a href="struct_room.html#a89f234133d3efe315836311cbf21c64b">Room::state</a></div><div class="ttdeci">int state</div><div class="ttdef"><b>Definition:</b> gameSpace.h:13</div></div>
+<div class="ttc" id="astruct_room_html_af516ddd52f7624bffea6758efda12cf6"><div class="ttname"><a href="struct_room.html#af516ddd52f7624bffea6758efda12cf6">Room::connectedItems</a></div><div class="ttdeci">List * connectedItems</div><div class="ttdef"><b>Definition:</b> gameSpace.h:17</div></div>
+<div class="ttc" id="astruct_state_html"><div class="ttname"><a href="struct_state.html">State</a></div><div class="ttdoc">Állapotot definiáló struct.</div><div class="ttdef"><b>Definition:</b> gameSpace.h:40</div></div>
+<div class="ttc" id="astruct_state_html_a7441ef0865bcb3db9b8064dd7375c1ea"><div class="ttname"><a href="struct_state.html#a7441ef0865bcb3db9b8064dd7375c1ea">State::id</a></div><div class="ttdeci">int id</div><div class="ttdef"><b>Definition:</b> gameSpace.h:42</div></div>
+<div class="ttc" id="astruct_state_html_a89f234133d3efe315836311cbf21c64b"><div class="ttname"><a href="struct_state.html#a89f234133d3efe315836311cbf21c64b">State::state</a></div><div class="ttdeci">int state</div><div class="ttdef"><b>Definition:</b> gameSpace.h:43</div></div>
+<div class="ttc" id="astruct_state_html_a94695358c018ccf54fe026a550e1a354"><div class="ttname"><a href="struct_state.html#a94695358c018ccf54fe026a550e1a354">State::room</a></div><div class="ttdeci">bool room</div><div class="ttdef"><b>Definition:</b> gameSpace.h:41</div></div>
+<div class="ttc" id="astruct_string_list_html"><div class="ttname"><a href="struct_string_list.html">StringList</a></div><div class="ttdoc">String lista.</div><div class="ttdef"><b>Definition:</b> essentials.h:40</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Készítette&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+</small></address>
+</body>
+</html>

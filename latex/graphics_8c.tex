@@ -1,0 +1,277 @@
+\hypertarget{graphics_8c}{}\doxysection{graphics.\+c fájlreferencia}
+\label{graphics_8c}\index{graphics.c@{graphics.c}}
+
+
+Képernyőn lévő megjelenítésekért felelős.  
+
+
+{\ttfamily \#include \char`\"{}graphics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}debugmalloc.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}econio.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}game\+Space.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}essentials.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}interpreter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}loader\+System.\+h\char`\"{}}\newline
+\doxysubsection*{Adatszerkezetek}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_menu_item}{Menu\+Item}}
+\begin{DoxyCompactList}\small\item\em Egy menü element definiál. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Típusdefiníciók}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_menu_item}{Menu\+Item}} \mbox{\hyperlink{graphics_8c_a7a113da5230ab9860e4c6bac9f24925b}{Menu\+Item}}
+\begin{DoxyCompactList}\small\item\em Egy menü element definiál. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{graphics_8c_a74008fbdc4ac2398ea803dbe67b5c8f3}{Draw\+Menu\+Item}} (int x, int y, char $\ast$text, bool selected)
+\begin{DoxyCompactList}\small\item\em Szöveg kirajzolása a képernyőre egy adott pozícióban. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graphics_8c_a998fda48cd8c702235c2a150b45ae949}{Draw\+Menu}} (int selected)
+\begin{DoxyCompactList}\small\item\em Összes menü elem kirajzolása, a selected elem kijelölésével. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graphics_8c_a1ad8cf1430e0a89c8689ed70183c5a15}{Draw\+Game\+Space}} ()
+\begin{DoxyCompactList}\small\item\em Játéktér kirajzolása. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graphics_8c_aeaa3166d3afc60134c15c048d277f7d0}{Play\+Game}} (\mbox{\hyperlink{struct_list}{List}} $\ast$player\+Inventory)
+\begin{DoxyCompactList}\small\item\em Játék elindítása. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graphics_8c_adfe34532a9f16b809ce5752fe143dddc}{New\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Új játék előkészítése. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graphics_8c_ab0e5cf3e0686edf88442f5977c0f8875}{Load\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Előző játék betöltése. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graphics_8c_a563404a2e162180fd2631d7ceea51359}{How\+To\+Play}} ()
+\begin{DoxyCompactList}\small\item\em How to play menüpont kezelése. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{graphics_8c_a04aa0456a0ff773c271a3c594fbd30b7}{Menu\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Kezeli a program menü módját. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Változók}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{graphics_8c_a9649ab8139c4c2ea5c93625b30d92a05}{WIDTH}} = 120
+\item 
+const int \mbox{\hyperlink{graphics_8c_af728b7647e0b8c49832983a31f9a2e9b}{HEIGHT}} = 30
+\item 
+\mbox{\hyperlink{struct_menu_item}{Menu\+Item}} \mbox{\hyperlink{graphics_8c_a7bffccc2bd5ed0090e9285e8b6258c7a}{items}} \mbox{[}4\mbox{]}
+\item 
+\mbox{\hyperlink{struct_room}{Room}} $\ast$ \mbox{\hyperlink{graphics_8c_a9f45b48de8f01c378c8e9cf0dfce61ab}{rooms}}
+\item 
+\mbox{\hyperlink{struct_object}{Object}} $\ast$ \mbox{\hyperlink{graphics_8c_abfee91d18630150cb0b6c5d5e33bfa13}{objects}}
+\item 
+\mbox{\hyperlink{struct_state}{State}} $\ast$ \mbox{\hyperlink{graphics_8c_ace8acdb472009cf282d9cb2dda568355}{states}}
+\item 
+int \mbox{\hyperlink{graphics_8c_a90c3ccdd5d149c3fa002c1bb5bde0a20}{room\+Count}}
+\item 
+int \mbox{\hyperlink{graphics_8c_ae65b907ff9970ea124e235d8081cbcb3}{object\+Count}}
+\item 
+int \mbox{\hyperlink{graphics_8c_a12cc37e05dc5b7ad42ae6436cc78c0e4}{state\+Count}}
+\item 
+int \mbox{\hyperlink{graphics_8c_a3607ee9a8488b21d313c3e4d5034cd14}{previous\+Room\+Id}}
+\item 
+int \mbox{\hyperlink{graphics_8c_a20f2cdfa16c01e5a912b692b175b8523}{current\+Room\+Id}}
+\item 
+int \mbox{\hyperlink{graphics_8c_af592bf4b47e1692eadf5cb116976a348}{previous\+Room\+State}}
+\item 
+int \mbox{\hyperlink{graphics_8c_af6eb192beb25f67e47296d85701e1337}{current\+Room\+State}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+Képernyőn lévő megjelenítésekért felelős. 
+
+
+
+\doxysubsection{Típusdefiníciók dokumentációja}
+\mbox{\Hypertarget{graphics_8c_a7a113da5230ab9860e4c6bac9f24925b}\label{graphics_8c_a7a113da5230ab9860e4c6bac9f24925b}} 
+\index{graphics.c@{graphics.c}!MenuItem@{MenuItem}}
+\index{MenuItem@{MenuItem}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{MenuItem}{MenuItem}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_menu_item}{Menu\+Item}} \mbox{\hyperlink{struct_menu_item}{Menu\+Item}}}
+
+
+
+Egy menü element definiál. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\mbox{\Hypertarget{graphics_8c_a1ad8cf1430e0a89c8689ed70183c5a15}\label{graphics_8c_a1ad8cf1430e0a89c8689ed70183c5a15}} 
+\index{graphics.c@{graphics.c}!DrawGameSpace@{DrawGameSpace}}
+\index{DrawGameSpace@{DrawGameSpace}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{DrawGameSpace()}{DrawGameSpace()}}
+{\footnotesize\ttfamily void Draw\+Game\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Játéktér kirajzolása. 
+
+\mbox{\Hypertarget{graphics_8c_a998fda48cd8c702235c2a150b45ae949}\label{graphics_8c_a998fda48cd8c702235c2a150b45ae949}} 
+\index{graphics.c@{graphics.c}!DrawMenu@{DrawMenu}}
+\index{DrawMenu@{DrawMenu}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{DrawMenu()}{DrawMenu()}}
+{\footnotesize\ttfamily void Draw\+Menu (\begin{DoxyParamCaption}\item[{int}]{selected }\end{DoxyParamCaption})}
+
+
+
+Összes menü elem kirajzolása, a selected elem kijelölésével. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em selected} & A kiválasztott elem sorszáma \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{graphics_8c_a74008fbdc4ac2398ea803dbe67b5c8f3}\label{graphics_8c_a74008fbdc4ac2398ea803dbe67b5c8f3}} 
+\index{graphics.c@{graphics.c}!DrawMenuItem@{DrawMenuItem}}
+\index{DrawMenuItem@{DrawMenuItem}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{DrawMenuItem()}{DrawMenuItem()}}
+{\footnotesize\ttfamily void Draw\+Menu\+Item (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{char $\ast$}]{text,  }\item[{bool}]{selected }\end{DoxyParamCaption})}
+
+
+
+Szöveg kirajzolása a képernyőre egy adott pozícióban. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em x} & X pozíció \\
+\hline
+{\em y} & Y pozíció \\
+\hline
+{\em text} & szöveg \\
+\hline
+{\em selected} & kiválasztott elem sorszáma \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{graphics_8c_a563404a2e162180fd2631d7ceea51359}\label{graphics_8c_a563404a2e162180fd2631d7ceea51359}} 
+\index{graphics.c@{graphics.c}!HowToPlay@{HowToPlay}}
+\index{HowToPlay@{HowToPlay}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{HowToPlay()}{HowToPlay()}}
+{\footnotesize\ttfamily void How\+To\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+How to play menüpont kezelése. 
+
+\mbox{\Hypertarget{graphics_8c_ab0e5cf3e0686edf88442f5977c0f8875}\label{graphics_8c_ab0e5cf3e0686edf88442f5977c0f8875}} 
+\index{graphics.c@{graphics.c}!LoadGame@{LoadGame}}
+\index{LoadGame@{LoadGame}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{LoadGame()}{LoadGame()}}
+{\footnotesize\ttfamily void Load\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Előző játék betöltése. 
+
+\mbox{\Hypertarget{graphics_8c_a04aa0456a0ff773c271a3c594fbd30b7}\label{graphics_8c_a04aa0456a0ff773c271a3c594fbd30b7}} 
+\index{graphics.c@{graphics.c}!MenuMode@{MenuMode}}
+\index{MenuMode@{MenuMode}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{MenuMode()}{MenuMode()}}
+{\footnotesize\ttfamily void Menu\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Kezeli a program menü módját. 
+
+\mbox{\Hypertarget{graphics_8c_adfe34532a9f16b809ce5752fe143dddc}\label{graphics_8c_adfe34532a9f16b809ce5752fe143dddc}} 
+\index{graphics.c@{graphics.c}!NewGame@{NewGame}}
+\index{NewGame@{NewGame}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{NewGame()}{NewGame()}}
+{\footnotesize\ttfamily void New\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Új játék előkészítése. 
+
+\mbox{\Hypertarget{graphics_8c_aeaa3166d3afc60134c15c048d277f7d0}\label{graphics_8c_aeaa3166d3afc60134c15c048d277f7d0}} 
+\index{graphics.c@{graphics.c}!PlayGame@{PlayGame}}
+\index{PlayGame@{PlayGame}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{PlayGame()}{PlayGame()}}
+{\footnotesize\ttfamily void Play\+Game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list}{List}} $\ast$}]{player\+Inventory }\end{DoxyParamCaption})}
+
+
+
+Játék elindítása. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em player\+Inventory} & A játékos eszköztára \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Változók dokumentációja}
+\mbox{\Hypertarget{graphics_8c_a20f2cdfa16c01e5a912b692b175b8523}\label{graphics_8c_a20f2cdfa16c01e5a912b692b175b8523}} 
+\index{graphics.c@{graphics.c}!currentRoomId@{currentRoomId}}
+\index{currentRoomId@{currentRoomId}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{currentRoomId}{currentRoomId}}
+{\footnotesize\ttfamily int current\+Room\+Id}
+
+\mbox{\Hypertarget{graphics_8c_af6eb192beb25f67e47296d85701e1337}\label{graphics_8c_af6eb192beb25f67e47296d85701e1337}} 
+\index{graphics.c@{graphics.c}!currentRoomState@{currentRoomState}}
+\index{currentRoomState@{currentRoomState}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{currentRoomState}{currentRoomState}}
+{\footnotesize\ttfamily int current\+Room\+State}
+
+\mbox{\Hypertarget{graphics_8c_af728b7647e0b8c49832983a31f9a2e9b}\label{graphics_8c_af728b7647e0b8c49832983a31f9a2e9b}} 
+\index{graphics.c@{graphics.c}!HEIGHT@{HEIGHT}}
+\index{HEIGHT@{HEIGHT}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{HEIGHT}{HEIGHT}}
+{\footnotesize\ttfamily const int HEIGHT = 30}
+
+\mbox{\Hypertarget{graphics_8c_a7bffccc2bd5ed0090e9285e8b6258c7a}\label{graphics_8c_a7bffccc2bd5ed0090e9285e8b6258c7a}} 
+\index{graphics.c@{graphics.c}!items@{items}}
+\index{items@{items}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{items}{items}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_menu_item}{Menu\+Item}} items\mbox{[}4\mbox{]}}
+
+\mbox{\Hypertarget{graphics_8c_ae65b907ff9970ea124e235d8081cbcb3}\label{graphics_8c_ae65b907ff9970ea124e235d8081cbcb3}} 
+\index{graphics.c@{graphics.c}!objectCount@{objectCount}}
+\index{objectCount@{objectCount}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{objectCount}{objectCount}}
+{\footnotesize\ttfamily int object\+Count}
+
+\mbox{\Hypertarget{graphics_8c_abfee91d18630150cb0b6c5d5e33bfa13}\label{graphics_8c_abfee91d18630150cb0b6c5d5e33bfa13}} 
+\index{graphics.c@{graphics.c}!objects@{objects}}
+\index{objects@{objects}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{objects}{objects}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_object}{Object}}$\ast$ objects}
+
+\mbox{\Hypertarget{graphics_8c_a3607ee9a8488b21d313c3e4d5034cd14}\label{graphics_8c_a3607ee9a8488b21d313c3e4d5034cd14}} 
+\index{graphics.c@{graphics.c}!previousRoomId@{previousRoomId}}
+\index{previousRoomId@{previousRoomId}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{previousRoomId}{previousRoomId}}
+{\footnotesize\ttfamily int previous\+Room\+Id}
+
+\mbox{\Hypertarget{graphics_8c_af592bf4b47e1692eadf5cb116976a348}\label{graphics_8c_af592bf4b47e1692eadf5cb116976a348}} 
+\index{graphics.c@{graphics.c}!previousRoomState@{previousRoomState}}
+\index{previousRoomState@{previousRoomState}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{previousRoomState}{previousRoomState}}
+{\footnotesize\ttfamily int previous\+Room\+State}
+
+\mbox{\Hypertarget{graphics_8c_a90c3ccdd5d149c3fa002c1bb5bde0a20}\label{graphics_8c_a90c3ccdd5d149c3fa002c1bb5bde0a20}} 
+\index{graphics.c@{graphics.c}!roomCount@{roomCount}}
+\index{roomCount@{roomCount}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{roomCount}{roomCount}}
+{\footnotesize\ttfamily int room\+Count}
+
+\mbox{\Hypertarget{graphics_8c_a9f45b48de8f01c378c8e9cf0dfce61ab}\label{graphics_8c_a9f45b48de8f01c378c8e9cf0dfce61ab}} 
+\index{graphics.c@{graphics.c}!rooms@{rooms}}
+\index{rooms@{rooms}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{rooms}{rooms}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_room}{Room}}$\ast$ rooms}
+
+\mbox{\Hypertarget{graphics_8c_a12cc37e05dc5b7ad42ae6436cc78c0e4}\label{graphics_8c_a12cc37e05dc5b7ad42ae6436cc78c0e4}} 
+\index{graphics.c@{graphics.c}!stateCount@{stateCount}}
+\index{stateCount@{stateCount}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{stateCount}{stateCount}}
+{\footnotesize\ttfamily int state\+Count}
+
+\mbox{\Hypertarget{graphics_8c_ace8acdb472009cf282d9cb2dda568355}\label{graphics_8c_ace8acdb472009cf282d9cb2dda568355}} 
+\index{graphics.c@{graphics.c}!states@{states}}
+\index{states@{states}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{states}{states}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_state}{State}}$\ast$ states}
+
+\mbox{\Hypertarget{graphics_8c_a9649ab8139c4c2ea5c93625b30d92a05}\label{graphics_8c_a9649ab8139c4c2ea5c93625b30d92a05}} 
+\index{graphics.c@{graphics.c}!WIDTH@{WIDTH}}
+\index{WIDTH@{WIDTH}!graphics.c@{graphics.c}}
+\doxysubsubsection{\texorpdfstring{WIDTH}{WIDTH}}
+{\footnotesize\ttfamily const int WIDTH = 120}
+

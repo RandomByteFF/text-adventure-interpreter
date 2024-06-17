@@ -1,0 +1,82 @@
+\hypertarget{game_space_8h}{}\doxysection{game\+Space.\+h fájlreferencia}
+\label{game_space_8h}\index{gameSpace.h@{gameSpace.h}}
+{\ttfamily \#include \char`\"{}essentials.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Adatszerkezetek}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_room}{Room}}
+\begin{DoxyCompactList}\small\item\em Szobát definiáló struct. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_object}{Object}}
+\begin{DoxyCompactList}\small\item\em Objectet definiáló struct. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_state}{State}}
+\begin{DoxyCompactList}\small\item\em Állapotot definiáló struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Típusdefiníciók}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_room}{Room}} \mbox{\hyperlink{game_space_8h_a2809d44319d7553e1846b35be4b953d8}{Room}}
+\begin{DoxyCompactList}\small\item\em Szobát definiáló struct. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_object}{Object}} \mbox{\hyperlink{game_space_8h_ab1287b6141419421dc5c14b9f7756b0a}{Object}}
+\begin{DoxyCompactList}\small\item\em Objectet definiáló struct. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_state}{State}} \mbox{\hyperlink{game_space_8h_aae671ea028d612abfaf230eb64495ca0}{State}}
+\begin{DoxyCompactList}\small\item\em Állapotot definiáló struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{game_space_8h_a9c79114362333cd45c94aa258af5df40}{Change\+States}} (\mbox{\hyperlink{struct_state}{State}} \mbox{\hyperlink{graphics_8c_ace8acdb472009cf282d9cb2dda568355}{states}}\mbox{[}$\,$\mbox{]}, int \mbox{\hyperlink{graphics_8c_a12cc37e05dc5b7ad42ae6436cc78c0e4}{state\+Count}}, char $\ast$list)
+\begin{DoxyCompactList}\small\item\em Megváltoztatja egy event string alapján az object/room állapotát. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Típusdefiníciók dokumentációja}
+\mbox{\Hypertarget{game_space_8h_ab1287b6141419421dc5c14b9f7756b0a}\label{game_space_8h_ab1287b6141419421dc5c14b9f7756b0a}} 
+\index{gameSpace.h@{gameSpace.h}!Object@{Object}}
+\index{Object@{Object}!gameSpace.h@{gameSpace.h}}
+\doxysubsubsection{\texorpdfstring{Object}{Object}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_object}{Object}} \mbox{\hyperlink{struct_object}{Object}}}
+
+
+
+Objectet definiáló struct. 
+
+\mbox{\Hypertarget{game_space_8h_a2809d44319d7553e1846b35be4b953d8}\label{game_space_8h_a2809d44319d7553e1846b35be4b953d8}} 
+\index{gameSpace.h@{gameSpace.h}!Room@{Room}}
+\index{Room@{Room}!gameSpace.h@{gameSpace.h}}
+\doxysubsubsection{\texorpdfstring{Room}{Room}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_room}{Room}} \mbox{\hyperlink{struct_room}{Room}}}
+
+
+
+Szobát definiáló struct. 
+
+\mbox{\Hypertarget{game_space_8h_aae671ea028d612abfaf230eb64495ca0}\label{game_space_8h_aae671ea028d612abfaf230eb64495ca0}} 
+\index{gameSpace.h@{gameSpace.h}!State@{State}}
+\index{State@{State}!gameSpace.h@{gameSpace.h}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_state}{State}} \mbox{\hyperlink{struct_state}{State}}}
+
+
+
+Állapotot definiáló struct. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\mbox{\Hypertarget{game_space_8h_a9c79114362333cd45c94aa258af5df40}\label{game_space_8h_a9c79114362333cd45c94aa258af5df40}} 
+\index{gameSpace.h@{gameSpace.h}!ChangeStates@{ChangeStates}}
+\index{ChangeStates@{ChangeStates}!gameSpace.h@{gameSpace.h}}
+\doxysubsubsection{\texorpdfstring{ChangeStates()}{ChangeStates()}}
+{\footnotesize\ttfamily void Change\+States (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_state}{State}}}]{states\mbox{[}$\,$\mbox{]},  }\item[{int}]{state\+Count,  }\item[{char $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Megváltoztatja egy event string alapján az object/room állapotát. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em states} & Állapotok tömb \\
+\hline
+{\em state\+Count} & Állapotok tömb elemszáma \\
+\hline
+{\em list} & Event lista \\
+\hline
+\end{DoxyParams}

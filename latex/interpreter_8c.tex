@@ -1,0 +1,107 @@
+\hypertarget{interpreter_8c}{}\doxysection{interpreter.\+c fájlreferencia}
+\label{interpreter_8c}\index{interpreter.c@{interpreter.c}}
+
+
+A játékos által megadott parancs értelmezéséért felelős.  
+
+
+{\ttfamily \#include \char`\"{}debugmalloc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}interpreter.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}essentials.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}game\+Space.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{interpreter_8c_a706837dacbd1e83d35d07e02045624b4}{What\+State}} (int id, \mbox{\hyperlink{struct_state}{State}} \mbox{\hyperlink{graphics_8c_ace8acdb472009cf282d9cb2dda568355}{states}}\mbox{[}$\,$\mbox{]}, int \mbox{\hyperlink{graphics_8c_a12cc37e05dc5b7ad42ae6436cc78c0e4}{state\+Count}})
+\begin{DoxyCompactList}\small\item\em Visszaadja, hogy egy room vagy object jelenleg milyen állapotban van. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interpreter_8c_a72a4d7408a84ff5ed1e15e4caa6af0d8}{Has\+Event}} (\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$l, char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Megmondja, hogy egy elem rendelkezik-\/e egy bizonyos eventel, ha igen akkor visszaadja, hogy hanyadik event, ha nem akkor -\/1-\/et ad vissza. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{interpreter_8c_a3cf496d41c5b289386edf538f038e730}{Execute}} (int $\ast$\mbox{\hyperlink{graphics_8c_a20f2cdfa16c01e5a912b692b175b8523}{current\+Room\+Id}}, char $\ast$command, \mbox{\hyperlink{struct_object}{Object}} \mbox{\hyperlink{graphics_8c_abfee91d18630150cb0b6c5d5e33bfa13}{objects}}\mbox{[}$\,$\mbox{]}, int \mbox{\hyperlink{graphics_8c_ae65b907ff9970ea124e235d8081cbcb3}{object\+Count}}, \mbox{\hyperlink{struct_room}{Room}} \mbox{\hyperlink{graphics_8c_a9f45b48de8f01c378c8e9cf0dfce61ab}{rooms}}\mbox{[}$\,$\mbox{]}, int \mbox{\hyperlink{graphics_8c_a90c3ccdd5d149c3fa002c1bb5bde0a20}{room\+Count}}, \mbox{\hyperlink{struct_state}{State}} \mbox{\hyperlink{graphics_8c_ace8acdb472009cf282d9cb2dda568355}{states}}\mbox{[}$\,$\mbox{]}, int \mbox{\hyperlink{graphics_8c_a12cc37e05dc5b7ad42ae6436cc78c0e4}{state\+Count}}, \mbox{\hyperlink{struct_list}{List}} $\ast$player\+Inventory)
+\begin{DoxyCompactList}\small\item\em Értelmezi a játék által megadott parancsot. Ha szobát vált a játékos akkor megváltoztatja a jelenlegi szoba ID-\/ját, állapotokat átállít, játékos eszköztárat menedzsel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+A játékos által megadott parancs értelmezéséért felelős. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\mbox{\Hypertarget{interpreter_8c_a3cf496d41c5b289386edf538f038e730}\label{interpreter_8c_a3cf496d41c5b289386edf538f038e730}} 
+\index{interpreter.c@{interpreter.c}!Execute@{Execute}}
+\index{Execute@{Execute}!interpreter.c@{interpreter.c}}
+\doxysubsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily char $\ast$ Execute (\begin{DoxyParamCaption}\item[{int $\ast$}]{current\+Room\+Id,  }\item[{char $\ast$}]{command,  }\item[{\mbox{\hyperlink{struct_object}{Object}}}]{objects\mbox{[}$\,$\mbox{]},  }\item[{int}]{object\+Count,  }\item[{\mbox{\hyperlink{struct_room}{Room}}}]{rooms\mbox{[}$\,$\mbox{]},  }\item[{int}]{room\+Count,  }\item[{\mbox{\hyperlink{struct_state}{State}}}]{states\mbox{[}$\,$\mbox{]},  }\item[{int}]{state\+Count,  }\item[{\mbox{\hyperlink{struct_list}{List}} $\ast$}]{player\+Inventory }\end{DoxyParamCaption})}
+
+
+
+Értelmezi a játék által megadott parancsot. Ha szobát vált a játékos akkor megváltoztatja a jelenlegi szoba ID-\/ját, állapotokat átállít, játékos eszköztárat menedzsel. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em current\+Room\+Id} & Jelenlegi szoba azonosítója \\
+\hline
+{\em command} & A játékos által megadott parancs \\
+\hline
+{\em objects} & Objecteket tartalmazó tömb \\
+\hline
+{\em object\+Count} & Objecteket tartalmazó tömb elemszáma \\
+\hline
+{\em rooms} & Szobákat tartalmazó tömb \\
+\hline
+{\em room\+Count} & Szobákat tartalmazó tömb elemszáma \\
+\hline
+{\em states} & Állapotokat tartalmazó tömb \\
+\hline
+{\em state\+Count} & Állapotokat tartalmazó tömb elemszáma \\
+\hline
+{\em player\+Inventory} & Játékos eszköztára \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+char$\ast$ A parancs által kiváltott esemény szövege. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interpreter_8c_a72a4d7408a84ff5ed1e15e4caa6af0d8}\label{interpreter_8c_a72a4d7408a84ff5ed1e15e4caa6af0d8}} 
+\index{interpreter.c@{interpreter.c}!HasEvent@{HasEvent}}
+\index{HasEvent@{HasEvent}!interpreter.c@{interpreter.c}}
+\doxysubsubsection{\texorpdfstring{HasEvent()}{HasEvent()}}
+{\footnotesize\ttfamily int Has\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$}]{l,  }\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+
+Megmondja, hogy egy elem rendelkezik-\/e egy bizonyos eventel, ha igen akkor visszaadja, hogy hanyadik event, ha nem akkor -\/1-\/et ad vissza. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em l} & A tesztelendő elem event listája \\
+\hline
+{\em string} & A tesztelendő event \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+int Az event sorszáma. -\/1 ha nem létezik 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interpreter_8c_a706837dacbd1e83d35d07e02045624b4}\label{interpreter_8c_a706837dacbd1e83d35d07e02045624b4}} 
+\index{interpreter.c@{interpreter.c}!WhatState@{WhatState}}
+\index{WhatState@{WhatState}!interpreter.c@{interpreter.c}}
+\doxysubsubsection{\texorpdfstring{WhatState()}{WhatState()}}
+{\footnotesize\ttfamily int What\+State (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{\mbox{\hyperlink{struct_state}{State}}}]{states\mbox{[}$\,$\mbox{]},  }\item[{int}]{state\+Count }\end{DoxyParamCaption})}
+
+
+
+Visszaadja, hogy egy room vagy object jelenleg milyen állapotban van. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em id} & object id-\/ja \\
+\hline
+{\em states} & Állapotokat tartalmazó tömb \\
+\hline
+{\em state\+Count} & Állapotokat tartalmazó tömb hossza \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+int Az object állapota 
+\end{DoxyReturn}

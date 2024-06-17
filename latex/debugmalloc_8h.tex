@@ -1,0 +1,111 @@
+\hypertarget{debugmalloc_8h}{}\doxysection{debugmalloc.\+h fájlreferencia}
+\label{debugmalloc_8h}\index{debugmalloc.h@{debugmalloc.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\doxysubsection*{Adatszerkezetek}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_debugmalloc_entry}{Debugmalloc\+Entry}}
+\item 
+struct \mbox{\hyperlink{struct_debugmalloc_data}{Debugmalloc\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Makródefiníciók}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{debugmalloc_8h_a535b58ab5aa48e2e86073e334d43fd32}{malloc}}(S)~debugmalloc\+\_\+malloc\+\_\+full((S), \char`\"{}malloc\char`\"{}, \#S, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, false)
+\item 
+\#define \mbox{\hyperlink{debugmalloc_8h_ac07b71d27b6b37e81ac3a4c230f5794e}{calloc}}(N,  S)~debugmalloc\+\_\+malloc\+\_\+full((N)$\ast$(S), \char`\"{}calloc\char`\"{}, \#N \char`\"{}, \char`\"{} \#S, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, true)
+\item 
+\#define \mbox{\hyperlink{debugmalloc_8h_a54df243d89c451240697d7d3afb5663f}{realloc}}(P,  S)~debugmalloc\+\_\+realloc\+\_\+full((P), (S), \char`\"{}realloc\char`\"{}, \#S, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{debugmalloc_8h_aa7943e5d135734f6801bebcc37401fc0}{free}}(P)~debugmalloc\+\_\+free\+\_\+full((P), \char`\"{}free\char`\"{}, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+\doxysubsection*{Típusdefiníciók}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_debugmalloc_entry}{Debugmalloc\+Entry}} \mbox{\hyperlink{debugmalloc_8h_a69e016f03a024f815bedf07ed671d4ea}{Debugmalloc\+Entry}}
+\item 
+typedef struct \mbox{\hyperlink{struct_debugmalloc_data}{Debugmalloc\+Data}} \mbox{\hyperlink{debugmalloc_8h_a6270b6c4128e9715c7e47c0d007e4367}{Debugmalloc\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerációk}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bab345007cf28a2516c0ba24371a400520}{debugmalloc\+\_\+canary\+\_\+size}} = 64
+, \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba8e3d5ad8628140edd887b8920f521cfd}{debugmalloc\+\_\+canary\+\_\+char}} = \textquotesingle{}K\textquotesingle{}
+, \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba40803f0d5a26a349a78cbd998cb8a2a1}{debugmalloc\+\_\+tablesize}} = 256
+, \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bae8726dfde3f35d4345009234ee734f6c}{debugmalloc\+\_\+max\+\_\+block\+\_\+size\+\_\+default}} = 1048576
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Makródefiníciók dokumentációja}
+\mbox{\Hypertarget{debugmalloc_8h_ac07b71d27b6b37e81ac3a4c230f5794e}\label{debugmalloc_8h_ac07b71d27b6b37e81ac3a4c230f5794e}} 
+\index{debugmalloc.h@{debugmalloc.h}!calloc@{calloc}}
+\index{calloc@{calloc}!debugmalloc.h@{debugmalloc.h}}
+\doxysubsubsection{\texorpdfstring{calloc}{calloc}}
+{\footnotesize\ttfamily \#define calloc(\begin{DoxyParamCaption}\item[{}]{N,  }\item[{}]{S }\end{DoxyParamCaption})~debugmalloc\+\_\+malloc\+\_\+full((N)$\ast$(S), \char`\"{}calloc\char`\"{}, \#N \char`\"{}, \char`\"{} \#S, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, true)}
+
+\mbox{\Hypertarget{debugmalloc_8h_aa7943e5d135734f6801bebcc37401fc0}\label{debugmalloc_8h_aa7943e5d135734f6801bebcc37401fc0}} 
+\index{debugmalloc.h@{debugmalloc.h}!free@{free}}
+\index{free@{free}!debugmalloc.h@{debugmalloc.h}}
+\doxysubsubsection{\texorpdfstring{free}{free}}
+{\footnotesize\ttfamily \#define free(\begin{DoxyParamCaption}\item[{}]{P }\end{DoxyParamCaption})~debugmalloc\+\_\+free\+\_\+full((P), \char`\"{}free\char`\"{}, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+)}
+
+\mbox{\Hypertarget{debugmalloc_8h_a535b58ab5aa48e2e86073e334d43fd32}\label{debugmalloc_8h_a535b58ab5aa48e2e86073e334d43fd32}} 
+\index{debugmalloc.h@{debugmalloc.h}!malloc@{malloc}}
+\index{malloc@{malloc}!debugmalloc.h@{debugmalloc.h}}
+\doxysubsubsection{\texorpdfstring{malloc}{malloc}}
+{\footnotesize\ttfamily \#define malloc(\begin{DoxyParamCaption}\item[{}]{S }\end{DoxyParamCaption})~debugmalloc\+\_\+malloc\+\_\+full((S), \char`\"{}malloc\char`\"{}, \#S, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, false)}
+
+\mbox{\Hypertarget{debugmalloc_8h_a54df243d89c451240697d7d3afb5663f}\label{debugmalloc_8h_a54df243d89c451240697d7d3afb5663f}} 
+\index{debugmalloc.h@{debugmalloc.h}!realloc@{realloc}}
+\index{realloc@{realloc}!debugmalloc.h@{debugmalloc.h}}
+\doxysubsubsection{\texorpdfstring{realloc}{realloc}}
+{\footnotesize\ttfamily \#define realloc(\begin{DoxyParamCaption}\item[{}]{P,  }\item[{}]{S }\end{DoxyParamCaption})~debugmalloc\+\_\+realloc\+\_\+full((P), (S), \char`\"{}realloc\char`\"{}, \#S, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+)}
+
+
+
+\doxysubsection{Típusdefiníciók dokumentációja}
+\mbox{\Hypertarget{debugmalloc_8h_a6270b6c4128e9715c7e47c0d007e4367}\label{debugmalloc_8h_a6270b6c4128e9715c7e47c0d007e4367}} 
+\index{debugmalloc.h@{debugmalloc.h}!DebugmallocData@{DebugmallocData}}
+\index{DebugmallocData@{DebugmallocData}!debugmalloc.h@{debugmalloc.h}}
+\doxysubsubsection{\texorpdfstring{DebugmallocData}{DebugmallocData}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_debugmalloc_data}{Debugmalloc\+Data}} \mbox{\hyperlink{struct_debugmalloc_data}{Debugmalloc\+Data}}}
+
+\mbox{\Hypertarget{debugmalloc_8h_a69e016f03a024f815bedf07ed671d4ea}\label{debugmalloc_8h_a69e016f03a024f815bedf07ed671d4ea}} 
+\index{debugmalloc.h@{debugmalloc.h}!DebugmallocEntry@{DebugmallocEntry}}
+\index{DebugmallocEntry@{DebugmallocEntry}!debugmalloc.h@{debugmalloc.h}}
+\doxysubsubsection{\texorpdfstring{DebugmallocEntry}{DebugmallocEntry}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_debugmalloc_entry}{Debugmalloc\+Entry}} \mbox{\hyperlink{struct_debugmalloc_entry}{Debugmalloc\+Entry}}}
+
+
+
+\doxysubsection{Enumerációk dokumentációja}
+\mbox{\Hypertarget{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55b}\label{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55b}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumeráció-értékek}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{debugmalloc\_canary\_size@{debugmalloc\_canary\_size}!debugmalloc.h@{debugmalloc.h}}\index{debugmalloc.h@{debugmalloc.h}!debugmalloc\_canary\_size@{debugmalloc\_canary\_size}}}\mbox{\Hypertarget{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bab345007cf28a2516c0ba24371a400520}\label{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bab345007cf28a2516c0ba24371a400520}} 
+debugmalloc\+\_\+canary\+\_\+size&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{debugmalloc\_canary\_char@{debugmalloc\_canary\_char}!debugmalloc.h@{debugmalloc.h}}\index{debugmalloc.h@{debugmalloc.h}!debugmalloc\_canary\_char@{debugmalloc\_canary\_char}}}\mbox{\Hypertarget{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba8e3d5ad8628140edd887b8920f521cfd}\label{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba8e3d5ad8628140edd887b8920f521cfd}} 
+debugmalloc\+\_\+canary\+\_\+char&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{debugmalloc\_tablesize@{debugmalloc\_tablesize}!debugmalloc.h@{debugmalloc.h}}\index{debugmalloc.h@{debugmalloc.h}!debugmalloc\_tablesize@{debugmalloc\_tablesize}}}\mbox{\Hypertarget{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba40803f0d5a26a349a78cbd998cb8a2a1}\label{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba40803f0d5a26a349a78cbd998cb8a2a1}} 
+debugmalloc\+\_\+tablesize&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{debugmalloc\_max\_block\_size\_default@{debugmalloc\_max\_block\_size\_default}!debugmalloc.h@{debugmalloc.h}}\index{debugmalloc.h@{debugmalloc.h}!debugmalloc\_max\_block\_size\_default@{debugmalloc\_max\_block\_size\_default}}}\mbox{\Hypertarget{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bae8726dfde3f35d4345009234ee734f6c}\label{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bae8726dfde3f35d4345009234ee734f6c}} 
+debugmalloc\+\_\+max\+\_\+block\+\_\+size\+\_\+default&\\
+\hline
+
+\end{DoxyEnumFields}

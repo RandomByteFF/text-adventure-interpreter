@@ -1,0 +1,42 @@
+\hypertarget{game_space_8c}{}\doxysection{game\+Space.\+c fájlreferencia}
+\label{game_space_8c}\index{gameSpace.c@{gameSpace.c}}
+
+
+Játék állapotát kezeli és a játéktérben elhelyezkedő elemeket definiálja.  
+
+
+{\ttfamily \#include \char`\"{}game\+Space.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}essentials.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{game_space_8c_a9c79114362333cd45c94aa258af5df40}{Change\+States}} (\mbox{\hyperlink{struct_state}{State}} \mbox{\hyperlink{graphics_8c_ace8acdb472009cf282d9cb2dda568355}{states}}\mbox{[}$\,$\mbox{]}, int \mbox{\hyperlink{graphics_8c_a12cc37e05dc5b7ad42ae6436cc78c0e4}{state\+Count}}, char $\ast$list)
+\begin{DoxyCompactList}\small\item\em Megváltoztatja egy event string alapján az object/room állapotát. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+Játék állapotát kezeli és a játéktérben elhelyezkedő elemeket definiálja. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\mbox{\Hypertarget{game_space_8c_a9c79114362333cd45c94aa258af5df40}\label{game_space_8c_a9c79114362333cd45c94aa258af5df40}} 
+\index{gameSpace.c@{gameSpace.c}!ChangeStates@{ChangeStates}}
+\index{ChangeStates@{ChangeStates}!gameSpace.c@{gameSpace.c}}
+\doxysubsubsection{\texorpdfstring{ChangeStates()}{ChangeStates()}}
+{\footnotesize\ttfamily void Change\+States (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_state}{State}}}]{states\mbox{[}$\,$\mbox{]},  }\item[{int}]{state\+Count,  }\item[{char $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Megváltoztatja egy event string alapján az object/room állapotát. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em states} & Állapotok tömb \\
+\hline
+{\em state\+Count} & Állapotok tömb elemszáma \\
+\hline
+{\em list} & Event lista \\
+\hline
+\end{DoxyParams}

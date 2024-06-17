@@ -1,0 +1,612 @@
+\hypertarget{essentials_8h}{}\doxysection{essentials.\+h fájlreferencia}
+\label{essentials_8h}\index{essentials.h@{essentials.h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Adatszerkezetek}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_node}{Node}}
+\begin{DoxyCompactList}\small\item\em Egy lista elem. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_list}{List}}
+\begin{DoxyCompactList}\small\item\em Int lista. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_string_node}{String\+Node}}
+\begin{DoxyCompactList}\small\item\em String lista elem. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_string_list}{String\+List}}
+\begin{DoxyCompactList}\small\item\em String lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Típusdefiníciók}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_node}{Node}} \mbox{\hyperlink{essentials_8h_a3b09f37e675bcd48a01bf22155996872}{Node}}
+\begin{DoxyCompactList}\small\item\em Egy lista elem. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_list}{List}} \mbox{\hyperlink{essentials_8h_a61366e7da8638d66a464a4a6f4799199}{List}}
+\begin{DoxyCompactList}\small\item\em Int lista. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_string_node}{String\+Node}} \mbox{\hyperlink{essentials_8h_ade0e414a1075d7c14acb5a7b199dd93b}{String\+Node}}
+\begin{DoxyCompactList}\small\item\em String lista elem. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_string_list}{String\+List}} \mbox{\hyperlink{essentials_8h_ae4b88da263d1953a7d200b44a99e0cd5}{String\+List}}
+\begin{DoxyCompactList}\small\item\em String lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_list}{List}} $\ast$ \mbox{\hyperlink{essentials_8h_a2586410927278bebb13adac4f91932cf}{Create\+List}} (int start\+Value)
+\begin{DoxyCompactList}\small\item\em Létrehoz egy int listát egy kezdőértékkel. A hívó felelőssége meghívni a listára a \mbox{\hyperlink{essentials_8c_aa0eedfda3a57b33ffa6126f16f7deb9b}{Destroy\+List()}} függvényt. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$ \mbox{\hyperlink{essentials_8h_a0e8b040446ca01f090552069c6f45a04}{Create\+String\+List}} (char $\ast$start)
+\begin{DoxyCompactList}\small\item\em Létrehoz egy String listát egy kezdőértékkel. A hívó felelőssége meghívni a listára a \mbox{\hyperlink{essentials_8c_ae6e39eb8d78f87da675fa7beb909a1a9}{Destroy\+String\+List()}} függvényt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{essentials_8h_aa0eedfda3a57b33ffa6126f16f7deb9b}{Destroy\+List}} (\mbox{\hyperlink{struct_list}{List}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Felszabadítja a teljes int listát. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{essentials_8h_ae6e39eb8d78f87da675fa7beb909a1a9}{Destroy\+String\+List}} (\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Felszabadítja a teljes String listát. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{essentials_8h_a286dd1286cce9143fc0737e51dd1ce14}{Add}} (\mbox{\hyperlink{struct_list}{List}} $\ast$list, int value)
+\begin{DoxyCompactList}\small\item\em Hozzáad egy elemet egy int listához. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{essentials_8h_adae40eed0ba6b1e67392e4539071936f}{Add\+String}} (\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$list, char $\ast$item)
+\begin{DoxyCompactList}\small\item\em Hozzáad egy stringet elemet egy string listához. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{essentials_8h_a9ece8b70d691e6fb5e03245ab2cfdd03}{Add\+String\+Pointer}} (\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$list, char $\ast$item)
+\begin{DoxyCompactList}\small\item\em Hozzáfűz egy String listához egy elemet aminek már le van foglalva a memória (csupán a kód gyorsításáért kell) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{essentials_8h_adb34fa1ce0b202dfa7bc5cdc3282ae8e}{At}} (\mbox{\hyperlink{struct_list}{List}} $\ast$list, int index)
+\begin{DoxyCompactList}\small\item\em Visszaadja a tömb bizonyos indexénél található értéket. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{essentials_8h_a49389c4cf138d375a393de2c2ca2e361}{At\+String}} (\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$list, int index)
+\begin{DoxyCompactList}\small\item\em Visszaadja a tömb bizonyos indexénél található értéket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{essentials_8h_a3badd9ccfdb5eb9de4292da88e7bafba}{Set}} (\mbox{\hyperlink{struct_list}{List}} $\ast$list, int index, int value)
+\begin{DoxyCompactList}\small\item\em Beállítja a tömb bizonyos indexénél található értéket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{essentials_8h_a949fd4be764173b0826254d858b8fb71}{Set\+String}} (\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$list, int index, char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Beállítja a tömb bizonyos indexénél található értéket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{essentials_8h_a48a909875743cffac5d8eb6061b3d51e}{Remove\+First}} (\mbox{\hyperlink{struct_list}{List}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Kitörli a lista első elemét. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{essentials_8h_ab681f70f78e7bbd3382aa358457e724a}{Remove\+First\+String}} (\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Kitörli a lista első elemét. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{essentials_8h_a8b59a619db29e584c108fe6d82710a19}{Remove\+At}} (\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$list, int index)
+\begin{DoxyCompactList}\small\item\em Kitörli a lista megadott elemét. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{essentials_8h_a2ef68a34c47713e0971e9231d6e1f3ab}{Remove\+At\+Int}} (\mbox{\hyperlink{struct_list}{List}} $\ast$list, int index)
+\begin{DoxyCompactList}\small\item\em Kitörli a lista megadott elemét. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{essentials_8h_ab6c30a2818dfd21d6ee003b209a8f8ca}{Find}} (\mbox{\hyperlink{struct_list}{List}} $\ast$list, int value)
+\begin{DoxyCompactList}\small\item\em Megkeresi, hogy az érték hanyadik indexen található meg először. -\/1 ha az érték nem található \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{essentials_8h_ad2c37386ecbd7ae2702ca7140b3f3816}{Find\+String}} (\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$list, char $\ast$value)
+\begin{DoxyCompactList}\small\item\em Megkeresi, hogy az érték hanyadik indexen található meg először. -\/1 ha az érték nem található \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{essentials_8h_a7c7b296748abafdccc52cc22d26fe0e6}{Contains}} (\mbox{\hyperlink{struct_list}{List}} $\ast$list, int value)
+\begin{DoxyCompactList}\small\item\em Megnézi, hogy tartalmazza-\/e a lista az elemet. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{essentials_8h_a3e8dcbda4ff88bb15cc9690ca37269fc}{Contains\+String}} (\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$list, void $\ast$value)
+\begin{DoxyCompactList}\small\item\em Megnézi, hogy tartalmazza-\/e a lista az elemet. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$ \mbox{\hyperlink{essentials_8h_aa7bad8e7e9cfe94280e45c079517eb26}{Split}} (char $\ast$string, char split)
+\begin{DoxyCompactList}\small\item\em Az elválasztó karakter alapján több elemre szed szét egy stringet. A hívó felelőssége meghívni a \mbox{\hyperlink{essentials_8c_ae6e39eb8d78f87da675fa7beb909a1a9}{Destroy\+String\+List()}}-\/et. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_list}{List}} $\ast$ \mbox{\hyperlink{essentials_8h_afe00a6074a0bb1c79175de34af7f3d76}{Split\+Int}} (char $\ast$string, char split)
+\begin{DoxyCompactList}\small\item\em Egy stringben megadott integereket szétszed az elválasztó karakter alapján. A hívó felelőssée meghívni a \mbox{\hyperlink{essentials_8c_aa0eedfda3a57b33ffa6126f16f7deb9b}{Destroy\+List()}}-\/et. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{essentials_8h_afb262c9a3677f420b34e3ef24af468a4}{Alloc}} (int n, FILE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Sort\+Beolvas segédfüggvénye. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{essentials_8h_abacf37ddc31c25a7946c912f346a149e}{Sort\+Beolvas}} (FILE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em A függvény beolvas egy teljes sort (enterig vagy fájl vége jelig) a megadott fájlból, és visszaadja egy dinamikusan foglalt sztringben. A sztring nullával van lezárva, az entert nem tartalmazza. A hívó felelőssége a \mbox{\hyperlink{debugmalloc_8h_aa7943e5d135734f6801bebcc37401fc0}{free()}}-\/t meghívni a kapott pointerre. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{essentials_8h_a6d9d8a71b985937df32a4e112024479b}{Convert\+To\+Int}} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Egy stringet int-\/é alakít. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{essentials_8h_ae3f024c529e10e495c41720c5f7fc14d}{Cpy\+Str\+Ptr}} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Készít egy másolatot egy stringből. A hívó felelőssége meghívni a free-\/t. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{essentials_8h_a7fe836e6b53e569484543f178736ebf4}{Merge}} (\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$list, int start, int end)
+\begin{DoxyCompactList}\small\item\em Lista elemeit összeolvasztja egy stringbe, whitespace karakterrel elválasztva. A hívó felelőssége meghívni a free-\/t. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{essentials_8h_acf560d607d27a4bf6dd0a542163afffc}{Sort\+Beolvas\+Std}} ()
+\begin{DoxyCompactList}\small\item\em A függvény beolvas egy teljes sort (enterig vagy fájl vége jelig) , és visszaadja egy dinamikusan foglalt sztringben. A sztring nullával van lezárva, az entert nem tartalmazza. A hívó felelőssége a \mbox{\hyperlink{debugmalloc_8h_aa7943e5d135734f6801bebcc37401fc0}{free()}}-\/t meghívni a kapott pointerre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Típusdefiníciók dokumentációja}
+\mbox{\Hypertarget{essentials_8h_a61366e7da8638d66a464a4a6f4799199}\label{essentials_8h_a61366e7da8638d66a464a4a6f4799199}} 
+\index{essentials.h@{essentials.h}!List@{List}}
+\index{List@{List}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{List}{List}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_list}{List}} \mbox{\hyperlink{struct_list}{List}}}
+
+
+
+Int lista. 
+
+\mbox{\Hypertarget{essentials_8h_a3b09f37e675bcd48a01bf22155996872}\label{essentials_8h_a3b09f37e675bcd48a01bf22155996872}} 
+\index{essentials.h@{essentials.h}!Node@{Node}}
+\index{Node@{Node}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{Node}{Node}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_node}{Node}} \mbox{\hyperlink{struct_node}{Node}}}
+
+
+
+Egy lista elem. 
+
+\mbox{\Hypertarget{essentials_8h_ae4b88da263d1953a7d200b44a99e0cd5}\label{essentials_8h_ae4b88da263d1953a7d200b44a99e0cd5}} 
+\index{essentials.h@{essentials.h}!StringList@{StringList}}
+\index{StringList@{StringList}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{StringList}{StringList}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_string_list}{String\+List}} \mbox{\hyperlink{struct_string_list}{String\+List}}}
+
+
+
+String lista. 
+
+\mbox{\Hypertarget{essentials_8h_ade0e414a1075d7c14acb5a7b199dd93b}\label{essentials_8h_ade0e414a1075d7c14acb5a7b199dd93b}} 
+\index{essentials.h@{essentials.h}!StringNode@{StringNode}}
+\index{StringNode@{StringNode}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{StringNode}{StringNode}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_string_node}{String\+Node}} \mbox{\hyperlink{struct_string_node}{String\+Node}}}
+
+
+
+String lista elem. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\mbox{\Hypertarget{essentials_8h_a286dd1286cce9143fc0737e51dd1ce14}\label{essentials_8h_a286dd1286cce9143fc0737e51dd1ce14}} 
+\index{essentials.h@{essentials.h}!Add@{Add}}
+\index{Add@{Add}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list}{List}} $\ast$}]{list,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Hozzáad egy elemet egy int listához. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Lista \\
+\hline
+{\em value} & Érték amit hozzáad a listához \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{essentials_8h_adae40eed0ba6b1e67392e4539071936f}\label{essentials_8h_adae40eed0ba6b1e67392e4539071936f}} 
+\index{essentials.h@{essentials.h}!AddString@{AddString}}
+\index{AddString@{AddString}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{AddString()}{AddString()}}
+{\footnotesize\ttfamily void Add\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$}]{list,  }\item[{char $\ast$}]{item }\end{DoxyParamCaption})}
+
+
+
+Hozzáad egy stringet elemet egy string listához. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Lista \\
+\hline
+{\em value} & Érték amit hozzáad a listához \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{essentials_8h_a9ece8b70d691e6fb5e03245ab2cfdd03}\label{essentials_8h_a9ece8b70d691e6fb5e03245ab2cfdd03}} 
+\index{essentials.h@{essentials.h}!AddStringPointer@{AddStringPointer}}
+\index{AddStringPointer@{AddStringPointer}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{AddStringPointer()}{AddStringPointer()}}
+{\footnotesize\ttfamily void Add\+String\+Pointer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$}]{list,  }\item[{char $\ast$}]{item }\end{DoxyParamCaption})}
+
+
+
+Hozzáfűz egy String listához egy elemet aminek már le van foglalva a memória (csupán a kód gyorsításáért kell) 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Lista \\
+\hline
+{\em item} & Pointer amit hozzá fog fűzni a listához \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{essentials_8h_afb262c9a3677f420b34e3ef24af468a4}\label{essentials_8h_afb262c9a3677f420b34e3ef24af468a4}} 
+\index{essentials.h@{essentials.h}!Alloc@{Alloc}}
+\index{Alloc@{Alloc}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{Alloc()}{Alloc()}}
+{\footnotesize\ttfamily char $\ast$ Alloc (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{FILE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Sort\+Beolvas segédfüggvénye. 
+
+\mbox{\Hypertarget{essentials_8h_adb34fa1ce0b202dfa7bc5cdc3282ae8e}\label{essentials_8h_adb34fa1ce0b202dfa7bc5cdc3282ae8e}} 
+\index{essentials.h@{essentials.h}!At@{At}}
+\index{At@{At}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{At()}{At()}}
+{\footnotesize\ttfamily int At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list}{List}} $\ast$}]{list,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Visszaadja a tömb bizonyos indexénél található értéket. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Lista \\
+\hline
+{\em index} & index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+int Indexen található érték 
+\end{DoxyReturn}
+\mbox{\Hypertarget{essentials_8h_a49389c4cf138d375a393de2c2ca2e361}\label{essentials_8h_a49389c4cf138d375a393de2c2ca2e361}} 
+\index{essentials.h@{essentials.h}!AtString@{AtString}}
+\index{AtString@{AtString}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{AtString()}{AtString()}}
+{\footnotesize\ttfamily char $\ast$ At\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$}]{list,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Visszaadja a tömb bizonyos indexénél található értéket. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Lista \\
+\hline
+{\em index} & index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+char$\ast$ Indexen található érték 
+\end{DoxyReturn}
+\mbox{\Hypertarget{essentials_8h_a7c7b296748abafdccc52cc22d26fe0e6}\label{essentials_8h_a7c7b296748abafdccc52cc22d26fe0e6}} 
+\index{essentials.h@{essentials.h}!Contains@{Contains}}
+\index{Contains@{Contains}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{Contains()}{Contains()}}
+{\footnotesize\ttfamily bool Contains (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list}{List}} $\ast$}]{list,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Megnézi, hogy tartalmazza-\/e a lista az elemet. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Lista \\
+\hline
+{\em value} & Érték \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true Az elem benne van a listában 
+
+false Az elem nincs benne a listában 
+\end{DoxyReturn}
+\mbox{\Hypertarget{essentials_8h_a3e8dcbda4ff88bb15cc9690ca37269fc}\label{essentials_8h_a3e8dcbda4ff88bb15cc9690ca37269fc}} 
+\index{essentials.h@{essentials.h}!ContainsString@{ContainsString}}
+\index{ContainsString@{ContainsString}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{ContainsString()}{ContainsString()}}
+{\footnotesize\ttfamily bool Contains\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$}]{list,  }\item[{void $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Megnézi, hogy tartalmazza-\/e a lista az elemet. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Lista \\
+\hline
+{\em value} & Érték \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true Az elem benne van a listában 
+
+false Az elem nincs benne a listában 
+\end{DoxyReturn}
+\mbox{\Hypertarget{essentials_8h_a6d9d8a71b985937df32a4e112024479b}\label{essentials_8h_a6d9d8a71b985937df32a4e112024479b}} 
+\index{essentials.h@{essentials.h}!ConvertToInt@{ConvertToInt}}
+\index{ConvertToInt@{ConvertToInt}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{ConvertToInt()}{ConvertToInt()}}
+{\footnotesize\ttfamily int Convert\+To\+Int (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Egy stringet int-\/é alakít. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em str} & Átalakítandó string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+int Átalakított int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{essentials_8h_ae3f024c529e10e495c41720c5f7fc14d}\label{essentials_8h_ae3f024c529e10e495c41720c5f7fc14d}} 
+\index{essentials.h@{essentials.h}!CpyStrPtr@{CpyStrPtr}}
+\index{CpyStrPtr@{CpyStrPtr}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{CpyStrPtr()}{CpyStrPtr()}}
+{\footnotesize\ttfamily char $\ast$ Cpy\+Str\+Ptr (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Készít egy másolatot egy stringből. A hívó felelőssége meghívni a free-\/t. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em str} & Másolandó string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+char$\ast$ Másolt string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{essentials_8h_a2586410927278bebb13adac4f91932cf}\label{essentials_8h_a2586410927278bebb13adac4f91932cf}} 
+\index{essentials.h@{essentials.h}!CreateList@{CreateList}}
+\index{CreateList@{CreateList}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{CreateList()}{CreateList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_list}{List}} $\ast$ Create\+List (\begin{DoxyParamCaption}\item[{int}]{start\+Value }\end{DoxyParamCaption})}
+
+
+
+Létrehoz egy int listát egy kezdőértékkel. A hívó felelőssége meghívni a listára a \mbox{\hyperlink{essentials_8c_aa0eedfda3a57b33ffa6126f16f7deb9b}{Destroy\+List()}} függvényt. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em start\+Value} & Kezdőérték \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+List$\ast$ Létrehozott lista 
+\end{DoxyReturn}
+\mbox{\Hypertarget{essentials_8h_a0e8b040446ca01f090552069c6f45a04}\label{essentials_8h_a0e8b040446ca01f090552069c6f45a04}} 
+\index{essentials.h@{essentials.h}!CreateStringList@{CreateStringList}}
+\index{CreateStringList@{CreateStringList}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{CreateStringList()}{CreateStringList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$ Create\+String\+List (\begin{DoxyParamCaption}\item[{char $\ast$}]{start }\end{DoxyParamCaption})}
+
+
+
+Létrehoz egy String listát egy kezdőértékkel. A hívó felelőssége meghívni a listára a \mbox{\hyperlink{essentials_8c_ae6e39eb8d78f87da675fa7beb909a1a9}{Destroy\+String\+List()}} függvényt. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em start} & kezdő érték \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+String\+List$\ast$ Létrehozott lista 
+\end{DoxyReturn}
+\mbox{\Hypertarget{essentials_8h_aa0eedfda3a57b33ffa6126f16f7deb9b}\label{essentials_8h_aa0eedfda3a57b33ffa6126f16f7deb9b}} 
+\index{essentials.h@{essentials.h}!DestroyList@{DestroyList}}
+\index{DestroyList@{DestroyList}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{DestroyList()}{DestroyList()}}
+{\footnotesize\ttfamily void Destroy\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list}{List}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Felszabadítja a teljes int listát. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Felszabadítandó lista \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{essentials_8h_ae6e39eb8d78f87da675fa7beb909a1a9}\label{essentials_8h_ae6e39eb8d78f87da675fa7beb909a1a9}} 
+\index{essentials.h@{essentials.h}!DestroyStringList@{DestroyStringList}}
+\index{DestroyStringList@{DestroyStringList}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{DestroyStringList()}{DestroyStringList()}}
+{\footnotesize\ttfamily void Destroy\+String\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Felszabadítja a teljes String listát. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Felszabadítandó lista \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{essentials_8h_ab6c30a2818dfd21d6ee003b209a8f8ca}\label{essentials_8h_ab6c30a2818dfd21d6ee003b209a8f8ca}} 
+\index{essentials.h@{essentials.h}!Find@{Find}}
+\index{Find@{Find}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{Find()}{Find()}}
+{\footnotesize\ttfamily int Find (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list}{List}} $\ast$}]{list,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Megkeresi, hogy az érték hanyadik indexen található meg először. -\/1 ha az érték nem található 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Lista \\
+\hline
+{\em value} & Keresendő érték \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+int index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{essentials_8h_ad2c37386ecbd7ae2702ca7140b3f3816}\label{essentials_8h_ad2c37386ecbd7ae2702ca7140b3f3816}} 
+\index{essentials.h@{essentials.h}!FindString@{FindString}}
+\index{FindString@{FindString}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{FindString()}{FindString()}}
+{\footnotesize\ttfamily int Find\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$}]{list,  }\item[{char $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Megkeresi, hogy az érték hanyadik indexen található meg először. -\/1 ha az érték nem található 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Lista \\
+\hline
+{\em value} & Keresendő érték \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+int index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{essentials_8h_a7fe836e6b53e569484543f178736ebf4}\label{essentials_8h_a7fe836e6b53e569484543f178736ebf4}} 
+\index{essentials.h@{essentials.h}!Merge@{Merge}}
+\index{Merge@{Merge}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{Merge()}{Merge()}}
+{\footnotesize\ttfamily char $\ast$ Merge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$}]{list,  }\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})}
+
+
+
+Lista elemeit összeolvasztja egy stringbe, whitespace karakterrel elválasztva. A hívó felelőssége meghívni a free-\/t. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Lista \\
+\hline
+{\em start} & Kezdő index (inclusive) \\
+\hline
+{\em end} & Végső index (inclusive) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+char$\ast$ Összeolvasztott string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{essentials_8h_a8b59a619db29e584c108fe6d82710a19}\label{essentials_8h_a8b59a619db29e584c108fe6d82710a19}} 
+\index{essentials.h@{essentials.h}!RemoveAt@{RemoveAt}}
+\index{RemoveAt@{RemoveAt}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{RemoveAt()}{RemoveAt()}}
+{\footnotesize\ttfamily void Remove\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$}]{list,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Kitörli a lista megadott elemét. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Lista \\
+\hline
+{\em index} & Index \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{essentials_8h_a2ef68a34c47713e0971e9231d6e1f3ab}\label{essentials_8h_a2ef68a34c47713e0971e9231d6e1f3ab}} 
+\index{essentials.h@{essentials.h}!RemoveAtInt@{RemoveAtInt}}
+\index{RemoveAtInt@{RemoveAtInt}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{RemoveAtInt()}{RemoveAtInt()}}
+{\footnotesize\ttfamily void Remove\+At\+Int (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list}{List}} $\ast$}]{list,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Kitörli a lista megadott elemét. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Lista \\
+\hline
+{\em index} & Index \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{essentials_8h_a48a909875743cffac5d8eb6061b3d51e}\label{essentials_8h_a48a909875743cffac5d8eb6061b3d51e}} 
+\index{essentials.h@{essentials.h}!RemoveFirst@{RemoveFirst}}
+\index{RemoveFirst@{RemoveFirst}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{RemoveFirst()}{RemoveFirst()}}
+{\footnotesize\ttfamily void Remove\+First (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list}{List}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Kitörli a lista első elemét. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Lista \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{essentials_8h_ab681f70f78e7bbd3382aa358457e724a}\label{essentials_8h_ab681f70f78e7bbd3382aa358457e724a}} 
+\index{essentials.h@{essentials.h}!RemoveFirstString@{RemoveFirstString}}
+\index{RemoveFirstString@{RemoveFirstString}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{RemoveFirstString()}{RemoveFirstString()}}
+{\footnotesize\ttfamily void Remove\+First\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Kitörli a lista első elemét. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Lista \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{essentials_8h_a3badd9ccfdb5eb9de4292da88e7bafba}\label{essentials_8h_a3badd9ccfdb5eb9de4292da88e7bafba}} 
+\index{essentials.h@{essentials.h}!Set@{Set}}
+\index{Set@{Set}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}}
+{\footnotesize\ttfamily void Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list}{List}} $\ast$}]{list,  }\item[{int}]{index,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Beállítja a tömb bizonyos indexénél található értéket. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Lista \\
+\hline
+{\em index} & Index \\
+\hline
+{\em value} & Beállítandó érték \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{essentials_8h_a949fd4be764173b0826254d858b8fb71}\label{essentials_8h_a949fd4be764173b0826254d858b8fb71}} 
+\index{essentials.h@{essentials.h}!SetString@{SetString}}
+\index{SetString@{SetString}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{SetString()}{SetString()}}
+{\footnotesize\ttfamily void Set\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$}]{list,  }\item[{int}]{index,  }\item[{char $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Beállítja a tömb bizonyos indexénél található értéket. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em list} & Lista \\
+\hline
+{\em index} & Index \\
+\hline
+{\em value} & Beállítandó érték \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{essentials_8h_abacf37ddc31c25a7946c912f346a149e}\label{essentials_8h_abacf37ddc31c25a7946c912f346a149e}} 
+\index{essentials.h@{essentials.h}!SortBeolvas@{SortBeolvas}}
+\index{SortBeolvas@{SortBeolvas}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{SortBeolvas()}{SortBeolvas()}}
+{\footnotesize\ttfamily char $\ast$ Sort\+Beolvas (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+A függvény beolvas egy teljes sort (enterig vagy fájl vége jelig) a megadott fájlból, és visszaadja egy dinamikusan foglalt sztringben. A sztring nullával van lezárva, az entert nem tartalmazza. A hívó felelőssége a \mbox{\hyperlink{debugmalloc_8h_aa7943e5d135734f6801bebcc37401fc0}{free()}}-\/t meghívni a kapott pointerre. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em fp} & Fájl pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+char$\ast$ Beolvasott string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{essentials_8h_acf560d607d27a4bf6dd0a542163afffc}\label{essentials_8h_acf560d607d27a4bf6dd0a542163afffc}} 
+\index{essentials.h@{essentials.h}!SortBeolvasStd@{SortBeolvasStd}}
+\index{SortBeolvasStd@{SortBeolvasStd}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{SortBeolvasStd()}{SortBeolvasStd()}}
+{\footnotesize\ttfamily char $\ast$ Sort\+Beolvas\+Std (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A függvény beolvas egy teljes sort (enterig vagy fájl vége jelig) , és visszaadja egy dinamikusan foglalt sztringben. A sztring nullával van lezárva, az entert nem tartalmazza. A hívó felelőssége a \mbox{\hyperlink{debugmalloc_8h_aa7943e5d135734f6801bebcc37401fc0}{free()}}-\/t meghívni a kapott pointerre. 
+
+\begin{DoxyReturn}{Visszatérési érték}
+char$\ast$ Beolvasott string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{essentials_8h_aa7bad8e7e9cfe94280e45c079517eb26}\label{essentials_8h_aa7bad8e7e9cfe94280e45c079517eb26}} 
+\index{essentials.h@{essentials.h}!Split@{Split}}
+\index{Split@{Split}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{Split()}{Split()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_string_list}{String\+List}} $\ast$ Split (\begin{DoxyParamCaption}\item[{char $\ast$}]{string,  }\item[{char}]{split }\end{DoxyParamCaption})}
+
+
+
+Az elválasztó karakter alapján több elemre szed szét egy stringet. A hívó felelőssége meghívni a \mbox{\hyperlink{essentials_8c_ae6e39eb8d78f87da675fa7beb909a1a9}{Destroy\+String\+List()}}-\/et. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em string} & Felbontandó string \\
+\hline
+{\em split} & Karakter ami alapján felbontja \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+String\+List$\ast$ Felbontott string lista 
+\end{DoxyReturn}
+\mbox{\Hypertarget{essentials_8h_afe00a6074a0bb1c79175de34af7f3d76}\label{essentials_8h_afe00a6074a0bb1c79175de34af7f3d76}} 
+\index{essentials.h@{essentials.h}!SplitInt@{SplitInt}}
+\index{SplitInt@{SplitInt}!essentials.h@{essentials.h}}
+\doxysubsubsection{\texorpdfstring{SplitInt()}{SplitInt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_list}{List}} $\ast$ Split\+Int (\begin{DoxyParamCaption}\item[{char $\ast$}]{string,  }\item[{char}]{split }\end{DoxyParamCaption})}
+
+
+
+Egy stringben megadott integereket szétszed az elválasztó karakter alapján. A hívó felelőssée meghívni a \mbox{\hyperlink{essentials_8c_aa0eedfda3a57b33ffa6126f16f7deb9b}{Destroy\+List()}}-\/et. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em string} & Felbontandó string \\
+\hline
+{\em split} & Karakter ami alapján felbontja \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+List$\ast$ Felbontott int lista 
+\end{DoxyReturn}

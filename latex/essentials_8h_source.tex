@@ -1,0 +1,72 @@
+\hypertarget{essentials_8h_source}{}\doxysection{essentials.\+h}
+\mbox{\hyperlink{essentials_8h}{Ugrás a fájl dokumentációjához.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef ESSENTIALS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define ESSENTIALS\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{11 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_node}{Node}} \{}
+\DoxyCodeLine{12     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_node}{Node}} *\mbox{\hyperlink{struct_node_a0191c33bec5ce1655dfe2e433f4a0711}{nextNode}};}
+\DoxyCodeLine{13     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_node_ac4f474c82e82cbb89ca7c36dd52be0ed}{value}};}
+\DoxyCodeLine{14 \} \mbox{\hyperlink{struct_node}{Node}};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{20 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_list}{List}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     \mbox{\hyperlink{struct_node}{Node}} *\mbox{\hyperlink{struct_list_a824ae5abbe480e2646ec4d14e7d36b5f}{startNode}}; \textcolor{comment}{//Ha minden elromlana akkor ezt írd vissza void *-\/ra}}
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_list_afed088663f8704004425cdae2120b9b3}{len}};}
+\DoxyCodeLine{24 \} \mbox{\hyperlink{struct_list}{List}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{30 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_string_node}{StringNode}} \{}
+\DoxyCodeLine{31     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_string_node}{StringNode}} *\mbox{\hyperlink{struct_string_node_a524c939843defe3c2a244465d64774cb}{nextNode}};}
+\DoxyCodeLine{32     \textcolor{keywordtype}{char} *\mbox{\hyperlink{struct_string_node_a4e9aec275e566b978a3ccb4e043d8c61}{value}};}
+\DoxyCodeLine{33 \} \mbox{\hyperlink{struct_string_node}{StringNode}};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{39 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_string_list}{StringList}}}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41     \mbox{\hyperlink{struct_string_node}{StringNode}} *\mbox{\hyperlink{struct_string_list_a1a701d58a83ca36d0c95ae570fbcc420}{startNode}};}
+\DoxyCodeLine{42     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_string_list_afed088663f8704004425cdae2120b9b3}{len}};}
+\DoxyCodeLine{43 \} \mbox{\hyperlink{struct_string_list}{StringList}};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \mbox{\hyperlink{struct_list}{List}} *\mbox{\hyperlink{essentials_8h_a2586410927278bebb13adac4f91932cf}{CreateList}}(\textcolor{keywordtype}{int} startValue);}
+\DoxyCodeLine{46 \mbox{\hyperlink{struct_string_list}{StringList}} *\mbox{\hyperlink{essentials_8h_a0e8b040446ca01f090552069c6f45a04}{CreateStringList}}(\textcolor{keywordtype}{char} *start);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keywordtype}{void} \mbox{\hyperlink{essentials_8h_aa0eedfda3a57b33ffa6126f16f7deb9b}{DestroyList}}(\mbox{\hyperlink{struct_list}{List}} *list);}
+\DoxyCodeLine{49 \textcolor{keywordtype}{void} \mbox{\hyperlink{essentials_8h_ae6e39eb8d78f87da675fa7beb909a1a9}{DestroyStringList}}(\mbox{\hyperlink{struct_string_list}{StringList}} *list);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keywordtype}{void} \mbox{\hyperlink{essentials_8h_a286dd1286cce9143fc0737e51dd1ce14}{Add}}(\mbox{\hyperlink{struct_list}{List}} *list, \textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{52 \textcolor{keywordtype}{void} \mbox{\hyperlink{essentials_8h_adae40eed0ba6b1e67392e4539071936f}{AddString}}(\mbox{\hyperlink{struct_string_list}{StringList}} *list, \textcolor{keywordtype}{char} *item);}
+\DoxyCodeLine{53 \textcolor{keywordtype}{void} \mbox{\hyperlink{essentials_8h_a9ece8b70d691e6fb5e03245ab2cfdd03}{AddStringPointer}}(\mbox{\hyperlink{struct_string_list}{StringList}} *list, \textcolor{keywordtype}{char} *item);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keywordtype}{int} \mbox{\hyperlink{essentials_8h_adb34fa1ce0b202dfa7bc5cdc3282ae8e}{At}}(\mbox{\hyperlink{struct_list}{List}} *list, \textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{56 \textcolor{keywordtype}{char} *\mbox{\hyperlink{essentials_8h_a49389c4cf138d375a393de2c2ca2e361}{AtString}}(\mbox{\hyperlink{struct_string_list}{StringList}} *list, \textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keywordtype}{void} \mbox{\hyperlink{essentials_8h_a3badd9ccfdb5eb9de4292da88e7bafba}{Set}}(\mbox{\hyperlink{struct_list}{List}} *list, \textcolor{keywordtype}{int} index, \textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{59 \textcolor{keywordtype}{void} \mbox{\hyperlink{essentials_8h_a949fd4be764173b0826254d858b8fb71}{SetString}}(\mbox{\hyperlink{struct_string_list}{StringList}} *list, \textcolor{keywordtype}{int} index, \textcolor{keywordtype}{char} *value);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keywordtype}{void} \mbox{\hyperlink{essentials_8h_a48a909875743cffac5d8eb6061b3d51e}{RemoveFirst}}(\mbox{\hyperlink{struct_list}{List}} *list);}
+\DoxyCodeLine{62 \textcolor{keywordtype}{void} \mbox{\hyperlink{essentials_8h_ab681f70f78e7bbd3382aa358457e724a}{RemoveFirstString}}(\mbox{\hyperlink{struct_string_list}{StringList}} *list);}
+\DoxyCodeLine{63 \textcolor{keywordtype}{void} \mbox{\hyperlink{essentials_8h_a8b59a619db29e584c108fe6d82710a19}{RemoveAt}}(\mbox{\hyperlink{struct_string_list}{StringList}} *list, \textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{64 \textcolor{keywordtype}{void} \mbox{\hyperlink{essentials_8h_a2ef68a34c47713e0971e9231d6e1f3ab}{RemoveAtInt}}(\mbox{\hyperlink{struct_list}{List}} *list, \textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{keywordtype}{int} \mbox{\hyperlink{essentials_8h_ab6c30a2818dfd21d6ee003b209a8f8ca}{Find}}(\mbox{\hyperlink{struct_list}{List}} *list, \textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{67 \textcolor{keywordtype}{int} \mbox{\hyperlink{essentials_8h_ad2c37386ecbd7ae2702ca7140b3f3816}{FindString}}(\mbox{\hyperlink{struct_string_list}{StringList}} *list, \textcolor{keywordtype}{char}* value);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{keywordtype}{bool} \mbox{\hyperlink{essentials_8h_a7c7b296748abafdccc52cc22d26fe0e6}{Contains}}(\mbox{\hyperlink{struct_list}{List}} *list, \textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{70 \textcolor{keywordtype}{bool} \mbox{\hyperlink{essentials_8h_a3e8dcbda4ff88bb15cc9690ca37269fc}{ContainsString}}(\mbox{\hyperlink{struct_string_list}{StringList}} *list, \textcolor{keywordtype}{void} *value);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \mbox{\hyperlink{struct_string_list}{StringList}} *\mbox{\hyperlink{essentials_8h_aa7bad8e7e9cfe94280e45c079517eb26}{Split}}(\textcolor{keywordtype}{char} *\textcolor{keywordtype}{string}, \textcolor{keywordtype}{char} split);}
+\DoxyCodeLine{73 \mbox{\hyperlink{struct_list}{List}} *\mbox{\hyperlink{essentials_8h_afe00a6074a0bb1c79175de34af7f3d76}{SplitInt}}(\textcolor{keywordtype}{char} *\textcolor{keywordtype}{string}, \textcolor{keywordtype}{char} split);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{keywordtype}{char} *\mbox{\hyperlink{essentials_8h_afb262c9a3677f420b34e3ef24af468a4}{Alloc}}(\textcolor{keywordtype}{int} n, FILE *fp);}
+\DoxyCodeLine{76 \textcolor{keywordtype}{char} *\mbox{\hyperlink{essentials_8h_abacf37ddc31c25a7946c912f346a149e}{SortBeolvas}}(FILE *fp);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keywordtype}{int} \mbox{\hyperlink{essentials_8h_a6d9d8a71b985937df32a4e112024479b}{ConvertToInt}}(\textcolor{keywordtype}{char} *str);}
+\DoxyCodeLine{79 \textcolor{keywordtype}{char} *\mbox{\hyperlink{essentials_8h_ae3f024c529e10e495c41720c5f7fc14d}{CpyStrPtr}}(\textcolor{keywordtype}{char} *str);}
+\DoxyCodeLine{80 \textcolor{keywordtype}{char} *\mbox{\hyperlink{essentials_8h_a7fe836e6b53e569484543f178736ebf4}{Merge}}(\mbox{\hyperlink{struct_string_list}{StringList}} *list, \textcolor{keywordtype}{int} start, \textcolor{keywordtype}{int} end);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{keywordtype}{char} *\mbox{\hyperlink{essentials_8h_acf560d607d27a4bf6dd0a542163afffc}{SortBeolvasStd}}();}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

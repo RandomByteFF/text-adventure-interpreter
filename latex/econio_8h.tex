@@ -1,0 +1,437 @@
+\hypertarget{econio_8h}{}\doxysection{econio.\+h fájlreferencia}
+\label{econio_8h}\index{econio.h@{econio.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Típusdefiníciók}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6c}{Econio\+Color}} \mbox{\hyperlink{econio_8h_ad58145c6e7ba7695e4a413ef1a93f084}{Econio\+Color}}
+\item 
+typedef enum \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861}{Econio\+Key}} \mbox{\hyperlink{econio_8h_ad4290d8a1ac1c200ab4b20169dbea440}{Econio\+Key}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerációk}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6c}{Econio\+Color}} \{ \newline
+\mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca4858d23180214ac3c7319d9d787e2bc0}{COL\+\_\+\+BLACK}} = 0
+, \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6cac9956999874d89bdab4b6265de0e9864}{COL\+\_\+\+BLUE}} = 1
+, \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca2db8b23580551a0e0ed37854fccdcd3b}{COL\+\_\+\+GREEN}} = 2
+, \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca5561dc63fd8323dd787dcab804cffed5}{COL\+\_\+\+CYAN}} = 3
+, \newline
+\mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca53195786af3299401f643995fc2e4c59}{COL\+\_\+\+RED}} = 4
+, \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca08926d46ae279e640e224ed191ffce95}{COL\+\_\+\+MAGENTA}} = 5
+, \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca44495386484bc55384ad1a3b8324954d}{COL\+\_\+\+BROWN}} = 6
+, \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca227e39f2d43fef4631c33134a9be55fc}{COL\+\_\+\+LIGHTGRAY}} = 7
+, \newline
+\mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca568578c77ffdd4684ced8781c9b57b8d}{COL\+\_\+\+DARKGRAY}} = 8
+, \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca7e4f6937c527d47876ce643cc3ab0200}{COL\+\_\+\+LIGHTBLUE}} = 9
+, \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca4cc92a94be8c9d7651d67dfb45d73e73}{COL\+\_\+\+LIGHTGREEN}} = 10
+, \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca64de3382ffce6223362fc74f80366221}{COL\+\_\+\+LIGHTCYAN}} = 11
+, \newline
+\mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca6938652b64828a46676aa4aaf506d667}{COL\+\_\+\+LIGHTRED}} = 12
+, \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca9674ab4158f6b16a247eece063e92000}{COL\+\_\+\+LIGHTMAGENTA}} = 13
+, \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca3ed5d5047665d7ec3edac36bfcae7094}{COL\+\_\+\+YELLOW}} = 14
+, \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6cac86bc91df9aa382a428dd48329f71369}{COL\+\_\+\+LIGHTYELLOW}} = COL\+\_\+\+YELLOW
+, \newline
+\mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca3d85c9fa4e2b6cdaff9d9e4ca8959c66}{COL\+\_\+\+WHITE}} = 15
+, \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6cadde58ea5b6dff35ca9b5383b11229341}{COL\+\_\+\+RESET}} = 16
+ \}
+\item 
+enum \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861}{Econio\+Key}} \{ \newline
+\mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861afcf70bc39c0032de8a1c6452ac9860a5}{KEY\+\_\+\+F1}} = -\/1
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a87897fd25282941e1a9bf72b9f64559a}{KEY\+\_\+\+F2}} = -\/2
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a965c99b1f4fc05cec09ef61b0af8e74a}{KEY\+\_\+\+F3}} = -\/3
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a01bce78a73ad136a7b42941297aff373}{KEY\+\_\+\+F4}} = -\/4
+, \newline
+\mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a6a69ea34f5d1372692bf040637e57c8f}{KEY\+\_\+\+F5}} = -\/5
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a247a20a9998f080827dd34004abc2f9a}{KEY\+\_\+\+F6}} = -\/6
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a34a07203a0a4f3e996b44e9a4fcfd1c6}{KEY\+\_\+\+F7}} = -\/7
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a9eaf4e9e3d8451fd1332c013d12c1375}{KEY\+\_\+\+F8}} = -\/8
+, \newline
+\mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a160e82eea885870bfa4924c27040cd7f}{KEY\+\_\+\+F9}} = -\/9
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a3b922025c26b38585ab140c7e40b291c}{KEY\+\_\+\+F10}} = -\/10
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861ad54743bc4e7f9279abf671cc2a091ce1}{KEY\+\_\+\+F11}} = -\/11
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a835f8397baa58fd73ff9c268d6458add}{KEY\+\_\+\+F12}} = -\/12
+, \newline
+\mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a0848a442d907968b211b97bc2bd88acd}{KEY\+\_\+\+UP}} = -\/20
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861aa9cdac7967bf7d88fdb761138a2a3416}{KEY\+\_\+\+DOWN}} = -\/21
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a612120b69c7dfd46086db7aaebdbcf65}{KEY\+\_\+\+LEFT}} = -\/22
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a6504370d9c6391e1a9da6a1a529b089d}{KEY\+\_\+\+RIGHT}} = -\/23
+, \newline
+\mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a5d9c9ba1d8f2c6f6737db37d3f449071}{KEY\+\_\+\+PAGEUP}} = -\/24
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a5996c34d86df2b3c1be741aeb35bdbc4}{KEY\+\_\+\+PAGEDOWN}} = -\/25
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861ad5b83418c285e43af5d3a87b4d4049d7}{KEY\+\_\+\+HOME}} = -\/26
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861aa8adb6fcb92dec58fb19410eacfdd403}{KEY\+\_\+\+END}} = -\/27
+, \newline
+\mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a26f2c18a3a0a7eabf7bd11f0ec93be78}{KEY\+\_\+\+INSERT}} = -\/28
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861ae7a3a4540031b038014294aa6743a7a4}{KEY\+\_\+\+DELETE}} = -\/29
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861afe74ffcec964857bebe9f6631f2a986f}{KEY\+\_\+\+CTRLUP}} = -\/30
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a24b90c05bcae5cf264958eab6dbb8f02}{KEY\+\_\+\+CTRLDOWN}} = -\/31
+, \newline
+\mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a7325ce08036aeed9c12f657a3f714d3f}{KEY\+\_\+\+CTRLLEFT}} = -\/32
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a7a7d36c453be1cc884b3400a09de9b6c}{KEY\+\_\+\+CTRLRIGHT}} = -\/33
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861aa81fcd4063d32d4784ba6d4050ac4306}{KEY\+\_\+\+CTRLPAGEUP}} = -\/34
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a9d4cad3ec3275e9b560290ecb6aa29fa}{KEY\+\_\+\+CTRLPAGEDOWN}} = -\/35
+, \newline
+\mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a525906b983722f441708d8cbc4510b32}{KEY\+\_\+\+CTRLHOME}} = -\/36
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a164c9ed9056d9aa34a2218180e329e54}{KEY\+\_\+\+CTRLEND}} = -\/37
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861aeae3bdfd2712782bd7e3501172bfbbf6}{KEY\+\_\+\+CTRLINSERT}} = -\/38
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861ac3d72e05e641f153bc034ed94225b77d}{KEY\+\_\+\+CTRLDELETE}} = -\/39
+, \newline
+\mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a4986f725c076ae69ba0af72973c48f3f}{KEY\+\_\+\+UNKNOWNKEY}} = -\/255
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861aa3cd0158e01f834cebcfb3fc5578df4b}{KEY\+\_\+\+BACKSPACE}} = 8
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a2a662d23aadd7106a3a2afdfd5d426ed}{KEY\+\_\+\+ENTER}} = 10
+, \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a3a471c8b61a5f730dcbdd50fe53f3ab7}{KEY\+\_\+\+ESCAPE}} = 27
+, \newline
+\mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861a60c75f9c8eded88ef76c0c94da27963c}{KEY\+\_\+\+TAB}} = 9
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{econio_8h_acc5626cd6a0b4c7acc6de4ae52901de5}{econio\+\_\+textcolor}} (int color)
+\item 
+void \mbox{\hyperlink{econio_8h_a6276df9910bffff7909f830ec272f370}{econio\+\_\+textbackground}} (int color)
+\item 
+void \mbox{\hyperlink{econio_8h_a30687da65226b3c30b9903eb30db535d}{econio\+\_\+gotoxy}} (int x, int y)
+\item 
+void \mbox{\hyperlink{econio_8h_a31c8135e1e2b38fe42aee0f469961def}{econio\+\_\+clrscr}} ()
+\item 
+void \mbox{\hyperlink{econio_8h_a1dc2781ffbc0f75396f1930bc3326d59}{econio\+\_\+flush}} ()
+\item 
+void \mbox{\hyperlink{econio_8h_a4336280832e1c8a0d5cebde41dc54bb0}{econio\+\_\+set\+\_\+title}} (char const $\ast$title)
+\item 
+void \mbox{\hyperlink{econio_8h_aeca358bf2619bf1c645b9a8068e877b7}{econio\+\_\+rawmode}} ()
+\item 
+void \mbox{\hyperlink{econio_8h_afe035d2e334229e6c4bccde9e5790c0c}{econio\+\_\+normalmode}} ()
+\item 
+bool \mbox{\hyperlink{econio_8h_a971a28bc4f241334a65295f75d8f6efe}{econio\+\_\+kbhit}} ()
+\item 
+int \mbox{\hyperlink{econio_8h_a3b2c7a9017cdc5791b0112a450929606}{econio\+\_\+getch}} ()
+\item 
+void \mbox{\hyperlink{econio_8h_ada70a2a0cc103157ec758cd08dba1a0e}{econio\+\_\+sleep}} (double sec)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Típusdefiníciók dokumentációja}
+\mbox{\Hypertarget{econio_8h_ad58145c6e7ba7695e4a413ef1a93f084}\label{econio_8h_ad58145c6e7ba7695e4a413ef1a93f084}} 
+\index{econio.h@{econio.h}!EconioColor@{EconioColor}}
+\index{EconioColor@{EconioColor}!econio.h@{econio.h}}
+\doxysubsubsection{\texorpdfstring{EconioColor}{EconioColor}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6c}{Econio\+Color}} \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6c}{Econio\+Color}}}
+
+\mbox{\Hypertarget{econio_8h_ad4290d8a1ac1c200ab4b20169dbea440}\label{econio_8h_ad4290d8a1ac1c200ab4b20169dbea440}} 
+\index{econio.h@{econio.h}!EconioKey@{EconioKey}}
+\index{EconioKey@{EconioKey}!econio.h@{econio.h}}
+\doxysubsubsection{\texorpdfstring{EconioKey}{EconioKey}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861}{Econio\+Key}} \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861}{Econio\+Key}}}
+
+
+
+\doxysubsection{Enumerációk dokumentációja}
+\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6c}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6c}} 
+\index{econio.h@{econio.h}!EconioColor@{EconioColor}}
+\index{EconioColor@{EconioColor}!econio.h@{econio.h}}
+\doxysubsubsection{\texorpdfstring{EconioColor}{EconioColor}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{econio_8h_ab60b60d304afda40bd5a7cba7611ed6c}{Econio\+Color}}}
+
+\begin{DoxyEnumFields}{Enumeráció-értékek}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_BLACK@{COL\_BLACK}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_BLACK@{COL\_BLACK}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca4858d23180214ac3c7319d9d787e2bc0}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca4858d23180214ac3c7319d9d787e2bc0}} 
+COL\+\_\+\+BLACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_BLUE@{COL\_BLUE}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_BLUE@{COL\_BLUE}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6cac9956999874d89bdab4b6265de0e9864}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6cac9956999874d89bdab4b6265de0e9864}} 
+COL\+\_\+\+BLUE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_GREEN@{COL\_GREEN}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_GREEN@{COL\_GREEN}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca2db8b23580551a0e0ed37854fccdcd3b}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca2db8b23580551a0e0ed37854fccdcd3b}} 
+COL\+\_\+\+GREEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_CYAN@{COL\_CYAN}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_CYAN@{COL\_CYAN}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca5561dc63fd8323dd787dcab804cffed5}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca5561dc63fd8323dd787dcab804cffed5}} 
+COL\+\_\+\+CYAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_RED@{COL\_RED}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_RED@{COL\_RED}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca53195786af3299401f643995fc2e4c59}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca53195786af3299401f643995fc2e4c59}} 
+COL\+\_\+\+RED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_MAGENTA@{COL\_MAGENTA}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_MAGENTA@{COL\_MAGENTA}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca08926d46ae279e640e224ed191ffce95}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca08926d46ae279e640e224ed191ffce95}} 
+COL\+\_\+\+MAGENTA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_BROWN@{COL\_BROWN}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_BROWN@{COL\_BROWN}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca44495386484bc55384ad1a3b8324954d}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca44495386484bc55384ad1a3b8324954d}} 
+COL\+\_\+\+BROWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_LIGHTGRAY@{COL\_LIGHTGRAY}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_LIGHTGRAY@{COL\_LIGHTGRAY}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca227e39f2d43fef4631c33134a9be55fc}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca227e39f2d43fef4631c33134a9be55fc}} 
+COL\+\_\+\+LIGHTGRAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_DARKGRAY@{COL\_DARKGRAY}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_DARKGRAY@{COL\_DARKGRAY}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca568578c77ffdd4684ced8781c9b57b8d}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca568578c77ffdd4684ced8781c9b57b8d}} 
+COL\+\_\+\+DARKGRAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_LIGHTBLUE@{COL\_LIGHTBLUE}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_LIGHTBLUE@{COL\_LIGHTBLUE}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca7e4f6937c527d47876ce643cc3ab0200}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca7e4f6937c527d47876ce643cc3ab0200}} 
+COL\+\_\+\+LIGHTBLUE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_LIGHTGREEN@{COL\_LIGHTGREEN}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_LIGHTGREEN@{COL\_LIGHTGREEN}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca4cc92a94be8c9d7651d67dfb45d73e73}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca4cc92a94be8c9d7651d67dfb45d73e73}} 
+COL\+\_\+\+LIGHTGREEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_LIGHTCYAN@{COL\_LIGHTCYAN}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_LIGHTCYAN@{COL\_LIGHTCYAN}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca64de3382ffce6223362fc74f80366221}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca64de3382ffce6223362fc74f80366221}} 
+COL\+\_\+\+LIGHTCYAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_LIGHTRED@{COL\_LIGHTRED}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_LIGHTRED@{COL\_LIGHTRED}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca6938652b64828a46676aa4aaf506d667}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca6938652b64828a46676aa4aaf506d667}} 
+COL\+\_\+\+LIGHTRED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_LIGHTMAGENTA@{COL\_LIGHTMAGENTA}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_LIGHTMAGENTA@{COL\_LIGHTMAGENTA}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca9674ab4158f6b16a247eece063e92000}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca9674ab4158f6b16a247eece063e92000}} 
+COL\+\_\+\+LIGHTMAGENTA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_YELLOW@{COL\_YELLOW}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_YELLOW@{COL\_YELLOW}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca3ed5d5047665d7ec3edac36bfcae7094}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca3ed5d5047665d7ec3edac36bfcae7094}} 
+COL\+\_\+\+YELLOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_LIGHTYELLOW@{COL\_LIGHTYELLOW}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_LIGHTYELLOW@{COL\_LIGHTYELLOW}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6cac86bc91df9aa382a428dd48329f71369}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6cac86bc91df9aa382a428dd48329f71369}} 
+COL\+\_\+\+LIGHTYELLOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_WHITE@{COL\_WHITE}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_WHITE@{COL\_WHITE}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca3d85c9fa4e2b6cdaff9d9e4ca8959c66}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6ca3d85c9fa4e2b6cdaff9d9e4ca8959c66}} 
+COL\+\_\+\+WHITE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_RESET@{COL\_RESET}!econio.h@{econio.h}}\index{econio.h@{econio.h}!COL\_RESET@{COL\_RESET}}}\mbox{\Hypertarget{econio_8h_ab60b60d304afda40bd5a7cba7611ed6cadde58ea5b6dff35ca9b5383b11229341}\label{econio_8h_ab60b60d304afda40bd5a7cba7611ed6cadde58ea5b6dff35ca9b5383b11229341}} 
+COL\+\_\+\+RESET&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861}} 
+\index{econio.h@{econio.h}!EconioKey@{EconioKey}}
+\index{EconioKey@{EconioKey}!econio.h@{econio.h}}
+\doxysubsubsection{\texorpdfstring{EconioKey}{EconioKey}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{econio_8h_a80b4bf8863277be7ed9265248d20f861}{Econio\+Key}}}
+
+\begin{DoxyEnumFields}{Enumeráció-értékek}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_F1@{KEY\_F1}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_F1@{KEY\_F1}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861afcf70bc39c0032de8a1c6452ac9860a5}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861afcf70bc39c0032de8a1c6452ac9860a5}} 
+KEY\+\_\+\+F1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_F2@{KEY\_F2}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_F2@{KEY\_F2}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a87897fd25282941e1a9bf72b9f64559a}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a87897fd25282941e1a9bf72b9f64559a}} 
+KEY\+\_\+\+F2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_F3@{KEY\_F3}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_F3@{KEY\_F3}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a965c99b1f4fc05cec09ef61b0af8e74a}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a965c99b1f4fc05cec09ef61b0af8e74a}} 
+KEY\+\_\+\+F3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_F4@{KEY\_F4}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_F4@{KEY\_F4}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a01bce78a73ad136a7b42941297aff373}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a01bce78a73ad136a7b42941297aff373}} 
+KEY\+\_\+\+F4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_F5@{KEY\_F5}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_F5@{KEY\_F5}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a6a69ea34f5d1372692bf040637e57c8f}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a6a69ea34f5d1372692bf040637e57c8f}} 
+KEY\+\_\+\+F5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_F6@{KEY\_F6}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_F6@{KEY\_F6}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a247a20a9998f080827dd34004abc2f9a}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a247a20a9998f080827dd34004abc2f9a}} 
+KEY\+\_\+\+F6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_F7@{KEY\_F7}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_F7@{KEY\_F7}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a34a07203a0a4f3e996b44e9a4fcfd1c6}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a34a07203a0a4f3e996b44e9a4fcfd1c6}} 
+KEY\+\_\+\+F7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_F8@{KEY\_F8}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_F8@{KEY\_F8}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a9eaf4e9e3d8451fd1332c013d12c1375}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a9eaf4e9e3d8451fd1332c013d12c1375}} 
+KEY\+\_\+\+F8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_F9@{KEY\_F9}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_F9@{KEY\_F9}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a160e82eea885870bfa4924c27040cd7f}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a160e82eea885870bfa4924c27040cd7f}} 
+KEY\+\_\+\+F9&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_F10@{KEY\_F10}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_F10@{KEY\_F10}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a3b922025c26b38585ab140c7e40b291c}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a3b922025c26b38585ab140c7e40b291c}} 
+KEY\+\_\+\+F10&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_F11@{KEY\_F11}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_F11@{KEY\_F11}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861ad54743bc4e7f9279abf671cc2a091ce1}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861ad54743bc4e7f9279abf671cc2a091ce1}} 
+KEY\+\_\+\+F11&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_F12@{KEY\_F12}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_F12@{KEY\_F12}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a835f8397baa58fd73ff9c268d6458add}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a835f8397baa58fd73ff9c268d6458add}} 
+KEY\+\_\+\+F12&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_UP@{KEY\_UP}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_UP@{KEY\_UP}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a0848a442d907968b211b97bc2bd88acd}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a0848a442d907968b211b97bc2bd88acd}} 
+KEY\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_DOWN@{KEY\_DOWN}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_DOWN@{KEY\_DOWN}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861aa9cdac7967bf7d88fdb761138a2a3416}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861aa9cdac7967bf7d88fdb761138a2a3416}} 
+KEY\+\_\+\+DOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_LEFT@{KEY\_LEFT}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_LEFT@{KEY\_LEFT}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a612120b69c7dfd46086db7aaebdbcf65}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a612120b69c7dfd46086db7aaebdbcf65}} 
+KEY\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_RIGHT@{KEY\_RIGHT}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_RIGHT@{KEY\_RIGHT}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a6504370d9c6391e1a9da6a1a529b089d}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a6504370d9c6391e1a9da6a1a529b089d}} 
+KEY\+\_\+\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_PAGEUP@{KEY\_PAGEUP}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_PAGEUP@{KEY\_PAGEUP}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a5d9c9ba1d8f2c6f6737db37d3f449071}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a5d9c9ba1d8f2c6f6737db37d3f449071}} 
+KEY\+\_\+\+PAGEUP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_PAGEDOWN@{KEY\_PAGEDOWN}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_PAGEDOWN@{KEY\_PAGEDOWN}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a5996c34d86df2b3c1be741aeb35bdbc4}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a5996c34d86df2b3c1be741aeb35bdbc4}} 
+KEY\+\_\+\+PAGEDOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_HOME@{KEY\_HOME}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_HOME@{KEY\_HOME}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861ad5b83418c285e43af5d3a87b4d4049d7}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861ad5b83418c285e43af5d3a87b4d4049d7}} 
+KEY\+\_\+\+HOME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_END@{KEY\_END}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_END@{KEY\_END}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861aa8adb6fcb92dec58fb19410eacfdd403}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861aa8adb6fcb92dec58fb19410eacfdd403}} 
+KEY\+\_\+\+END&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_INSERT@{KEY\_INSERT}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_INSERT@{KEY\_INSERT}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a26f2c18a3a0a7eabf7bd11f0ec93be78}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a26f2c18a3a0a7eabf7bd11f0ec93be78}} 
+KEY\+\_\+\+INSERT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_DELETE@{KEY\_DELETE}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_DELETE@{KEY\_DELETE}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861ae7a3a4540031b038014294aa6743a7a4}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861ae7a3a4540031b038014294aa6743a7a4}} 
+KEY\+\_\+\+DELETE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_CTRLUP@{KEY\_CTRLUP}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_CTRLUP@{KEY\_CTRLUP}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861afe74ffcec964857bebe9f6631f2a986f}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861afe74ffcec964857bebe9f6631f2a986f}} 
+KEY\+\_\+\+CTRLUP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_CTRLDOWN@{KEY\_CTRLDOWN}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_CTRLDOWN@{KEY\_CTRLDOWN}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a24b90c05bcae5cf264958eab6dbb8f02}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a24b90c05bcae5cf264958eab6dbb8f02}} 
+KEY\+\_\+\+CTRLDOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_CTRLLEFT@{KEY\_CTRLLEFT}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_CTRLLEFT@{KEY\_CTRLLEFT}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a7325ce08036aeed9c12f657a3f714d3f}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a7325ce08036aeed9c12f657a3f714d3f}} 
+KEY\+\_\+\+CTRLLEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_CTRLRIGHT@{KEY\_CTRLRIGHT}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_CTRLRIGHT@{KEY\_CTRLRIGHT}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a7a7d36c453be1cc884b3400a09de9b6c}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a7a7d36c453be1cc884b3400a09de9b6c}} 
+KEY\+\_\+\+CTRLRIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_CTRLPAGEUP@{KEY\_CTRLPAGEUP}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_CTRLPAGEUP@{KEY\_CTRLPAGEUP}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861aa81fcd4063d32d4784ba6d4050ac4306}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861aa81fcd4063d32d4784ba6d4050ac4306}} 
+KEY\+\_\+\+CTRLPAGEUP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_CTRLPAGEDOWN@{KEY\_CTRLPAGEDOWN}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_CTRLPAGEDOWN@{KEY\_CTRLPAGEDOWN}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a9d4cad3ec3275e9b560290ecb6aa29fa}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a9d4cad3ec3275e9b560290ecb6aa29fa}} 
+KEY\+\_\+\+CTRLPAGEDOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_CTRLHOME@{KEY\_CTRLHOME}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_CTRLHOME@{KEY\_CTRLHOME}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a525906b983722f441708d8cbc4510b32}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a525906b983722f441708d8cbc4510b32}} 
+KEY\+\_\+\+CTRLHOME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_CTRLEND@{KEY\_CTRLEND}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_CTRLEND@{KEY\_CTRLEND}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a164c9ed9056d9aa34a2218180e329e54}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a164c9ed9056d9aa34a2218180e329e54}} 
+KEY\+\_\+\+CTRLEND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_CTRLINSERT@{KEY\_CTRLINSERT}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_CTRLINSERT@{KEY\_CTRLINSERT}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861aeae3bdfd2712782bd7e3501172bfbbf6}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861aeae3bdfd2712782bd7e3501172bfbbf6}} 
+KEY\+\_\+\+CTRLINSERT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_CTRLDELETE@{KEY\_CTRLDELETE}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_CTRLDELETE@{KEY\_CTRLDELETE}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861ac3d72e05e641f153bc034ed94225b77d}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861ac3d72e05e641f153bc034ed94225b77d}} 
+KEY\+\_\+\+CTRLDELETE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_UNKNOWNKEY@{KEY\_UNKNOWNKEY}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_UNKNOWNKEY@{KEY\_UNKNOWNKEY}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a4986f725c076ae69ba0af72973c48f3f}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a4986f725c076ae69ba0af72973c48f3f}} 
+KEY\+\_\+\+UNKNOWNKEY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_BACKSPACE@{KEY\_BACKSPACE}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_BACKSPACE@{KEY\_BACKSPACE}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861aa3cd0158e01f834cebcfb3fc5578df4b}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861aa3cd0158e01f834cebcfb3fc5578df4b}} 
+KEY\+\_\+\+BACKSPACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_ENTER@{KEY\_ENTER}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_ENTER@{KEY\_ENTER}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a2a662d23aadd7106a3a2afdfd5d426ed}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a2a662d23aadd7106a3a2afdfd5d426ed}} 
+KEY\+\_\+\+ENTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_ESCAPE@{KEY\_ESCAPE}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_ESCAPE@{KEY\_ESCAPE}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a3a471c8b61a5f730dcbdd50fe53f3ab7}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a3a471c8b61a5f730dcbdd50fe53f3ab7}} 
+KEY\+\_\+\+ESCAPE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_TAB@{KEY\_TAB}!econio.h@{econio.h}}\index{econio.h@{econio.h}!KEY\_TAB@{KEY\_TAB}}}\mbox{\Hypertarget{econio_8h_a80b4bf8863277be7ed9265248d20f861a60c75f9c8eded88ef76c0c94da27963c}\label{econio_8h_a80b4bf8863277be7ed9265248d20f861a60c75f9c8eded88ef76c0c94da27963c}} 
+KEY\+\_\+\+TAB&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Függvények dokumentációja}
+\mbox{\Hypertarget{econio_8h_a31c8135e1e2b38fe42aee0f469961def}\label{econio_8h_a31c8135e1e2b38fe42aee0f469961def}} 
+\index{econio.h@{econio.h}!econio\_clrscr@{econio\_clrscr}}
+\index{econio\_clrscr@{econio\_clrscr}!econio.h@{econio.h}}
+\doxysubsubsection{\texorpdfstring{econio\_clrscr()}{econio\_clrscr()}}
+{\footnotesize\ttfamily void econio\+\_\+clrscr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clear the screen and return the cursor to the upper left position. \mbox{\Hypertarget{econio_8h_a1dc2781ffbc0f75396f1930bc3326d59}\label{econio_8h_a1dc2781ffbc0f75396f1930bc3326d59}} 
+\index{econio.h@{econio.h}!econio\_flush@{econio\_flush}}
+\index{econio\_flush@{econio\_flush}!econio.h@{econio.h}}
+\doxysubsubsection{\texorpdfstring{econio\_flush()}{econio\_flush()}}
+{\footnotesize\ttfamily void econio\+\_\+flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Send output to the terminal. To be called if many characters were drawn to the terminal and there was no ~\newline
+ at the end. \mbox{\Hypertarget{econio_8h_a3b2c7a9017cdc5791b0112a450929606}\label{econio_8h_a3b2c7a9017cdc5791b0112a450929606}} 
+\index{econio.h@{econio.h}!econio\_getch@{econio\_getch}}
+\index{econio\_getch@{econio\_getch}!econio.h@{econio.h}}
+\doxysubsubsection{\texorpdfstring{econio\_getch()}{econio\_getch()}}
+{\footnotesize\ttfamily int econio\+\_\+getch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get one raw character from terminal. This can detect F1-\/\+F10, cursor keys, backspace and other controlling keys\+: see the keyboard constants.\+DIW ASCII code is returned for other keys. Non-\/\+ASCII keys probably won\textquotesingle{}t work. Characters are not echoed to the screen when in raw mode. Only to be used after calling \mbox{\hyperlink{econio_8h_aeca358bf2619bf1c645b9a8068e877b7}{econio\+\_\+rawmode()}}. Note that backspace will be code 8, regardless of terminal settings (whether it sent BS or DEL char). Enter will always be 10, even on Windows. On Windows, this function sometimes returns 0\textquotesingle{}s, so just ignore them. Also function keys are not supported on Windows. \mbox{\Hypertarget{econio_8h_a30687da65226b3c30b9903eb30db535d}\label{econio_8h_a30687da65226b3c30b9903eb30db535d}} 
+\index{econio.h@{econio.h}!econio\_gotoxy@{econio\_gotoxy}}
+\index{econio\_gotoxy@{econio\_gotoxy}!econio.h@{econio.h}}
+\doxysubsubsection{\texorpdfstring{econio\_gotoxy()}{econio\_gotoxy()}}
+{\footnotesize\ttfamily void econio\+\_\+gotoxy (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Jump to position (x, y) with the cursor. Upper left corner is (0, 0). \mbox{\Hypertarget{econio_8h_a971a28bc4f241334a65295f75d8f6efe}\label{econio_8h_a971a28bc4f241334a65295f75d8f6efe}} 
+\index{econio.h@{econio.h}!econio\_kbhit@{econio\_kbhit}}
+\index{econio\_kbhit@{econio\_kbhit}!econio.h@{econio.h}}
+\doxysubsubsection{\texorpdfstring{econio\_kbhit()}{econio\_kbhit()}}
+{\footnotesize\ttfamily bool econio\+\_\+kbhit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Detect if a key is pressed. If so, it can be read with \mbox{\hyperlink{econio_8h_a3b2c7a9017cdc5791b0112a450929606}{econio\+\_\+getch()}}. Only to be used after calling \mbox{\hyperlink{econio_8h_aeca358bf2619bf1c645b9a8068e877b7}{econio\+\_\+rawmode()}}. \mbox{\Hypertarget{econio_8h_afe035d2e334229e6c4bccde9e5790c0c}\label{econio_8h_afe035d2e334229e6c4bccde9e5790c0c}} 
+\index{econio.h@{econio.h}!econio\_normalmode@{econio\_normalmode}}
+\index{econio\_normalmode@{econio\_normalmode}!econio.h@{econio.h}}
+\doxysubsubsection{\texorpdfstring{econio\_normalmode()}{econio\_normalmode()}}
+{\footnotesize\ttfamily void econio\+\_\+normalmode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Switch the terminal back to normal, line-\/oriented mode. Characters are echoed to the screen when in normal mode. \mbox{\Hypertarget{econio_8h_aeca358bf2619bf1c645b9a8068e877b7}\label{econio_8h_aeca358bf2619bf1c645b9a8068e877b7}} 
+\index{econio.h@{econio.h}!econio\_rawmode@{econio\_rawmode}}
+\index{econio\_rawmode@{econio\_rawmode}!econio.h@{econio.h}}
+\doxysubsubsection{\texorpdfstring{econio\_rawmode()}{econio\_rawmode()}}
+{\footnotesize\ttfamily void econio\+\_\+rawmode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Switch the terminal to raw mode, to detect F1-\/\+F10, cursor keys and other controlling keys. Use \mbox{\hyperlink{econio_8h_a3b2c7a9017cdc5791b0112a450929606}{econio\+\_\+getch()}} and \mbox{\hyperlink{econio_8h_a971a28bc4f241334a65295f75d8f6efe}{econio\+\_\+kbhit()}} afterwards. Characters are not echoed to the screen when in raw mode. Switching back to line-\/oriented mode is possible using \mbox{\hyperlink{econio_8h_afe035d2e334229e6c4bccde9e5790c0c}{econio\+\_\+normalmode()}}. \mbox{\Hypertarget{econio_8h_a4336280832e1c8a0d5cebde41dc54bb0}\label{econio_8h_a4336280832e1c8a0d5cebde41dc54bb0}} 
+\index{econio.h@{econio.h}!econio\_set\_title@{econio\_set\_title}}
+\index{econio\_set\_title@{econio\_set\_title}!econio.h@{econio.h}}
+\doxysubsubsection{\texorpdfstring{econio\_set\_title()}{econio\_set\_title()}}
+{\footnotesize\ttfamily void econio\+\_\+set\+\_\+title (\begin{DoxyParamCaption}\item[{char const $\ast$}]{title }\end{DoxyParamCaption})}
+
+Set the title of the terminal window. \mbox{\Hypertarget{econio_8h_ada70a2a0cc103157ec758cd08dba1a0e}\label{econio_8h_ada70a2a0cc103157ec758cd08dba1a0e}} 
+\index{econio.h@{econio.h}!econio\_sleep@{econio\_sleep}}
+\index{econio\_sleep@{econio\_sleep}!econio.h@{econio.h}}
+\doxysubsubsection{\texorpdfstring{econio\_sleep()}{econio\_sleep()}}
+{\footnotesize\ttfamily void econio\+\_\+sleep (\begin{DoxyParamCaption}\item[{double}]{sec }\end{DoxyParamCaption})}
+
+Delay for the specified amount of time (sec can be an arbitrary floating point number, not just integer). \mbox{\Hypertarget{econio_8h_a6276df9910bffff7909f830ec272f370}\label{econio_8h_a6276df9910bffff7909f830ec272f370}} 
+\index{econio.h@{econio.h}!econio\_textbackground@{econio\_textbackground}}
+\index{econio\_textbackground@{econio\_textbackground}!econio.h@{econio.h}}
+\doxysubsubsection{\texorpdfstring{econio\_textbackground()}{econio\_textbackground()}}
+{\footnotesize\ttfamily void econio\+\_\+textbackground (\begin{DoxyParamCaption}\item[{int}]{color }\end{DoxyParamCaption})}
+
+Change background color to the one specified. See the color constants in the colors header. \mbox{\Hypertarget{econio_8h_acc5626cd6a0b4c7acc6de4ae52901de5}\label{econio_8h_acc5626cd6a0b4c7acc6de4ae52901de5}} 
+\index{econio.h@{econio.h}!econio\_textcolor@{econio\_textcolor}}
+\index{econio\_textcolor@{econio\_textcolor}!econio.h@{econio.h}}
+\doxysubsubsection{\texorpdfstring{econio\_textcolor()}{econio\_textcolor()}}
+{\footnotesize\ttfamily void econio\+\_\+textcolor (\begin{DoxyParamCaption}\item[{int}]{color }\end{DoxyParamCaption})}
+
+Change text color to the one specified. See the color constants in the colors header. 

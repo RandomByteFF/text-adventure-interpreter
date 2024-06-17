@@ -1,0 +1,40 @@
+\hypertarget{game_space_8h_source}{}\doxysection{game\+Space.\+h}
+\mbox{\hyperlink{game_space_8h}{Ugrás a fájl dokumentációjához.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GAMESPACE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GAMESPACE\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{essentials_8h}{essentials.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{10 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_room}{Room}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_room_a7441ef0865bcb3db9b8064dd7375c1ea}{id}};}
+\DoxyCodeLine{13     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_room_a89f234133d3efe315836311cbf21c64b}{state}};}
+\DoxyCodeLine{14     \textcolor{keywordtype}{char} *\mbox{\hyperlink{struct_room_a5ac083a645d964373f022d03df4849c8}{name}};}
+\DoxyCodeLine{15     \textcolor{keywordtype}{char} *\mbox{\hyperlink{struct_room_a708724b88a1448d492390994a27fd060}{lookAroundText}};}
+\DoxyCodeLine{16     \textcolor{keywordtype}{char} *\mbox{\hyperlink{struct_room_a4c1aa5183787b8f708ace40c720984d0}{entryText}};}
+\DoxyCodeLine{17     \mbox{\hyperlink{struct_list}{List}} *\mbox{\hyperlink{struct_room_af516ddd52f7624bffea6758efda12cf6}{connectedItems}};}
+\DoxyCodeLine{18     \mbox{\hyperlink{struct_list}{List}} *\mbox{\hyperlink{struct_room_a6ed20cbe4d4defbc73f0398e92303725}{connectedRooms}};}
+\DoxyCodeLine{19 \} \mbox{\hyperlink{struct_room}{Room}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{25 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_object}{Object}} \{}
+\DoxyCodeLine{26     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_object_a7441ef0865bcb3db9b8064dd7375c1ea}{id}};}
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_object_a89f234133d3efe315836311cbf21c64b}{state}};}
+\DoxyCodeLine{28     \textcolor{keywordtype}{char} *\mbox{\hyperlink{struct_object_a5ac083a645d964373f022d03df4849c8}{name}};}
+\DoxyCodeLine{29     \textcolor{keywordtype}{char} *\mbox{\hyperlink{struct_object_ad8a40975ddf68b2b486cbd7c546366ef}{lookAtText}};}
+\DoxyCodeLine{30     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_object_a9fc7bf88ec59249d82adde1fd7351acd}{collectible}};}
+\DoxyCodeLine{31     \mbox{\hyperlink{struct_string_list}{StringList}} *\mbox{\hyperlink{struct_object_af0efbfd79dfe73d2ed3e454faa5ff486}{modifyEvent}};}
+\DoxyCodeLine{32     \mbox{\hyperlink{struct_string_list}{StringList}} *\mbox{\hyperlink{struct_object_a8c19cca1333d6bc33b60f8f384b24f06}{modify}};}
+\DoxyCodeLine{33     \mbox{\hyperlink{struct_string_list}{StringList}} *\mbox{\hyperlink{struct_object_a4a090cc21e7181d86339b45e862f6469}{modifyString}};}
+\DoxyCodeLine{34 \} \mbox{\hyperlink{struct_object}{Object}};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{40 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_state}{State}} \{}
+\DoxyCodeLine{41     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_state_a94695358c018ccf54fe026a550e1a354}{room}}; \textcolor{comment}{//A false azt jelenti, hogy object}}
+\DoxyCodeLine{42     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_state_a7441ef0865bcb3db9b8064dd7375c1ea}{id}};}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_state_a89f234133d3efe315836311cbf21c64b}{state}};}
+\DoxyCodeLine{44 \} \mbox{\hyperlink{struct_state}{State}};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keywordtype}{void} \mbox{\hyperlink{game_space_8h_a9c79114362333cd45c94aa258af5df40}{ChangeStates}}(\mbox{\hyperlink{struct_state}{State}} \mbox{\hyperlink{graphics_8c_ace8acdb472009cf282d9cb2dda568355}{states}}[], \textcolor{keywordtype}{int} \mbox{\hyperlink{graphics_8c_a12cc37e05dc5b7ad42ae6436cc78c0e4}{stateCount}}, \textcolor{keywordtype}{char} *list);}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

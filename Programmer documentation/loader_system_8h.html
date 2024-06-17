@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Szöveges kalandjáték értelmező: loaderSystem.h fájlreferencia</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Szöveges kalandjáték értelmező
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.9.5 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','Keresés');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Függvények</a>  </div>
+  <div class="headertitle"><div class="title">loaderSystem.h fájlreferencia</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="game_space_8h_source.html">gameSpace.h</a>&quot;</code><br />
+</div>
+<p><a href="loader_system_8h_source.html">Ugrás a fájl forráskódjához.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Függvények</h2></td></tr>
+<tr class="memitem:ace8d3b30afb92ad1d7af7d7c7943307d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="loader_system_8h.html#ace8d3b30afb92ad1d7af7d7c7943307d">DestroyRooms</a> (<a class="el" href="struct_room.html">Room</a> *room, int <a class="el" href="graphics_8c.html#a90c3ccdd5d149c3fa002c1bb5bde0a20">roomCount</a>)</td></tr>
+<tr class="memdesc:ace8d3b30afb92ad1d7af7d7c7943307d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Felszabadítja az összes room objectet.  <a href="loader_system_8h.html#ace8d3b30afb92ad1d7af7d7c7943307d">Részletek...</a><br /></td></tr>
+<tr class="separator:ace8d3b30afb92ad1d7af7d7c7943307d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa76103fd659e0150a8ce0b2e6a7733f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="loader_system_8h.html#aa76103fd659e0150a8ce0b2e6a7733f4">DestroyObjects</a> (<a class="el" href="struct_object.html">Object</a> *object, int <a class="el" href="graphics_8c.html#ae65b907ff9970ea124e235d8081cbcb3">objectCount</a>)</td></tr>
+<tr class="memdesc:aa76103fd659e0150a8ce0b2e6a7733f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">felszabadítja az összes object objectet  <a href="loader_system_8h.html#aa76103fd659e0150a8ce0b2e6a7733f4">Részletek...</a><br /></td></tr>
+<tr class="separator:aa76103fd659e0150a8ce0b2e6a7733f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f80908c946d718735c7a03325c8412"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="loader_system_8h.html#a00f80908c946d718735c7a03325c8412">LoadStry</a> (<a class="el" href="struct_room.html">Room</a> **<a class="el" href="graphics_8c.html#a9f45b48de8f01c378c8e9cf0dfce61ab">rooms</a>, <a class="el" href="struct_object.html">Object</a> **<a class="el" href="graphics_8c.html#abfee91d18630150cb0b6c5d5e33bfa13">objects</a>, int *<a class="el" href="graphics_8c.html#a90c3ccdd5d149c3fa002c1bb5bde0a20">roomCount</a>, int *<a class="el" href="graphics_8c.html#ae65b907ff9970ea124e235d8081cbcb3">objectCount</a>, <a class="el" href="struct_state.html">State</a> *<a class="el" href="graphics_8c.html#ace8acdb472009cf282d9cb2dda568355">states</a>[], int *elementCount)</td></tr>
+<tr class="memdesc:a00f80908c946d718735c7a03325c8412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Betölti a rooms.stry-t és az objects.stry-t. A hívó köteles meghívni mint a DestroyObjects és a DestroyRooms függvényeket.  <a href="loader_system_8h.html#a00f80908c946d718735c7a03325c8412">Részletek...</a><br /></td></tr>
+<tr class="separator:a00f80908c946d718735c7a03325c8412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Függvények dokumentációja</h2>
+<a id="aa76103fd659e0150a8ce0b2e6a7733f4" name="aa76103fd659e0150a8ce0b2e6a7733f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa76103fd659e0150a8ce0b2e6a7733f4">&#9670;&#160;</a></span>DestroyObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DestroyObjects </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_object.html">Object</a> *&#160;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>objectCount</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>felszabadítja az összes object objectet </p>
+
+</div>
+</div>
+<a id="ace8d3b30afb92ad1d7af7d7c7943307d" name="ace8d3b30afb92ad1d7af7d7c7943307d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace8d3b30afb92ad1d7af7d7c7943307d">&#9670;&#160;</a></span>DestroyRooms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DestroyRooms </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_room.html">Room</a> *&#160;</td>
+          <td class="paramname"><em>room</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>roomCount</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Felszabadítja az összes room objectet. </p>
+
+</div>
+</div>
+<a id="a00f80908c946d718735c7a03325c8412" name="a00f80908c946d718735c7a03325c8412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f80908c946d718735c7a03325c8412">&#9670;&#160;</a></span>LoadStry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoadStry </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_room.html">Room</a> **&#160;</td>
+          <td class="paramname"><em>rooms</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_object.html">Object</a> **&#160;</td>
+          <td class="paramname"><em>objects</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>roomCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>objectCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_state.html">State</a> *&#160;</td>
+          <td class="paramname"><em>states</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>elementCount</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Betölti a rooms.stry-t és az objects.stry-t. A hívó köteles meghívni mint a DestroyObjects és a DestroyRooms függvényeket. </p>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rooms</td><td></td></tr>
+    <tr><td class="paramname">objects</td><td></td></tr>
+    <tr><td class="paramname">roomCount</td><td></td></tr>
+    <tr><td class="paramname">objectCount</td><td></td></tr>
+    <tr><td class="paramname">states</td><td></td></tr>
+    <tr><td class="paramname">elementCount</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Készítette&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+</small></address>
+</body>
+</html>

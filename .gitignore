@@ -1,8 +1,8 @@
-.zip
-.exe
-.csv
-.dat
-.pdb
-.ilk
-.obj
-.vscode
+*.zip
+*.exe
+*.csv
+*.dat
+*.pdb
+*.ilk
+*.obj
+*.vscode

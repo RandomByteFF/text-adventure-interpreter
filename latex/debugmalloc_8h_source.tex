@@ -1,0 +1,508 @@
+\hypertarget{debugmalloc_8h_source}{}\doxysection{debugmalloc.\+h}
+\mbox{\hyperlink{debugmalloc_8h}{Ugrás a fájl dokumentációjához.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef DEBUGMALLOC\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define DEBUGMALLOC\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <stddef.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <ctype.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <stdarg.h>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{14     \textcolor{comment}{/* size of canary in bytes. should be multiple of largest alignment}}
+\DoxyCodeLine{15 \textcolor{comment}{     * required by any data type (usually 8 or 16) */}}
+\DoxyCodeLine{16     \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bab345007cf28a2516c0ba24371a400520}{debugmalloc\_canary\_size}} = 64,}
+\DoxyCodeLine{17     }
+\DoxyCodeLine{18     \textcolor{comment}{/* canary byte */}}
+\DoxyCodeLine{19     \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba8e3d5ad8628140edd887b8920f521cfd}{debugmalloc\_canary\_char}} = \textcolor{charliteral}{'K'},}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{comment}{/* hash table size for allocated entries */}}
+\DoxyCodeLine{22     \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba40803f0d5a26a349a78cbd998cb8a2a1}{debugmalloc\_tablesize}} = 256,}
+\DoxyCodeLine{23     }
+\DoxyCodeLine{24     \textcolor{comment}{/* max block size for allocation, can be modified with debugmalloc\_max\_block\_size() */}}
+\DoxyCodeLine{25     \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bae8726dfde3f35d4345009234ee734f6c}{debugmalloc\_max\_block\_size\_default}} = 1048576}
+\DoxyCodeLine{26 \};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{comment}{/* make getpid and putenv "{}crossplatform"{}. deprecated on windows but they work just fine,}}
+\DoxyCodeLine{30 \textcolor{comment}{ * however not declared. */}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{32     \textcolor{comment}{/* windows */}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{    \#include <process.h>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{    \#ifdef \_MSC\_VER}}
+\DoxyCodeLine{35         \textcolor{comment}{/* visual studio, getenv/getpid deprecated warning */}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{        \#pragma warning(disable: 4996)}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{    \#else}}
+\DoxyCodeLine{38         \textcolor{comment}{/* other windows. the declaration is unfortunately hidden}}
+\DoxyCodeLine{39 \textcolor{comment}{         * in mingw header files by ifdefs. */}}
+\DoxyCodeLine{40         \textcolor{keywordtype}{int} putenv(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *);}
+\DoxyCodeLine{41 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{43     \textcolor{comment}{/* posix */}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{    \#include <unistd.h>}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{comment}{/* linked list entry for allocated blocks */}}
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} \{}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct_debugmalloc_entry_ae241706d126e0114e48ce7c4083d93d1}{real\_mem}};     \textcolor{comment}{/* the address of the real allocation */}}
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct_debugmalloc_entry_a20cf96b6c21400f0123a6a3b6dae9876}{user\_mem}};     \textcolor{comment}{/* address shown to the user */}}
+\DoxyCodeLine{52     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_debugmalloc_entry_a854352f53b148adc24983a58a1866d66}{size}};        \textcolor{comment}{/* size of block requested by user */}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{char} \mbox{\hyperlink{struct_debugmalloc_entry_a353d29f9f9cc0db6fca9d49b5f88d34d}{file}}[64];      \textcolor{comment}{/* malloc called in this file */}}
+\DoxyCodeLine{55     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_debugmalloc_entry_a05ef0c4dbeec4fc8ccb225de9c26d896}{line}};      \textcolor{comment}{/* malloc called at this line in file */}}
+\DoxyCodeLine{56     \textcolor{keywordtype}{char} \mbox{\hyperlink{struct_debugmalloc_entry_ac8a2334cf5c64b1f708ced23ef569db4}{func}}[32];      \textcolor{comment}{/* allocation function called (malloc, calloc, realloc) */}}
+\DoxyCodeLine{57     \textcolor{keywordtype}{char} \mbox{\hyperlink{struct_debugmalloc_entry_aa8f5b6d2256e18de50b9a17b5e3cda3b}{expr}}[128];     \textcolor{comment}{/* expression calculating the size of allocation */}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} *\mbox{\hyperlink{struct_debugmalloc_entry_aae87f43e5df8141aedca245507e8d790}{prev}}, *\mbox{\hyperlink{struct_debugmalloc_entry_a7ebf7cb15f24577c59e05768d8f9ffc5}{next}};  \textcolor{comment}{/* for doubly linked list */}}
+\DoxyCodeLine{60 \} \mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{comment}{/* debugmalloc singleton, storing all state */}}
+\DoxyCodeLine{64 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}} \{}
+\DoxyCodeLine{65     \textcolor{keywordtype}{char} \mbox{\hyperlink{struct_debugmalloc_data_af5ff893eedb28514f6f69c3687ca893b}{logfile}}[256];    \textcolor{comment}{/* log file name or empty string */}}
+\DoxyCodeLine{66     \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_debugmalloc_data_a5ff6535cb48e89d8b0707e889ba72b0d}{max\_block\_size}};  \textcolor{comment}{/* max size of a single block allocated */}}
+\DoxyCodeLine{67     \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_debugmalloc_data_a15f42e819e77e27bc9e2f204ff15e871}{alloc\_count}};     \textcolor{comment}{/* currently allocated; decreased with free */}}
+\DoxyCodeLine{68     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_debugmalloc_data_a23c9102a7df871da995e7aa887279e46}{alloc\_bytes}};}
+\DoxyCodeLine{69     \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_debugmalloc_data_a42a37cfdec0b59c102e58457f5954962}{all\_alloc\_count}}; \textcolor{comment}{/* all allocations, never decreased */}}
+\DoxyCodeLine{70     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_debugmalloc_data_a9b9e3387235c1e2bebc84e38c230837e}{all\_alloc\_bytes}};}
+\DoxyCodeLine{71     \mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} \mbox{\hyperlink{struct_debugmalloc_data_a96730563c8ca3d98f4f9f40df5ecb3c0}{head}}[\mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba40803f0d5a26a349a78cbd998cb8a2a1}{debugmalloc\_tablesize}}], \mbox{\hyperlink{struct_debugmalloc_data_a6a489bd48f708358b171a68acf75de9f}{tail}}[\mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba40803f0d5a26a349a78cbd998cb8a2a1}{debugmalloc\_tablesize}}];  \textcolor{comment}{/* head and tail elements of allocation lists */}}
+\DoxyCodeLine{72 \} \mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{comment}{/* this forward declaration is required by the singleton manager function */}}
+\DoxyCodeLine{76 \textcolor{keyword}{static} \mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}} * debugmalloc\_create(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{comment}{/* creates singleton instance. as this function is static included to different}}
+\DoxyCodeLine{80 \textcolor{comment}{ * translation units, multiple instances of the static variables are created.}}
+\DoxyCodeLine{81 \textcolor{comment}{ * to make sure it is really a singleton, these instances must know each other}}
+\DoxyCodeLine{82 \textcolor{comment}{ * somethow. an environment variable is used for that purpose, ie. the address}}
+\DoxyCodeLine{83 \textcolor{comment}{ * of the singleton allocated is stored by the operating system.}}
+\DoxyCodeLine{84 \textcolor{comment}{ * this implementation is not thread-\/safe. */}}
+\DoxyCodeLine{85 \textcolor{keyword}{static} \mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}} * debugmalloc\_singleton(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{86     \textcolor{keyword}{static} \textcolor{keywordtype}{char} envstr[100];}
+\DoxyCodeLine{87     \textcolor{keyword}{static} \textcolor{keywordtype}{void} *instance = NULL;}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{comment}{/* if we do not know the address of the singleton:}}
+\DoxyCodeLine{90 \textcolor{comment}{     * -\/ maybe we are the one to create it (env variable also does not exist)}}
+\DoxyCodeLine{91 \textcolor{comment}{     * -\/ or it is already created, and stored in the env variable. */}}
+\DoxyCodeLine{92     \textcolor{keywordflow}{if} (instance == NULL) \{}
+\DoxyCodeLine{93         \textcolor{keywordtype}{char} envvarname[100] = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{94         sprintf(envvarname, \textcolor{stringliteral}{"{}\%s\%d"{}}, \textcolor{stringliteral}{"{}debugmallocsingleton"{}}, (\textcolor{keywordtype}{int}) getpid());}
+\DoxyCodeLine{95         \textcolor{keywordtype}{char} *envptr = getenv(envvarname);}
+\DoxyCodeLine{96         \textcolor{keywordflow}{if} (envptr == NULL) \{}
+\DoxyCodeLine{97             \textcolor{comment}{/* no env variable: create singleton. */}}
+\DoxyCodeLine{98             instance = debugmalloc\_create();}
+\DoxyCodeLine{99             sprintf(envstr, \textcolor{stringliteral}{"{}\%s=\%p"{}}, envvarname, instance);}
+\DoxyCodeLine{100             putenv(envstr);}
+\DoxyCodeLine{101         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{102             \textcolor{comment}{/* another copy of this function already created it. */}}
+\DoxyCodeLine{103             \textcolor{keywordtype}{int} ok = sscanf(envptr, \textcolor{stringliteral}{"{}\%p"{}}, \&instance);}
+\DoxyCodeLine{104             \textcolor{keywordflow}{if} (ok != 1) \{}
+\DoxyCodeLine{105                 fprintf(stderr, \textcolor{stringliteral}{"{}debugmalloc: nem lehet ertelmezni: \%s!\(\backslash\)n"{}}, envptr);}
+\DoxyCodeLine{106                 abort();}
+\DoxyCodeLine{107             \}}
+\DoxyCodeLine{108         \}}
+\DoxyCodeLine{109     \}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{keywordflow}{return} (\mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}} *) instance;}
+\DoxyCodeLine{112 \}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{comment}{/* better version of strncpy, always terminates string with \(\backslash\)0. */}}
+\DoxyCodeLine{116 \textcolor{keyword}{static} \textcolor{keywordtype}{void} debugmalloc\_strlcpy(\textcolor{keywordtype}{char} *dest, \textcolor{keywordtype}{char} \textcolor{keyword}{const} *src, \textcolor{keywordtype}{size\_t} destsize) \{}
+\DoxyCodeLine{117     strncpy(dest, src, destsize);}
+\DoxyCodeLine{118     dest[destsize -\/ 1] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{119 \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{comment}{/* set the name of the log file for debugmalloc. empty filename}}
+\DoxyCodeLine{123 \textcolor{comment}{ * means logging to stderr. */}}
+\DoxyCodeLine{124 \textcolor{keyword}{static} \textcolor{keywordtype}{void} debugmalloc\_log\_file(\textcolor{keywordtype}{char} \textcolor{keyword}{const} *logfilename) \{}
+\DoxyCodeLine{125     \textcolor{keywordflow}{if} (logfilename == NULL)}
+\DoxyCodeLine{126         logfilename = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{127     \mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}} *instance = debugmalloc\_singleton();}
+\DoxyCodeLine{128     debugmalloc\_strlcpy(instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_af5ff893eedb28514f6f69c3687ca893b}{logfile}}, logfilename, \textcolor{keyword}{sizeof}(instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_af5ff893eedb28514f6f69c3687ca893b}{logfile}}));}
+\DoxyCodeLine{129 \}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{comment}{/* set the maximum size of one block. useful for debugging purposes. */}}
+\DoxyCodeLine{133 \textcolor{keyword}{static} \textcolor{keywordtype}{void} debugmalloc\_max\_block\_size(\textcolor{keywordtype}{long} max\_block\_size) \{}
+\DoxyCodeLine{134     \mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}} *instance = debugmalloc\_singleton();}
+\DoxyCodeLine{135     instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a5ff6535cb48e89d8b0707e889ba72b0d}{max\_block\_size}} = max\_block\_size;}
+\DoxyCodeLine{136 \}}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{comment}{/* printf to the log file, or stderr. */}}
+\DoxyCodeLine{141 \textcolor{keyword}{static} \textcolor{keywordtype}{void} debugmalloc\_log(\textcolor{keywordtype}{char} \textcolor{keyword}{const} *format, ...) \{}
+\DoxyCodeLine{142     \mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}} *instance = debugmalloc\_singleton();}
+\DoxyCodeLine{143     FILE *f = stderr;}
+\DoxyCodeLine{144     \textcolor{keywordflow}{if} (instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_af5ff893eedb28514f6f69c3687ca893b}{logfile}}[0] != \textcolor{charliteral}{'\(\backslash\)0'}) \{}
+\DoxyCodeLine{145         f = fopen(instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_af5ff893eedb28514f6f69c3687ca893b}{logfile}}, \textcolor{stringliteral}{"{}at"{}});}
+\DoxyCodeLine{146         \textcolor{keywordflow}{if} (f == NULL) \{}
+\DoxyCodeLine{147             f = stderr;}
+\DoxyCodeLine{148             fprintf(stderr, \textcolor{stringliteral}{"{}debugmalloc: nem tudom megnyitni a \%s fajlt irasra!\(\backslash\)n"{}}, instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_af5ff893eedb28514f6f69c3687ca893b}{logfile}});}
+\DoxyCodeLine{149             debugmalloc\_strlcpy(instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_af5ff893eedb28514f6f69c3687ca893b}{logfile}}, \textcolor{stringliteral}{"{}"{}}, \textcolor{keyword}{sizeof}(instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_af5ff893eedb28514f6f69c3687ca893b}{logfile}}));}
+\DoxyCodeLine{150         \}}
+\DoxyCodeLine{151     \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     va\_list ap;}
+\DoxyCodeLine{154     va\_start(ap, format);}
+\DoxyCodeLine{155     vfprintf(f, format, ap);}
+\DoxyCodeLine{156     va\_end(ap);}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158     \textcolor{keywordflow}{if} (f != stderr)}
+\DoxyCodeLine{159         fclose(f);}
+\DoxyCodeLine{160 \}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \textcolor{comment}{/* initialize a memory block allocated for the user. the start and the end}}
+\DoxyCodeLine{164 \textcolor{comment}{ * of the block is initialized with the canary characters. if 'zero' is}}
+\DoxyCodeLine{165 \textcolor{comment}{ * true, the user memory area is zero-\/initialized, otherwise it is also}}
+\DoxyCodeLine{166 \textcolor{comment}{ * filled with the canary character to simulate garbage in memory. */}}
+\DoxyCodeLine{167 \textcolor{keyword}{static} \textcolor{keywordtype}{void} debugmalloc\_memory\_init(\mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} *elem, \textcolor{keywordtype}{bool} zero) \{}
+\DoxyCodeLine{168     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *real\_mem = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *) elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_ae241706d126e0114e48ce7c4083d93d1}{real\_mem}};}
+\DoxyCodeLine{169     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *user\_mem = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *) elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a20cf96b6c21400f0123a6a3b6dae9876}{user\_mem}};}
+\DoxyCodeLine{170     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *canary1 = real\_mem;}
+\DoxyCodeLine{171     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *canary2 = real\_mem + \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bab345007cf28a2516c0ba24371a400520}{debugmalloc\_canary\_size}} + elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a854352f53b148adc24983a58a1866d66}{size}};}
+\DoxyCodeLine{172     memset(canary1, \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba8e3d5ad8628140edd887b8920f521cfd}{debugmalloc\_canary\_char}}, \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bab345007cf28a2516c0ba24371a400520}{debugmalloc\_canary\_size}});}
+\DoxyCodeLine{173     memset(canary2, \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba8e3d5ad8628140edd887b8920f521cfd}{debugmalloc\_canary\_char}}, \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bab345007cf28a2516c0ba24371a400520}{debugmalloc\_canary\_size}});}
+\DoxyCodeLine{174     memset(user\_mem, zero ? 0 : \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba8e3d5ad8628140edd887b8920f521cfd}{debugmalloc\_canary\_char}}, elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a854352f53b148adc24983a58a1866d66}{size}});}
+\DoxyCodeLine{175 \}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{comment}{/* check canary, return true if ok, false if corrupted. */}}
+\DoxyCodeLine{178 \textcolor{keyword}{static} \textcolor{keywordtype}{bool} debugmalloc\_canary\_ok(\mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} \textcolor{keyword}{const} *elem) \{}
+\DoxyCodeLine{179     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *real\_mem = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *) elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_ae241706d126e0114e48ce7c4083d93d1}{real\_mem}};}
+\DoxyCodeLine{180     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *canary1 = real\_mem;}
+\DoxyCodeLine{181     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *canary2 = real\_mem + \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bab345007cf28a2516c0ba24371a400520}{debugmalloc\_canary\_size}} + elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a854352f53b148adc24983a58a1866d66}{size}};}
+\DoxyCodeLine{182     for (\textcolor{keywordtype}{size\_t} i = 0; i < \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bab345007cf28a2516c0ba24371a400520}{debugmalloc\_canary\_size}}; ++i) \{}
+\DoxyCodeLine{183         \textcolor{keywordflow}{if} (canary1[i] != \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba8e3d5ad8628140edd887b8920f521cfd}{debugmalloc\_canary\_char}})}
+\DoxyCodeLine{184             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{185         \textcolor{keywordflow}{if} (canary2[i] != \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba8e3d5ad8628140edd887b8920f521cfd}{debugmalloc\_canary\_char}})}
+\DoxyCodeLine{186             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{187     \}}
+\DoxyCodeLine{188     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{189 \}}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 \textcolor{comment}{/* dump memory contents to log file. */}}
+\DoxyCodeLine{193 \textcolor{keyword}{static} \textcolor{keywordtype}{void} debugmalloc\_dump\_memory(\textcolor{keywordtype}{char} \textcolor{keyword}{const} *mem, \textcolor{keywordtype}{size\_t} size) \{}
+\DoxyCodeLine{194     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} y = 0; y < (size + 15) / 16; y++) \{}
+\DoxyCodeLine{195         \textcolor{keywordtype}{char} line[80];}
+\DoxyCodeLine{196         \textcolor{keywordtype}{int} pos = 0;}
+\DoxyCodeLine{197         pos += sprintf(line + pos, \textcolor{stringliteral}{"{}      \%04x  "{}}, y * 16);}
+\DoxyCodeLine{198         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} x = 0; x < 16; x++) \{}
+\DoxyCodeLine{199             \textcolor{keywordflow}{if} (y * 16 + x < size)}
+\DoxyCodeLine{200                 pos += sprintf(line + pos, \textcolor{stringliteral}{"{}\%02x "{}}, mem[y * 16 + x]);}
+\DoxyCodeLine{201             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{202                 pos += sprintf(line + pos, \textcolor{stringliteral}{"{}   "{}});}
+\DoxyCodeLine{203         \}}
+\DoxyCodeLine{204         pos += sprintf(line + pos, \textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{205         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} x = 0; x < 16; x++) \{}
+\DoxyCodeLine{206             \textcolor{keywordflow}{if} (y * 16 + x < size) \{}
+\DoxyCodeLine{207                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} c = mem[y * 16 + x];}
+\DoxyCodeLine{208                 pos += sprintf(line + pos, \textcolor{stringliteral}{"{}\%c"{}}, isprint(c) ? c : \textcolor{charliteral}{'.'});}
+\DoxyCodeLine{209             \}}
+\DoxyCodeLine{210             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{211                 pos += sprintf(line + pos, \textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{212             \}}
+\DoxyCodeLine{213         \}}
+\DoxyCodeLine{214         debugmalloc\_log(\textcolor{stringliteral}{"{}\%s\(\backslash\)n"{}}, line);}
+\DoxyCodeLine{215     \}}
+\DoxyCodeLine{216 \}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219 \textcolor{comment}{/* dump data of allocated memory block.}}
+\DoxyCodeLine{220 \textcolor{comment}{ * if the canary is corrupted, it is also written to the log. */}}
+\DoxyCodeLine{221 \textcolor{keyword}{static} \textcolor{keywordtype}{void} debugmalloc\_dump\_elem(\mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} \textcolor{keyword}{const} *elem) \{}
+\DoxyCodeLine{222     \textcolor{keywordtype}{bool} canary\_ok = debugmalloc\_canary\_ok(elem);}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224     debugmalloc\_log(\textcolor{stringliteral}{"{}  \%p, \%u bajt, kanari: \%s\(\backslash\)n"{}}}
+\DoxyCodeLine{225                     \textcolor{stringliteral}{"{}  \%s:\%u, \%s(\%s)\(\backslash\)n"{}},}
+\DoxyCodeLine{226                        elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a20cf96b6c21400f0123a6a3b6dae9876}{user\_mem}}, (\textcolor{keywordtype}{unsigned}) elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a854352f53b148adc24983a58a1866d66}{size}}, canary\_ok ? \textcolor{stringliteral}{"{}ok"{}} : \textcolor{stringliteral}{"{}**SERULT**"{}},}
+\DoxyCodeLine{227                        elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a353d29f9f9cc0db6fca9d49b5f88d34d}{file}}, elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a05ef0c4dbeec4fc8ccb225de9c26d896}{line}},}
+\DoxyCodeLine{228                        elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_ac8a2334cf5c64b1f708ced23ef569db4}{func}}, elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_aa8f5b6d2256e18de50b9a17b5e3cda3b}{expr}});}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230     \textcolor{keywordflow}{if} (!canary\_ok) \{}
+\DoxyCodeLine{231         debugmalloc\_log(\textcolor{stringliteral}{"{}    ELOTTE kanari: \(\backslash\)n"{}});}
+\DoxyCodeLine{232         debugmalloc\_dump\_memory((\textcolor{keywordtype}{char} \textcolor{keyword}{const} *) elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_ae241706d126e0114e48ce7c4083d93d1}{real\_mem}}, \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bab345007cf28a2516c0ba24371a400520}{debugmalloc\_canary\_size}});}
+\DoxyCodeLine{233     \}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235     debugmalloc\_dump\_memory((\textcolor{keywordtype}{char} \textcolor{keyword}{const} *) elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a20cf96b6c21400f0123a6a3b6dae9876}{user\_mem}}, elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a854352f53b148adc24983a58a1866d66}{size}} > 64 ? 64 : elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a854352f53b148adc24983a58a1866d66}{size}});}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237     \textcolor{keywordflow}{if} (!canary\_ok) \{}
+\DoxyCodeLine{238         debugmalloc\_log(\textcolor{stringliteral}{"{}    UTANA kanari: \(\backslash\)n"{}});}
+\DoxyCodeLine{239         debugmalloc\_dump\_memory((\textcolor{keywordtype}{char} \textcolor{keyword}{const} *) elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_ae241706d126e0114e48ce7c4083d93d1}{real\_mem}} + \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bab345007cf28a2516c0ba24371a400520}{debugmalloc\_canary\_size}} + elem-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a854352f53b148adc24983a58a1866d66}{size}}, \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bab345007cf28a2516c0ba24371a400520}{debugmalloc\_canary\_size}});}
+\DoxyCodeLine{240     \}}
+\DoxyCodeLine{241 \}}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244 \textcolor{comment}{/* dump data of all memory blocks allocated. */}}
+\DoxyCodeLine{245 \textcolor{keyword}{static} \textcolor{keywordtype}{void} debugmalloc\_dump(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{246     \mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}} *instance = debugmalloc\_singleton();}
+\DoxyCodeLine{247     debugmalloc\_log(\textcolor{stringliteral}{"{}** DEBUGMALLOC DUMP ************************************\(\backslash\)n"{}});}
+\DoxyCodeLine{248     \textcolor{keywordtype}{int} cnt = 0;}
+\DoxyCodeLine{249     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba40803f0d5a26a349a78cbd998cb8a2a1}{debugmalloc\_tablesize}}; i++) \{}
+\DoxyCodeLine{250         \mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} *head = \&instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a96730563c8ca3d98f4f9f40df5ecb3c0}{head}}[i];}
+\DoxyCodeLine{251         \textcolor{keywordflow}{for} (\mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} *iter = head-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a7ebf7cb15f24577c59e05768d8f9ffc5}{next}}; iter-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a7ebf7cb15f24577c59e05768d8f9ffc5}{next}} != NULL; iter = iter-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a7ebf7cb15f24577c59e05768d8f9ffc5}{next}}) \{}
+\DoxyCodeLine{252             ++cnt;}
+\DoxyCodeLine{253             debugmalloc\_log(\textcolor{stringliteral}{"{}** \%d/\%d. rekord:\(\backslash\)n"{}}, cnt, instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a15f42e819e77e27bc9e2f204ff15e871}{alloc\_count}});}
+\DoxyCodeLine{254             debugmalloc\_dump\_elem(iter);}
+\DoxyCodeLine{255         \}}
+\DoxyCodeLine{256     \}}
+\DoxyCodeLine{257     debugmalloc\_log(\textcolor{stringliteral}{"{}** DEBUGMALLOC DUMP VEGE *******************************\(\backslash\)n"{}});}
+\DoxyCodeLine{258 \}}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261 \textcolor{comment}{/* called at program exit to dump data if there is a leak,}}
+\DoxyCodeLine{262 \textcolor{comment}{ * ie. allocated block remained. */}}
+\DoxyCodeLine{263 \textcolor{keyword}{static} \textcolor{keywordtype}{void} debugmalloc\_atexit\_dump(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{264     \mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}} *instance = debugmalloc\_singleton();}
+\DoxyCodeLine{265     }
+\DoxyCodeLine{266     \textcolor{keywordflow}{if} (instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a15f42e819e77e27bc9e2f204ff15e871}{alloc\_count}} > 0) \{}
+\DoxyCodeLine{267         debugmalloc\_log(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{268                         \textcolor{stringliteral}{"{}********************************************************\(\backslash\)n"{}}}
+\DoxyCodeLine{269                         \textcolor{stringliteral}{"{}* MEMORIASZIVARGAS VAN A PROGRAMBAN!!!\(\backslash\)n"{}}}
+\DoxyCodeLine{270                         \textcolor{stringliteral}{"{}********************************************************\(\backslash\)n"{}}}
+\DoxyCodeLine{271                         \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{272         debugmalloc\_dump();}
+\DoxyCodeLine{273     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{274         debugmalloc\_log(\textcolor{stringliteral}{"{}****************************************************\(\backslash\)n"{}}}
+\DoxyCodeLine{275                         \textcolor{stringliteral}{"{}* Debugmalloc: nincs memoriaszivargas a programban.\(\backslash\)n"{}}}
+\DoxyCodeLine{276                         \textcolor{stringliteral}{"{}* Osszes foglalas: \%d blokk, \%d bajt.\(\backslash\)n"{}}}
+\DoxyCodeLine{277                         \textcolor{stringliteral}{"{}****************************************************\(\backslash\)n"{}},}
+\DoxyCodeLine{278                         instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a42a37cfdec0b59c102e58457f5954962}{all\_alloc\_count}}, instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a9b9e3387235c1e2bebc84e38c230837e}{all\_alloc\_bytes}});}
+\DoxyCodeLine{279     \}}
+\DoxyCodeLine{280 \}}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283 \textcolor{comment}{/* hash function for bucket hash. */}}
+\DoxyCodeLine{284 \textcolor{keyword}{static} \textcolor{keywordtype}{size\_t} debugmalloc\_hash(\textcolor{keywordtype}{void} *address) \{}
+\DoxyCodeLine{285     \textcolor{comment}{/* the last few bits are ignored, as they are usually zero for}}
+\DoxyCodeLine{286 \textcolor{comment}{     * alignment purposes. all tested architectures used 16 byte allocation. */}}
+\DoxyCodeLine{287     \textcolor{keywordtype}{size\_t} cut = (size\_t)address >> 4;}
+\DoxyCodeLine{288     \textcolor{keywordflow}{return} cut \% \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba40803f0d5a26a349a78cbd998cb8a2a1}{debugmalloc\_tablesize}};}
+\DoxyCodeLine{289 \}}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292 \textcolor{comment}{/* insert element to hash table. */}}
+\DoxyCodeLine{293 \textcolor{keyword}{static} \textcolor{keywordtype}{void} debugmalloc\_insert(\mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} *entry) \{}
+\DoxyCodeLine{294     \mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}} *instance = debugmalloc\_singleton();}
+\DoxyCodeLine{295     \textcolor{keywordtype}{size\_t} idx = debugmalloc\_hash(entry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a20cf96b6c21400f0123a6a3b6dae9876}{user\_mem}});}
+\DoxyCodeLine{296     \mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} *head = \&instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a96730563c8ca3d98f4f9f40df5ecb3c0}{head}}[idx];}
+\DoxyCodeLine{297     entry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_aae87f43e5df8141aedca245507e8d790}{prev}} = head;}
+\DoxyCodeLine{298     entry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a7ebf7cb15f24577c59e05768d8f9ffc5}{next}} = head-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a7ebf7cb15f24577c59e05768d8f9ffc5}{next}};}
+\DoxyCodeLine{299     head-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a7ebf7cb15f24577c59e05768d8f9ffc5}{next}}-\/>\mbox{\hyperlink{struct_debugmalloc_entry_aae87f43e5df8141aedca245507e8d790}{prev}} = entry;}
+\DoxyCodeLine{300     head-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a7ebf7cb15f24577c59e05768d8f9ffc5}{next}} = entry;}
+\DoxyCodeLine{301     instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a15f42e819e77e27bc9e2f204ff15e871}{alloc\_count}} += 1;}
+\DoxyCodeLine{302     instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a23c9102a7df871da995e7aa887279e46}{alloc\_bytes}} += entry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a854352f53b148adc24983a58a1866d66}{size}};}
+\DoxyCodeLine{303     instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a42a37cfdec0b59c102e58457f5954962}{all\_alloc\_count}} += 1;}
+\DoxyCodeLine{304     instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a9b9e3387235c1e2bebc84e38c230837e}{all\_alloc\_bytes}} += entry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a854352f53b148adc24983a58a1866d66}{size}};}
+\DoxyCodeLine{305 \}}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308 \textcolor{comment}{/* remove element from hash table */}}
+\DoxyCodeLine{309 \textcolor{keyword}{static} \textcolor{keywordtype}{void} debugmalloc\_remove(\mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} *entry) \{}
+\DoxyCodeLine{310     \mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}} *instance = debugmalloc\_singleton();}
+\DoxyCodeLine{311     entry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a7ebf7cb15f24577c59e05768d8f9ffc5}{next}}-\/>\mbox{\hyperlink{struct_debugmalloc_entry_aae87f43e5df8141aedca245507e8d790}{prev}} = entry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_aae87f43e5df8141aedca245507e8d790}{prev}};}
+\DoxyCodeLine{312     entry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_aae87f43e5df8141aedca245507e8d790}{prev}}-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a7ebf7cb15f24577c59e05768d8f9ffc5}{next}} = entry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a7ebf7cb15f24577c59e05768d8f9ffc5}{next}};}
+\DoxyCodeLine{313     instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a15f42e819e77e27bc9e2f204ff15e871}{alloc\_count}} -\/= 1;}
+\DoxyCodeLine{314     instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a23c9102a7df871da995e7aa887279e46}{alloc\_bytes}} -\/= entry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a854352f53b148adc24983a58a1866d66}{size}};}
+\DoxyCodeLine{315 \}}
+\DoxyCodeLine{316 }
+\DoxyCodeLine{317 }
+\DoxyCodeLine{318 \textcolor{comment}{/* find element in hash table, given with the memory address that the user sees.}}
+\DoxyCodeLine{319 \textcolor{comment}{ * @return the linked list entry, or null if not found. */}}
+\DoxyCodeLine{320 \textcolor{keyword}{static} \mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} *debugmalloc\_find(\textcolor{keywordtype}{void} *mem) \{}
+\DoxyCodeLine{321     \mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}} *instance = debugmalloc\_singleton();}
+\DoxyCodeLine{322     \textcolor{keywordtype}{size\_t} idx = debugmalloc\_hash(mem);}
+\DoxyCodeLine{323     \mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} *head = \&instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a96730563c8ca3d98f4f9f40df5ecb3c0}{head}}[idx];}
+\DoxyCodeLine{324     \textcolor{keywordflow}{for} (\mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} *iter = head-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a7ebf7cb15f24577c59e05768d8f9ffc5}{next}}; iter-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a7ebf7cb15f24577c59e05768d8f9ffc5}{next}} != NULL; iter = iter-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a7ebf7cb15f24577c59e05768d8f9ffc5}{next}})}
+\DoxyCodeLine{325         \textcolor{keywordflow}{if} (iter-\/>user\_mem == mem)}
+\DoxyCodeLine{326             \textcolor{keywordflow}{return} iter;}
+\DoxyCodeLine{327     \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{328 \}}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330 }
+\DoxyCodeLine{331 \textcolor{comment}{/* allocate memory. this function is called via the macro. */}}
+\DoxyCodeLine{332 \textcolor{keyword}{static} \textcolor{keywordtype}{void} *debugmalloc\_malloc\_full(\textcolor{keywordtype}{size\_t} size, \textcolor{keywordtype}{char} \textcolor{keyword}{const} *func, \textcolor{keywordtype}{char} \textcolor{keyword}{const} *expr, \textcolor{keywordtype}{char} \textcolor{keyword}{const} *file, \textcolor{keywordtype}{unsigned} line, \textcolor{keywordtype}{bool} zero) \{}
+\DoxyCodeLine{333     \textcolor{comment}{/* imitate standard malloc: return null if size is zero */}}
+\DoxyCodeLine{334     \textcolor{keywordflow}{if} (size == 0)}
+\DoxyCodeLine{335         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{336     }
+\DoxyCodeLine{337     \textcolor{comment}{/* check max size */}}
+\DoxyCodeLine{338     \mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}} *instance = debugmalloc\_singleton();}
+\DoxyCodeLine{339     \textcolor{keywordflow}{if} (size > instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a5ff6535cb48e89d8b0707e889ba72b0d}{max\_block\_size}}) \{}
+\DoxyCodeLine{340         debugmalloc\_log(\textcolor{stringliteral}{"{}debugmalloc: \%s @ \%s:\%u: a blokk merete tul nagy, \%u bajt; debugmalloc\_max\_block\_size() fuggvennyel novelheto.\(\backslash\)n"{}}, func, file, line, (\textcolor{keywordtype}{unsigned}) size);}
+\DoxyCodeLine{341         abort();}
+\DoxyCodeLine{342     \}}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344     \textcolor{comment}{/* allocate more memory, make room for canary */}}
+\DoxyCodeLine{345     \textcolor{keywordtype}{void} *real\_mem = \mbox{\hyperlink{debugmalloc_8h_a535b58ab5aa48e2e86073e334d43fd32}{malloc}}(size + 2 * \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bab345007cf28a2516c0ba24371a400520}{debugmalloc\_canary\_size}});}
+\DoxyCodeLine{346     \textcolor{keywordflow}{if} (real\_mem == NULL) \{}
+\DoxyCodeLine{347         debugmalloc\_log(\textcolor{stringliteral}{"{}debugmalloc: \%s @ \%s:\%u: nem sikerult \%u meretu memoriat foglalni!\(\backslash\)n"{}}, func, file, line, (\textcolor{keywordtype}{unsigned}) size);}
+\DoxyCodeLine{348         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{349     \}}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351     \textcolor{comment}{/* allocate memory for linked list element */}}
+\DoxyCodeLine{352     \mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} *newentry = (\mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} *) \mbox{\hyperlink{debugmalloc_8h_a535b58ab5aa48e2e86073e334d43fd32}{malloc}}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}}));}
+\DoxyCodeLine{353     \textcolor{keywordflow}{if} (newentry == NULL) \{}
+\DoxyCodeLine{354         \mbox{\hyperlink{debugmalloc_8h_aa7943e5d135734f6801bebcc37401fc0}{free}}(real\_mem);}
+\DoxyCodeLine{355         debugmalloc\_log(\textcolor{stringliteral}{"{}debugmalloc: \%s @ \%s:\%u: le tudtam foglalni \%u memoriat, de utana a sajatnak nem, sry\(\backslash\)n"{}}, func, file, line, (\textcolor{keywordtype}{unsigned}) size);}
+\DoxyCodeLine{356         abort();}
+\DoxyCodeLine{357     \}}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359     \textcolor{comment}{/* metadata of allocation: caller function, code line etc. */}}
+\DoxyCodeLine{360     debugmalloc\_strlcpy(newentry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_ac8a2334cf5c64b1f708ced23ef569db4}{func}}, func, \textcolor{keyword}{sizeof}(newentry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_ac8a2334cf5c64b1f708ced23ef569db4}{func}}));}
+\DoxyCodeLine{361     debugmalloc\_strlcpy(newentry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_aa8f5b6d2256e18de50b9a17b5e3cda3b}{expr}}, expr, \textcolor{keyword}{sizeof}(newentry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_aa8f5b6d2256e18de50b9a17b5e3cda3b}{expr}}));}
+\DoxyCodeLine{362     debugmalloc\_strlcpy(newentry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a353d29f9f9cc0db6fca9d49b5f88d34d}{file}}, file, \textcolor{keyword}{sizeof}(newentry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a353d29f9f9cc0db6fca9d49b5f88d34d}{file}}));}
+\DoxyCodeLine{363     newentry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a05ef0c4dbeec4fc8ccb225de9c26d896}{line}} = line;}
+\DoxyCodeLine{364 }
+\DoxyCodeLine{365     \textcolor{comment}{/* address of allocated memory chunk */}}
+\DoxyCodeLine{366     newentry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_ae241706d126e0114e48ce7c4083d93d1}{real\_mem}} = real\_mem;}
+\DoxyCodeLine{367     newentry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a20cf96b6c21400f0123a6a3b6dae9876}{user\_mem}} = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *) real\_mem + \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bab345007cf28a2516c0ba24371a400520}{debugmalloc\_canary\_size}};}
+\DoxyCodeLine{368     newentry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a854352f53b148adc24983a58a1866d66}{size}} = size;}
+\DoxyCodeLine{369     debugmalloc\_memory\_init(newentry, zero);}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{371     \textcolor{comment}{/* store in list and return pointer to user area */}}
+\DoxyCodeLine{372     debugmalloc\_insert(newentry);}
+\DoxyCodeLine{373     \textcolor{keywordflow}{return} newentry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a20cf96b6c21400f0123a6a3b6dae9876}{user\_mem}};}
+\DoxyCodeLine{374 \}}
+\DoxyCodeLine{375 }
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377 \textcolor{comment}{/* free memory and remove list item. before deleting, the chuck is filled with}}
+\DoxyCodeLine{378 \textcolor{comment}{ * the canary byte to make sure that the user will see garbage if the memory}}
+\DoxyCodeLine{379 \textcolor{comment}{ * is accessed after freeing. */}}
+\DoxyCodeLine{380 \textcolor{keyword}{static} \textcolor{keywordtype}{void} debugmalloc\_free\_inner(\mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} *deleted) \{}
+\DoxyCodeLine{381     debugmalloc\_remove(deleted);}
+\DoxyCodeLine{382 }
+\DoxyCodeLine{383     \textcolor{comment}{/* fill with garbage, then remove from linked list */}}
+\DoxyCodeLine{384     memset(deleted-\/>\mbox{\hyperlink{struct_debugmalloc_entry_ae241706d126e0114e48ce7c4083d93d1}{real\_mem}}, \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba8e3d5ad8628140edd887b8920f521cfd}{debugmalloc\_canary\_char}}, deleted-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a854352f53b148adc24983a58a1866d66}{size}} + 2 * \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bab345007cf28a2516c0ba24371a400520}{debugmalloc\_canary\_size}});}
+\DoxyCodeLine{385     \mbox{\hyperlink{debugmalloc_8h_aa7943e5d135734f6801bebcc37401fc0}{free}}(deleted-\/>\mbox{\hyperlink{struct_debugmalloc_entry_ae241706d126e0114e48ce7c4083d93d1}{real\_mem}});}
+\DoxyCodeLine{386     \mbox{\hyperlink{debugmalloc_8h_aa7943e5d135734f6801bebcc37401fc0}{free}}(deleted);}
+\DoxyCodeLine{387 \}}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{389 }
+\DoxyCodeLine{390 \textcolor{comment}{/* free memory -\/ called via the macro.}}
+\DoxyCodeLine{391 \textcolor{comment}{ * as all allocations are tracked in the list, this function can terminate the program}}
+\DoxyCodeLine{392 \textcolor{comment}{ * if a block is freed twice or the free function is called with an invalid address. */}}
+\DoxyCodeLine{393 \textcolor{keyword}{static} \textcolor{keywordtype}{void} debugmalloc\_free\_full(\textcolor{keywordtype}{void} *mem, \textcolor{keywordtype}{char} \textcolor{keyword}{const} *func, \textcolor{keywordtype}{char} \textcolor{keyword}{const} *file, \textcolor{keywordtype}{unsigned} line) \{}
+\DoxyCodeLine{394     \textcolor{comment}{/* imitate standard free function: if ptr is null, no operation is performed */}}
+\DoxyCodeLine{395     \textcolor{keywordflow}{if} (mem == NULL)}
+\DoxyCodeLine{396         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{397 }
+\DoxyCodeLine{398     \textcolor{comment}{/* find allocation, abort if not found */}}
+\DoxyCodeLine{399     \mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} *deleted = debugmalloc\_find(mem);}
+\DoxyCodeLine{400     \textcolor{keywordflow}{if} (deleted == NULL) \{}
+\DoxyCodeLine{401         debugmalloc\_log(\textcolor{stringliteral}{"{}debugmalloc: \%s @ \%s:\%u: olyan teruletet probalsz felszabaditani, ami nincs lefoglalva!\(\backslash\)n"{}}, func, file, line);}
+\DoxyCodeLine{402         abort();}
+\DoxyCodeLine{403     \}}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{405     \textcolor{comment}{/* check canary and then free memory */}}
+\DoxyCodeLine{406     \textcolor{keywordflow}{if} (!debugmalloc\_canary\_ok(deleted)) \{}
+\DoxyCodeLine{407         debugmalloc\_log(\textcolor{stringliteral}{"{}debugmalloc: \%s @ \%s:\%u: a \%p memoriateruletet tulindexelted!\(\backslash\)n"{}}, func, file, line, mem);}
+\DoxyCodeLine{408         debugmalloc\_dump\_elem(deleted);}
+\DoxyCodeLine{409     \}}
+\DoxyCodeLine{410     debugmalloc\_free\_inner(deleted);}
+\DoxyCodeLine{411 \}}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413 }
+\DoxyCodeLine{414 \textcolor{comment}{/* realloc-\/like function. */}}
+\DoxyCodeLine{415 \textcolor{keyword}{static} \textcolor{keywordtype}{void} *debugmalloc\_realloc\_full(\textcolor{keywordtype}{void} *oldmem, \textcolor{keywordtype}{size\_t} newsize, \textcolor{keywordtype}{char} \textcolor{keyword}{const} *func, \textcolor{keywordtype}{char} \textcolor{keyword}{const} *expr, \textcolor{keywordtype}{char} \textcolor{keyword}{const} *file, \textcolor{keywordtype}{unsigned} line) \{}
+\DoxyCodeLine{416     \textcolor{comment}{/* imitate standard realloc: equivalent to free if size is null. */}}
+\DoxyCodeLine{417     \textcolor{keywordflow}{if} (newsize == 0) \{}
+\DoxyCodeLine{418         debugmalloc\_free\_full(oldmem, func, file, line);}
+\DoxyCodeLine{419         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{420     \}}
+\DoxyCodeLine{421     \textcolor{comment}{/* imitate standard realloc: equivalent to malloc if first param is NULL */}}
+\DoxyCodeLine{422     \textcolor{keywordflow}{if} (oldmem == NULL)}
+\DoxyCodeLine{423         \textcolor{keywordflow}{return} debugmalloc\_malloc\_full(newsize, func, expr, file, line, 0);}
+\DoxyCodeLine{424 }
+\DoxyCodeLine{425     \textcolor{comment}{/* find old allocation. abort if not found. */}}
+\DoxyCodeLine{426     \mbox{\hyperlink{struct_debugmalloc_entry}{DebugmallocEntry}} *oldentry = debugmalloc\_find(oldmem);}
+\DoxyCodeLine{427     \textcolor{keywordflow}{if} (oldentry == NULL) \{}
+\DoxyCodeLine{428         debugmalloc\_log(\textcolor{stringliteral}{"{}debugmalloc: \%s @ \%s:\%u: olyan teruletet probalsz atmeretezni, ami nincs lefoglalva!\(\backslash\)n"{}}, func, file, line);}
+\DoxyCodeLine{429         abort();}
+\DoxyCodeLine{430     \}}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{432     \textcolor{comment}{/* create new allocation, copy \& free old data */}}
+\DoxyCodeLine{433     \textcolor{keywordtype}{void} *newmem = debugmalloc\_malloc\_full(newsize, func, expr, file, line, \textcolor{keyword}{false});}
+\DoxyCodeLine{434     \textcolor{keywordflow}{if} (newmem == NULL) \{}
+\DoxyCodeLine{435         debugmalloc\_log(\textcolor{stringliteral}{"{}debugmalloc: \%s @ \%s:\%u: nem sikerult uj memoriat foglalni az atmeretezeshez!\(\backslash\)n"{}}, func, file, line);}
+\DoxyCodeLine{436         \textcolor{comment}{/* imitate standard realloc: original block is untouched, but return NULL */}}
+\DoxyCodeLine{437         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{438     \}}
+\DoxyCodeLine{439     \textcolor{keywordtype}{size\_t} smaller = oldentry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a854352f53b148adc24983a58a1866d66}{size}} < newsize ? oldentry-\/>\mbox{\hyperlink{struct_debugmalloc_entry_a854352f53b148adc24983a58a1866d66}{size}} : newsize;}
+\DoxyCodeLine{440     memcpy(newmem, oldmem, smaller);}
+\DoxyCodeLine{441     debugmalloc\_free\_inner(oldentry);}
+\DoxyCodeLine{442 }
+\DoxyCodeLine{443     \textcolor{keywordflow}{return} newmem;}
+\DoxyCodeLine{444 \}}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446 }
+\DoxyCodeLine{447 \textcolor{comment}{/* initialize debugmalloc singleton. returns the newly allocated instance */}}
+\DoxyCodeLine{448 \textcolor{keyword}{static} \mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}} * debugmalloc\_create(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{449     \textcolor{comment}{/* config check */}}
+\DoxyCodeLine{450     \textcolor{keywordflow}{if} (\mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bab345007cf28a2516c0ba24371a400520}{debugmalloc\_canary\_size}} \% 16 != 0) \{}
+\DoxyCodeLine{451         debugmalloc\_log(\textcolor{stringliteral}{"{}debugmalloc: a kanari merete legyen 16-\/tal oszthato\(\backslash\)n"{}});}
+\DoxyCodeLine{452         abort();}
+\DoxyCodeLine{453     \}}
+\DoxyCodeLine{454     \textcolor{keywordflow}{if} (\mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba8e3d5ad8628140edd887b8920f521cfd}{debugmalloc\_canary\_char}} == 0) \{}
+\DoxyCodeLine{455         debugmalloc\_log(\textcolor{stringliteral}{"{}debugmalloc: a kanari legyen 0-\/tol kulonbozo\(\backslash\)n"{}});}
+\DoxyCodeLine{456         abort();}
+\DoxyCodeLine{457     \}}
+\DoxyCodeLine{458     \textcolor{comment}{/* avoid compiler warning if these functions are not used */}}
+\DoxyCodeLine{459     (void) debugmalloc\_realloc\_full;}
+\DoxyCodeLine{460     (void) debugmalloc\_log\_file;}
+\DoxyCodeLine{461     (void) debugmalloc\_max\_block\_size;}
+\DoxyCodeLine{462 }
+\DoxyCodeLine{463     \textcolor{comment}{/* create and initialize instance */}}
+\DoxyCodeLine{464     \mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}} *instance = (\mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}} *) \mbox{\hyperlink{debugmalloc_8h_a535b58ab5aa48e2e86073e334d43fd32}{malloc}}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_debugmalloc_data}{DebugmallocData}}));}
+\DoxyCodeLine{465     \textcolor{keywordflow}{if} (instance == NULL) \{}
+\DoxyCodeLine{466         debugmalloc\_log(\textcolor{stringliteral}{"{}debugmalloc: nem sikerult elinditani a memoriakezelest\(\backslash\)n"{}});}
+\DoxyCodeLine{467         abort();}
+\DoxyCodeLine{468     \}}
+\DoxyCodeLine{469     debugmalloc\_strlcpy(instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_af5ff893eedb28514f6f69c3687ca893b}{logfile}}, \textcolor{stringliteral}{"{}"{}}, \textcolor{keyword}{sizeof}(instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_af5ff893eedb28514f6f69c3687ca893b}{logfile}}));}
+\DoxyCodeLine{470     instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a5ff6535cb48e89d8b0707e889ba72b0d}{max\_block\_size}} = \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55bae8726dfde3f35d4345009234ee734f6c}{debugmalloc\_max\_block\_size\_default}};}
+\DoxyCodeLine{471     instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a15f42e819e77e27bc9e2f204ff15e871}{alloc\_count}} = 0;}
+\DoxyCodeLine{472     instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a23c9102a7df871da995e7aa887279e46}{alloc\_bytes}} = 0;}
+\DoxyCodeLine{473     instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a42a37cfdec0b59c102e58457f5954962}{all\_alloc\_count}} = 0;}
+\DoxyCodeLine{474     instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a9b9e3387235c1e2bebc84e38c230837e}{all\_alloc\_bytes}} = 0;}
+\DoxyCodeLine{475     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < \mbox{\hyperlink{debugmalloc_8h_a06fc87d81c62e9abb8790b6e5713c55ba40803f0d5a26a349a78cbd998cb8a2a1}{debugmalloc\_tablesize}}; i++) \{}
+\DoxyCodeLine{476         instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a96730563c8ca3d98f4f9f40df5ecb3c0}{head}}[i].\mbox{\hyperlink{struct_debugmalloc_entry_aae87f43e5df8141aedca245507e8d790}{prev}} = NULL;}
+\DoxyCodeLine{477         instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a96730563c8ca3d98f4f9f40df5ecb3c0}{head}}[i].\mbox{\hyperlink{struct_debugmalloc_entry_a7ebf7cb15f24577c59e05768d8f9ffc5}{next}} = \&instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a6a489bd48f708358b171a68acf75de9f}{tail}}[i];}
+\DoxyCodeLine{478         instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a6a489bd48f708358b171a68acf75de9f}{tail}}[i].\mbox{\hyperlink{struct_debugmalloc_entry_a7ebf7cb15f24577c59e05768d8f9ffc5}{next}} = NULL;}
+\DoxyCodeLine{479         instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a6a489bd48f708358b171a68acf75de9f}{tail}}[i].\mbox{\hyperlink{struct_debugmalloc_entry_aae87f43e5df8141aedca245507e8d790}{prev}} = \&instance-\/>\mbox{\hyperlink{struct_debugmalloc_data_a96730563c8ca3d98f4f9f40df5ecb3c0}{head}}[i];}
+\DoxyCodeLine{480     \}}
+\DoxyCodeLine{481 }
+\DoxyCodeLine{482     atexit(debugmalloc\_atexit\_dump);}
+\DoxyCodeLine{483     \textcolor{keywordflow}{return} instance;}
+\DoxyCodeLine{484 \}}
+\DoxyCodeLine{485 }
+\DoxyCodeLine{486 }
+\DoxyCodeLine{487 \textcolor{comment}{/* These macro-\/like functions forward all allocation/free}}
+\DoxyCodeLine{488 \textcolor{comment}{ * calls to debugmalloc. Usage is the same, malloc(size)}}
+\DoxyCodeLine{489 \textcolor{comment}{ * gives the address of a new memory block, free(ptr)}}
+\DoxyCodeLine{490 \textcolor{comment}{ * deallocates etc.}}
+\DoxyCodeLine{491 \textcolor{comment}{ * }}
+\DoxyCodeLine{492 \textcolor{comment}{ * If you use this file, make sure that you include this}}
+\DoxyCodeLine{493 \textcolor{comment}{ * in *ALL* translation units (*.c) of your source. The}}
+\DoxyCodeLine{494 \textcolor{comment}{ * builtin free() function cannot deallocate a memory block}}
+\DoxyCodeLine{495 \textcolor{comment}{ * that was allocated via debugmalloc, yet the name of}}
+\DoxyCodeLine{496 \textcolor{comment}{ * the function is the same! */}}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498 \textcolor{preprocessor}{\#define malloc(S) debugmalloc\_malloc\_full((S), "{}malloc"{}}, \#S, \_\_FILE\_\_, \_\_LINE\_\_, false)}
+\DoxyCodeLine{499 \textcolor{preprocessor}{\#define calloc(N,S) debugmalloc\_malloc\_full((N)*(S), "{}calloc"{}}, \#N "{}, "{} \#S, \_\_FILE\_\_, \_\_LINE\_\_, true)}
+\DoxyCodeLine{500 \textcolor{preprocessor}{\#define realloc(P,S) debugmalloc\_realloc\_full((P), (S), "{}realloc"{}}, \#S, \_\_FILE\_\_, \_\_LINE\_\_)}
+\DoxyCodeLine{501 \textcolor{preprocessor}{\#define free(P) debugmalloc\_free\_full((P), "{}free"{}}, \_\_FILE\_\_, \_\_LINE\_\_)}
+\DoxyCodeLine{502 }
+\DoxyCodeLine{503 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

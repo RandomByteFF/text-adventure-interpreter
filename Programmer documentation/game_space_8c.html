@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Szöveges kalandjáték értelmező: gameSpace.c fájlreferencia</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Szöveges kalandjáték értelmező
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.9.5 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','Keresés');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Függvények</a>  </div>
+  <div class="headertitle"><div class="title">gameSpace.c fájlreferencia</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Játék állapotát kezeli és a játéktérben elhelyezkedő elemeket definiálja.  
+<a href="#details">Részletek...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="game_space_8h_source.html">gameSpace.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="essentials_8h_source.html">essentials.h</a>&quot;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Függvények</h2></td></tr>
+<tr class="memitem:a9c79114362333cd45c94aa258af5df40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_space_8c.html#a9c79114362333cd45c94aa258af5df40">ChangeStates</a> (<a class="el" href="struct_state.html">State</a> <a class="el" href="graphics_8c.html#ace8acdb472009cf282d9cb2dda568355">states</a>[], int <a class="el" href="graphics_8c.html#a12cc37e05dc5b7ad42ae6436cc78c0e4">stateCount</a>, char *list)</td></tr>
+<tr class="memdesc:a9c79114362333cd45c94aa258af5df40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Megváltoztatja egy event string alapján az object/room állapotát.  <a href="game_space_8c.html#a9c79114362333cd45c94aa258af5df40">Részletek...</a><br /></td></tr>
+<tr class="separator:a9c79114362333cd45c94aa258af5df40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Részletes leírás</h2>
+<div class="textblock"><p >Játék állapotát kezeli és a játéktérben elhelyezkedő elemeket definiálja. </p>
+</div><h2 class="groupheader">Függvények dokumentációja</h2>
+<a id="a9c79114362333cd45c94aa258af5df40" name="a9c79114362333cd45c94aa258af5df40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c79114362333cd45c94aa258af5df40">&#9670;&#160;</a></span>ChangeStates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ChangeStates </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_state.html">State</a>&#160;</td>
+          <td class="paramname"><em>states</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>stateCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Megváltoztatja egy event string alapján az object/room állapotát. </p>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">states</td><td>Állapotok tömb </td></tr>
+    <tr><td class="paramname">stateCount</td><td>Állapotok tömb elemszáma </td></tr>
+    <tr><td class="paramname">list</td><td>Event lista </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Készítette&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5
+</small></address>
+</body>
+</html>

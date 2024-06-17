@@ -1,0 +1,263 @@
+\select@language {magyar} \@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\select@language {magyar} \contentsline {chapter}{\numberline {1}Adatszerkezet-\/mutató}{1}{chapter.1}%
+\select@language {magyar} \contentsline {section}{\numberline {1.1}Adatszerkezetek}{1}{section.1.1}%
+\select@language {magyar} \contentsline {chapter}{\numberline {2}Fájlmutató}{3}{chapter.2}%
+\select@language {magyar} \contentsline {section}{\numberline {2.1}Fájllista}{3}{section.2.1}%
+\select@language {magyar} \contentsline {chapter}{\numberline {3}Adatszerkezetek dokumentációja}{5}{chapter.3}%
+\select@language {magyar} \contentsline {section}{\numberline {3.1}Debugmalloc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data struktúrareferencia}{5}{section.3.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.1}Adatmezők dokumentációja}{5}{subsection.3.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.1}all\_alloc\_bytes}{5}{subsubsection.3.1.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.2}all\_alloc\_count}{5}{subsubsection.3.1.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.3}alloc\_bytes}{6}{subsubsection.3.1.1.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.4}alloc\_count}{6}{subsubsection.3.1.1.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.5}head}{6}{subsubsection.3.1.1.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.6}logfile}{6}{subsubsection.3.1.1.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.7}max\_block\_size}{6}{subsubsection.3.1.1.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.8}tail}{6}{subsubsection.3.1.1.8}%
+\select@language {magyar} \contentsline {section}{\numberline {3.2}Debugmalloc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Entry struktúrareferencia}{6}{section.3.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.2.1}Adatmezők dokumentációja}{7}{subsection.3.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.2.1.1}expr}{7}{subsubsection.3.2.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.2.1.2}file}{7}{subsubsection.3.2.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.2.1.3}func}{7}{subsubsection.3.2.1.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.2.1.4}line}{7}{subsubsection.3.2.1.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.2.1.5}next}{7}{subsubsection.3.2.1.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.2.1.6}prev}{8}{subsubsection.3.2.1.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.2.1.7}real\_mem}{8}{subsubsection.3.2.1.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.2.1.8}size}{8}{subsubsection.3.2.1.8}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.2.1.9}user\_mem}{8}{subsubsection.3.2.1.9}%
+\select@language {magyar} \contentsline {section}{\numberline {3.3}List struktúrareferencia}{8}{section.3.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.3.1}Részletes leírás}{8}{subsection.3.3.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.3.2}Adatmezők dokumentációja}{8}{subsection.3.3.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.3.2.1}len}{9}{subsubsection.3.3.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.3.2.2}startNode}{9}{subsubsection.3.3.2.2}%
+\select@language {magyar} \contentsline {section}{\numberline {3.4}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item struktúrareferencia}{9}{section.3.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.1}Részletes leírás}{9}{subsection.3.4.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4.2}Adatmezők dokumentációja}{9}{subsection.3.4.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.4.2.1}text}{9}{subsubsection.3.4.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.4.2.2}x}{9}{subsubsection.3.4.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.4.2.3}y}{10}{subsubsection.3.4.2.3}%
+\select@language {magyar} \contentsline {section}{\numberline {3.5}Node struktúrareferencia}{10}{section.3.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.5.1}Részletes leírás}{10}{subsection.3.5.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.5.2}Adatmezők dokumentációja}{10}{subsection.3.5.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.5.2.1}nextNode}{10}{subsubsection.3.5.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.5.2.2}value}{10}{subsubsection.3.5.2.2}%
+\select@language {magyar} \contentsline {section}{\numberline {3.6}Object struktúrareferencia}{11}{section.3.6}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.6.1}Részletes leírás}{11}{subsection.3.6.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.6.2}Adatmezők dokumentációja}{11}{subsection.3.6.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.6.2.1}collectible}{11}{subsubsection.3.6.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.6.2.2}id}{11}{subsubsection.3.6.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.6.2.3}lookAtText}{11}{subsubsection.3.6.2.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.6.2.4}modify}{12}{subsubsection.3.6.2.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.6.2.5}modifyEvent}{12}{subsubsection.3.6.2.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.6.2.6}modifyString}{12}{subsubsection.3.6.2.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.6.2.7}name}{12}{subsubsection.3.6.2.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.6.2.8}state}{12}{subsubsection.3.6.2.8}%
+\select@language {magyar} \contentsline {section}{\numberline {3.7}Room struktúrareferencia}{12}{section.3.7}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.7.1}Részletes leírás}{13}{subsection.3.7.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.7.2}Adatmezők dokumentációja}{13}{subsection.3.7.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.7.2.1}connectedItems}{13}{subsubsection.3.7.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.7.2.2}connectedRooms}{13}{subsubsection.3.7.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.7.2.3}entryText}{13}{subsubsection.3.7.2.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.7.2.4}id}{13}{subsubsection.3.7.2.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.7.2.5}lookAroundText}{13}{subsubsection.3.7.2.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.7.2.6}name}{13}{subsubsection.3.7.2.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.7.2.7}state}{14}{subsubsection.3.7.2.7}%
+\select@language {magyar} \contentsline {section}{\numberline {3.8}State struktúrareferencia}{14}{section.3.8}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.8.1}Részletes leírás}{14}{subsection.3.8.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.8.2}Adatmezők dokumentációja}{14}{subsection.3.8.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.8.2.1}id}{14}{subsubsection.3.8.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.8.2.2}room}{14}{subsubsection.3.8.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.8.2.3}state}{15}{subsubsection.3.8.2.3}%
+\select@language {magyar} \contentsline {section}{\numberline {3.9}String\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List struktúrareferencia}{15}{section.3.9}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.9.1}Részletes leírás}{15}{subsection.3.9.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.9.2}Adatmezők dokumentációja}{15}{subsection.3.9.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.9.2.1}len}{15}{subsubsection.3.9.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.9.2.2}startNode}{15}{subsubsection.3.9.2.2}%
+\select@language {magyar} \contentsline {section}{\numberline {3.10}String\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Node struktúrareferencia}{16}{section.3.10}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.10.1}Részletes leírás}{16}{subsection.3.10.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.10.2}Adatmezők dokumentációja}{16}{subsection.3.10.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.10.2.1}nextNode}{16}{subsubsection.3.10.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.10.2.2}value}{16}{subsubsection.3.10.2.2}%
+\select@language {magyar} \contentsline {chapter}{\numberline {4}Fájlok dokumentációja}{17}{chapter.4}%
+\select@language {magyar} \contentsline {section}{\numberline {4.1}debugmalloc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h fájlreferencia}{17}{section.4.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.1}Makródefiníciók dokumentációja}{18}{subsection.4.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.1.1}calloc}{18}{subsubsection.4.1.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.1.2}free}{18}{subsubsection.4.1.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.1.3}malloc}{18}{subsubsection.4.1.1.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.1.4}realloc}{18}{subsubsection.4.1.1.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.2}Típusdefiníciók dokumentációja}{18}{subsection.4.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.2.1}DebugmallocData}{18}{subsubsection.4.1.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.2.2}DebugmallocEntry}{18}{subsubsection.4.1.2.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.3}Enumerációk dokumentációja}{18}{subsection.4.1.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.3.1}anonymous enum}{18}{subsubsection.4.1.3.1}%
+\select@language {magyar} \contentsline {section}{\numberline {4.2}debugmalloc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{19}{section.4.2}%
+\select@language {magyar} \contentsline {section}{\numberline {4.3}econio.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c fájlreferencia}{25}{section.4.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.3.1}Függvények dokumentációja}{25}{subsection.4.3.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.1.1}econio\_clrscr()}{25}{subsubsection.4.3.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.1.2}econio\_flush()}{26}{subsubsection.4.3.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.1.3}econio\_getch()}{26}{subsubsection.4.3.1.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.1.4}econio\_gotoxy()}{26}{subsubsection.4.3.1.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.1.5}econio\_kbhit()}{26}{subsubsection.4.3.1.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.1.6}econio\_normalmode()}{26}{subsubsection.4.3.1.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.1.7}econio\_rawmode()}{26}{subsubsection.4.3.1.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.1.8}econio\_set\_title()}{27}{subsubsection.4.3.1.8}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.1.9}econio\_sleep()}{27}{subsubsection.4.3.1.9}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.1.10}econio\_textbackground()}{27}{subsubsection.4.3.1.10}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.1.11}econio\_textcolor()}{27}{subsubsection.4.3.1.11}%
+\select@language {magyar} \contentsline {section}{\numberline {4.4}econio.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h fájlreferencia}{27}{section.4.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.4.1}Típusdefiníciók dokumentációja}{28}{subsection.4.4.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.4.1.1}EconioColor}{28}{subsubsection.4.4.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.4.1.2}EconioKey}{28}{subsubsection.4.4.1.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.4.2}Enumerációk dokumentációja}{29}{subsection.4.4.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.4.2.1}EconioColor}{29}{subsubsection.4.4.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.4.2.2}EconioKey}{30}{subsubsection.4.4.2.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.4.3}Függvények dokumentációja}{31}{subsection.4.4.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.4.3.1}econio\_clrscr()}{31}{subsubsection.4.4.3.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.4.3.2}econio\_flush()}{31}{subsubsection.4.4.3.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.4.3.3}econio\_getch()}{31}{subsubsection.4.4.3.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.4.3.4}econio\_gotoxy()}{32}{subsubsection.4.4.3.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.4.3.5}econio\_kbhit()}{32}{subsubsection.4.4.3.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.4.3.6}econio\_normalmode()}{32}{subsubsection.4.4.3.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.4.3.7}econio\_rawmode()}{32}{subsubsection.4.4.3.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.4.3.8}econio\_set\_title()}{32}{subsubsection.4.4.3.8}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.4.3.9}econio\_sleep()}{32}{subsubsection.4.4.3.9}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.4.3.10}econio\_textbackground()}{32}{subsubsection.4.4.3.10}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.4.3.11}econio\_textcolor()}{33}{subsubsection.4.4.3.11}%
+\select@language {magyar} \contentsline {section}{\numberline {4.5}econio.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{33}{section.4.5}%
+\select@language {magyar} \contentsline {section}{\numberline {4.6}essentials.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c fájlreferencia}{34}{section.4.6}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.6.1}Részletes leírás}{36}{subsection.4.6.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.6.2}Függvények dokumentációja}{36}{subsection.4.6.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.1}Add()}{36}{subsubsection.4.6.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.2}AddString()}{36}{subsubsection.4.6.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.3}AddStringPointer()}{36}{subsubsection.4.6.2.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.4}Alloc()}{37}{subsubsection.4.6.2.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.5}AllocStd()}{37}{subsubsection.4.6.2.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.6}At()}{37}{subsubsection.4.6.2.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.7}AtString()}{37}{subsubsection.4.6.2.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.8}Contains()}{38}{subsubsection.4.6.2.8}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.9}ContainsString()}{38}{subsubsection.4.6.2.9}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.10}ConvertToInt()}{39}{subsubsection.4.6.2.10}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.11}CpyStrPtr()}{39}{subsubsection.4.6.2.11}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.12}CreateList()}{39}{subsubsection.4.6.2.12}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.13}CreateStringList()}{40}{subsubsection.4.6.2.13}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.14}DestroyList()}{40}{subsubsection.4.6.2.14}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.15}DestroyStringList()}{40}{subsubsection.4.6.2.15}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.16}Find()}{41}{subsubsection.4.6.2.16}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.17}FindString()}{41}{subsubsection.4.6.2.17}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.18}Merge()}{41}{subsubsection.4.6.2.18}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.19}RemoveAt()}{42}{subsubsection.4.6.2.19}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.20}RemoveAtInt()}{42}{subsubsection.4.6.2.20}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.21}RemoveFirst()}{43}{subsubsection.4.6.2.21}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.22}RemoveFirstString()}{43}{subsubsection.4.6.2.22}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.23}Set()}{43}{subsubsection.4.6.2.23}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.24}SetString()}{43}{subsubsection.4.6.2.24}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.25}SortBeolvas()}{44}{subsubsection.4.6.2.25}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.26}SortBeolvasStd()}{44}{subsubsection.4.6.2.26}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.27}Split()}{44}{subsubsection.4.6.2.27}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.6.2.28}SplitInt()}{45}{subsubsection.4.6.2.28}%
+\select@language {magyar} \contentsline {section}{\numberline {4.7}essentials.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h fájlreferencia}{45}{section.4.7}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.7.1}Típusdefiníciók dokumentációja}{47}{subsection.4.7.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.1.1}List}{47}{subsubsection.4.7.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.1.2}Node}{47}{subsubsection.4.7.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.1.3}StringList}{47}{subsubsection.4.7.1.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.1.4}StringNode}{48}{subsubsection.4.7.1.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.7.2}Függvények dokumentációja}{48}{subsection.4.7.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.1}Add()}{48}{subsubsection.4.7.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.2}AddString()}{48}{subsubsection.4.7.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.3}AddStringPointer()}{48}{subsubsection.4.7.2.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.4}Alloc()}{49}{subsubsection.4.7.2.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.5}At()}{49}{subsubsection.4.7.2.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.6}AtString()}{49}{subsubsection.4.7.2.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.7}Contains()}{50}{subsubsection.4.7.2.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.8}ContainsString()}{50}{subsubsection.4.7.2.8}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.9}ConvertToInt()}{51}{subsubsection.4.7.2.9}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.10}CpyStrPtr()}{51}{subsubsection.4.7.2.10}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.11}CreateList()}{51}{subsubsection.4.7.2.11}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.12}CreateStringList()}{52}{subsubsection.4.7.2.12}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.13}DestroyList()}{52}{subsubsection.4.7.2.13}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.14}DestroyStringList()}{52}{subsubsection.4.7.2.14}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.15}Find()}{53}{subsubsection.4.7.2.15}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.16}FindString()}{53}{subsubsection.4.7.2.16}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.17}Merge()}{53}{subsubsection.4.7.2.17}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.18}RemoveAt()}{54}{subsubsection.4.7.2.18}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.19}RemoveAtInt()}{54}{subsubsection.4.7.2.19}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.20}RemoveFirst()}{54}{subsubsection.4.7.2.20}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.21}RemoveFirstString()}{55}{subsubsection.4.7.2.21}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.22}Set()}{55}{subsubsection.4.7.2.22}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.23}SetString()}{55}{subsubsection.4.7.2.23}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.24}SortBeolvas()}{56}{subsubsection.4.7.2.24}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.25}SortBeolvasStd()}{56}{subsubsection.4.7.2.25}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.26}Split()}{56}{subsubsection.4.7.2.26}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.27}SplitInt()}{57}{subsubsection.4.7.2.27}%
+\select@language {magyar} \contentsline {section}{\numberline {4.8}essentials.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{57}{section.4.8}%
+\select@language {magyar} \contentsline {section}{\numberline {4.9}game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Space.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c fájlreferencia}{58}{section.4.9}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.9.1}Részletes leírás}{58}{subsection.4.9.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.9.2}Függvények dokumentációja}{58}{subsection.4.9.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.9.2.1}ChangeStates()}{58}{subsubsection.4.9.2.1}%
+\select@language {magyar} \contentsline {section}{\numberline {4.10}game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Space.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h fájlreferencia}{59}{section.4.10}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.10.1}Típusdefiníciók dokumentációja}{59}{subsection.4.10.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.10.1.1}Object}{59}{subsubsection.4.10.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.10.1.2}Room}{60}{subsubsection.4.10.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.10.1.3}State}{60}{subsubsection.4.10.1.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.10.2}Függvények dokumentációja}{60}{subsection.4.10.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.10.2.1}ChangeStates()}{60}{subsubsection.4.10.2.1}%
+\select@language {magyar} \contentsline {section}{\numberline {4.11}game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Space.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{60}{section.4.11}%
+\select@language {magyar} \contentsline {section}{\numberline {4.12}graphics.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c fájlreferencia}{61}{section.4.12}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.12.1}Részletes leírás}{62}{subsection.4.12.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.12.2}Típusdefiníciók dokumentációja}{62}{subsection.4.12.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.2.1}MenuItem}{62}{subsubsection.4.12.2.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.12.3}Függvények dokumentációja}{62}{subsection.4.12.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.3.1}DrawGameSpace()}{62}{subsubsection.4.12.3.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.3.2}DrawMenu()}{62}{subsubsection.4.12.3.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.3.3}DrawMenuItem()}{63}{subsubsection.4.12.3.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.3.4}HowToPlay()}{63}{subsubsection.4.12.3.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.3.5}LoadGame()}{63}{subsubsection.4.12.3.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.3.6}MenuMode()}{63}{subsubsection.4.12.3.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.3.7}NewGame()}{64}{subsubsection.4.12.3.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.3.8}PlayGame()}{64}{subsubsection.4.12.3.8}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.12.4}Változók dokumentációja}{64}{subsection.4.12.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.4.1}currentRoomId}{64}{subsubsection.4.12.4.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.4.2}currentRoomState}{64}{subsubsection.4.12.4.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.4.3}HEIGHT}{64}{subsubsection.4.12.4.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.4.4}items}{64}{subsubsection.4.12.4.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.4.5}objectCount}{65}{subsubsection.4.12.4.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.4.6}objects}{65}{subsubsection.4.12.4.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.4.7}previousRoomId}{65}{subsubsection.4.12.4.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.4.8}previousRoomState}{65}{subsubsection.4.12.4.8}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.4.9}roomCount}{65}{subsubsection.4.12.4.9}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.4.10}rooms}{65}{subsubsection.4.12.4.10}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.4.11}stateCount}{65}{subsubsection.4.12.4.11}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.4.12}states}{65}{subsubsection.4.12.4.12}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.4.13}WIDTH}{66}{subsubsection.4.12.4.13}%
+\select@language {magyar} \contentsline {section}{\numberline {4.13}graphics.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h fájlreferencia}{66}{section.4.13}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.13.1}Függvények dokumentációja}{66}{subsection.4.13.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.13.1.1}MenuMode()}{66}{subsubsection.4.13.1.1}%
+\select@language {magyar} \contentsline {section}{\numberline {4.14}graphics.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{66}{section.4.14}%
+\select@language {magyar} \contentsline {section}{\numberline {4.15}interpreter.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c fájlreferencia}{66}{section.4.15}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.15.1}Részletes leírás}{67}{subsection.4.15.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.15.2}Függvények dokumentációja}{67}{subsection.4.15.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.15.2.1}Execute()}{67}{subsubsection.4.15.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.15.2.2}HasEvent()}{68}{subsubsection.4.15.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.15.2.3}WhatState()}{68}{subsubsection.4.15.2.3}%
+\select@language {magyar} \contentsline {section}{\numberline {4.16}interpreter.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h fájlreferencia}{68}{section.4.16}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.16.1}Függvények dokumentációja}{69}{subsection.4.16.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.16.1.1}Execute()}{69}{subsubsection.4.16.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.16.1.2}WhatState()}{70}{subsubsection.4.16.1.2}%
+\select@language {magyar} \contentsline {section}{\numberline {4.17}interpreter.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{70}{section.4.17}%
+\select@language {magyar} \contentsline {section}{\numberline {4.18}loader\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c fájlreferencia}{70}{section.4.18}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.18.1}Részletes leírás}{71}{subsection.4.18.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.18.2}Függvények dokumentációja}{71}{subsection.4.18.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.18.2.1}DestroyObjects()}{71}{subsubsection.4.18.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.18.2.2}DestroyRooms()}{71}{subsubsection.4.18.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.18.2.3}LoadStry()}{71}{subsubsection.4.18.2.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.18.2.4}ReadFile()}{72}{subsubsection.4.18.2.4}%
+\select@language {magyar} \contentsline {section}{\numberline {4.19}loader\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h fájlreferencia}{72}{section.4.19}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.19.1}Függvények dokumentációja}{72}{subsection.4.19.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.19.1.1}DestroyObjects()}{73}{subsubsection.4.19.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.19.1.2}DestroyRooms()}{73}{subsubsection.4.19.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.19.1.3}LoadStry()}{73}{subsubsection.4.19.1.3}%
+\select@language {magyar} \contentsline {section}{\numberline {4.20}loader\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}System.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{73}{section.4.20}%
+\select@language {magyar} \contentsline {section}{\numberline {4.21}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c fájlreferencia}{74}{section.4.21}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.21.1}Függvények dokumentációja}{74}{subsection.4.21.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.21.1.1}main()}{74}{subsubsection.4.21.1.1}%
+\select@language {magyar} \contentsline {chapter}{T\'argymutat\'o}{75}{section*.37}%
